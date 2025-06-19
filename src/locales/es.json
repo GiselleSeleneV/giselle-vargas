@@ -1,0 +1,52 @@
+{
+  "header": {
+    "menu": "Menú",
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "language": {
+      "english": "Inglés",
+      "spanish": "Español"
+    }
+  },
+  
+  "home": {
+    "greetings": "¡Hola, bienvenidos!",
+    "I_am": "Soy",
+    "explore": "¡Explora mi portafolio personal!",
+    "button": "¡Explorar!"
+  },
+
+  "contact": {
+    "software_developer": "DESARROLLADORA DE SOFTWARE"
+  },
+
+  "about_me": {
+    "about_me": "SOBRE MI",
+    "description": "Soy una desarrolladora front-end apasionada por la creación de experiencias digitales fluidas y atractivas. Con experiencia en JavaScript, React, Next.js y GraphQL, me especializo en desarrollar aplicaciones web interactivas, optimizadas y escalables.\n\nMe destaco por mi capacidad para implementar soluciones técnicas eficientes, optimizar el rendimiento y mejorar la experiencia del usuario. Disfruto enfrentando desafíos técnicos complejos y aplicando buenas prácticas de desarrollo para garantizar código limpio, mantenible y accesible.\n\nA lo largo de mi trayectoria, he trabajado en proyectos de diseño y desarrollo web para diversos sectores, colaborando con equipos multidisciplinarios para entregar productos de alta calidad. Mi enfoque proactivo hacia el aprendizaje continuo me permite adaptarme a nuevas tecnologías y metodologías de desarrollo, asegurando soluciones innovadoras y eficientes.\n\nCreo en la importancia de la accesibilidad, la usabilidad y el diseño centrado en el usuario, y siempre busco aportar valor a cada proyecto mediante la creación de interfaces intuitivas y robustas."
+  },
+
+  "experience": {
+    "projects": "Projects",
+    "company_one": {
+      "company": "Corporación Talentum",
+      "startDate": "Ago-2023",
+      "endDate": "Dic-2024",
+      "city": "Cali, Valle del Cauca",
+      "position": "DESARROLLADORA FRONTEND",
+      "role": "En mi rol como desarrolladora de software front-end en Corporación Talentum, participé en el desarrollo de plataformas tecnológicas orientadas al sector educativo en colaboración con la Secretaría de Educación. Mi trabajo se centraba en crear interfaces intuitivas e interactivas que facilitaran la evaluación de estudiantes, el monitoreo de su progreso y la gestión de conocimientos.\n\nUtilicé tecnologías como JavaScript, React, GraphQL y Next.js para diseñar soluciones escalables que mejoraran la experiencia del usuario y optimizaran procesos educativos. Contribuí a proyectos que buscaban reducir la brecha digital, implementar aulas STEAM y fomentar una educación inclusiva en comunidades con recursos limitados.\n\nAdicionalmente, formé parte del equipo de soporte de primer nivel para el Sistema de Información de Gestión Pedagógica (SIGP), una plataforma utilizada en diversas instituciones educativas del Valle del Cauca. En este rol, gestionaba las solicitudes de los usuarios, clasificaba los casos según su complejidad (niveles 1, 2 o 3) y los derivaba al área correspondiente, asegurando respuestas ágiles y eficientes que optimizaban la experiencia del usuario y mejoraban la gestión pedagógica."
+    },
+    "company_two": {
+      "company": "Deft Soluciones",
+      "startDate": "Ago-2023",
+      "endDate": "Dic-2024",
+      "city": "Cali, Valle del Cauca",
+      "position": "DESARROLLADORA FRONTEND",
+      "role": "En mi rol como desarrolladora de software front-end en Corporación Talentum, participé en el desarrollo de plataformas tecnológicas orientadas al sector educativo en colaboración con la Secretaría de Educación. Mi trabajo se centraba en crear interfaces intuitivas e interactivas que facilitaran la evaluación de estudiantes, el monitoreo de su progreso y la gestión de conocimientos.\n\nUtilicé tecnologías como JavaScript, React, GraphQL y Next.js para diseñar soluciones escalables que mejoraran la experiencia del usuario y optimizaran procesos educativos. Contribuí a proyectos que buscaban reducir la brecha digital, implementar aulas STEAM y fomentar una educación inclusiva en comunidades con recursos limitados.\n\nAdicionalmente, formé parte del equipo de soporte de primer nivel para el Sistema de Información de Gestión Pedagógica (SIGP), una plataforma utilizada en diversas instituciones educativas del Valle del Cauca. En este rol, gestionaba las solicitudes de los usuarios, clasificaba los casos según su complejidad (niveles 1, 2 o 3) y los derivaba al área correspondiente, asegurando respuestas ágiles y eficientes que optimizaban la experiencia del usuario y mejoraban la gestión pedagógica."
+    }
+  }
+
+    
+}
+  

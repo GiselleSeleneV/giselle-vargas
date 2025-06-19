@@ -1,0 +1,92 @@
+"use client";
+import { useEffect, useRef } from "react";
+import AboutMe from "@/components/AboutMe";
+import { motion } from "framer-motion";
+import Welcome from "./Welcome";
+import Skills from "./Skills";
+import { useActiveComponent } from "@/store/useActiveComponent";
+import { useSectionRefs } from "@/store/useSectionsRefs";
+import Experience from "./Experience";
+
+
+export default function AppContent() {
+    const sections = ["Welcome", "AboutMe", "Experience", "Skills"];
+    const { activeIndex, setActiveIndex } = useActiveComponent();
+
+
+    const welcomeRef = useRef<HTMLDivElement>(null);
+    const aboutMeRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
+    const skillsRef = useRef<HTMLDivElement>(null);
+
+    const sectionRefs = useSectionRefs();
+
+    useEffect(() => {
+        sectionRefs.setRefs({
+            welcomeRef,
+            aboutMeRef,
+            experienceRef,
+            skillsRef,
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === welcomeRef.current) {
+                            setActiveIndex(0);
+                        } else if (entry.target === aboutMeRef.current) {
+                            setActiveIndex(1);
+                        } else if (entry.target === experienceRef.current) {
+                            setActiveIndex(2);
+                        } else if (entry.target === skillsRef.current) {
+                            setActiveIndex(3);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        if (welcomeRef.current) observer.observe(welcomeRef.current);
+        if (aboutMeRef.current) observer.observe(aboutMeRef.current);
+        if (experienceRef.current) observer.observe(experienceRef.current);
+        if (skillsRef.current) observer.observe(skillsRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+
+    return (
+        <div className="relative h-screen w-full overflow-hidden  text-white">
+
+            <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
+
+                <section ref={welcomeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Welcome />
+                </section>
+
+                <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <AboutMe />
+                </section>
+
+                <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Experience />
+                </section>
+
+                <section ref={skillsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Skills />
+                </section>
+            </div>
+
+            <div className="hidden md:flex absolute right-2 md:right-10 lg:right-10 xl:right-10 top-1/2 transform -translate-y-1/2  flex-col gap-4">
+                {sections.map((_, index) => (
+                    <motion.div
+                        key={index}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}

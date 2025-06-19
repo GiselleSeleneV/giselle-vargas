@@ -1,0 +1,96 @@
+export function MessageIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z" />
+            <path d="M22 6l-10 7L2 6" />
+        </svg>
+    );
+}
+
+export function LocationIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z" />
+            <circle cx="12" cy="10" r="3" />
+        </svg>
+    );
+}
+
+export function PhoneIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12.8 19.5 19.5 0 0 1 1.07 4.37 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.72 13 13 0 0 0 .72 2.82 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.35 6.35l1.27-1.27a2 2 0 0 1 2.11-.45 13 13 0 0 0 2.82.72A2 2 0 0 1 22 16.92Z" />
+        </svg>
+    );
+}
+
+export function LanguageIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 7h5" />
+            <path d="M12 12h5" />
+            <path d="M12 17h5" />
+            <path d="M7 7l3 5l-3 5" />
+        </svg>
+    );
+}
+
+export function CloseIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+    );
+}

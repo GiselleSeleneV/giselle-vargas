@@ -1,0 +1,51 @@
+{
+  "header": {
+    "menu": "Menu",
+    "home": "Home",
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "language": {
+      "english": "English",
+      "spanish": "Spanish"
+    }
+  },
+  
+  "home": {
+    "greetings": "Hello, welcome!",
+    "I_am": "I am",
+    "explore": "Explore my portfolio!",
+    "button": "Explore!"
+  },
+
+  "contact": {
+    "software_developer": "SOFTWARE DEVELOPER"
+  },
+  
+  "about_me": {
+    "about_me": "ABOUT ME",
+    "description": "I am a passionate front-end developer dedicated to creating seamless and engaging digital experiences. With expertise in JavaScript, React, Next.js, and GraphQL, I specialize in building interactive, optimized, and scalable web applications.\n\nI excel at implementing efficient technical solutions, optimizing performance, and enhancing user experience. I enjoy tackling complex technical challenges and applying best development practices to ensure clean, maintainable, and accessible code.\n\nThroughout my career, I have worked on design and development projects across various industries, collaborating with multidisciplinary teams to deliver high-quality products. My proactive approach to continuous learning allows me to adapt to new technologies and development methodologies, ensuring innovative and efficient solutions.\n\nI strongly believe in the importance of accessibility, usability, and user-centered design, and I always strive to add value to every project by creating intuitive and robust interfaces."
+  },
+
+  "experience": {
+    "projects": "Proyectos",
+    "company_one": {
+      "company": "Talentum Corporation",
+      "startDate": "Aug-2023",
+      "endDate": "Dec-2024",
+      "city": "Cali, Valle del Cauca",
+      "position": "Frontend Developer",
+      "role": "As a front-end software developer at Corporación Talentum, I participated in the development of technology platforms focused on the educational sector in collaboration with the Secretariat of Education. My work focused on creating intuitive and interactive interfaces that facilitated student assessment, progress monitoring, and knowledge management.\n\nI used technologies such as JavaScript, React, GraphQL, and Next.js to design scalable solutions that improved user experience and optimized educational processes. I contributed to projects aimed at reducing the digital divide, implementing STEAM classrooms, and promoting inclusive education in under-resourced communities.\n\nAdditionally, I was part of the first-level support team for the Pedagogical Management Information System (SIGP), a platform used in various educational institutions in Valle del Cauca. In this role, I managed user requests, classified cases according to their complexity (levels 1, 2, or 3), and referred them to the corresponding area, ensuring agile and efficient responses that optimized user experience and improved pedagogical management."
+    },
+    "company_two": {
+      "company": "Talentum Corporation",
+      "startDate": "Aug-2023",
+      "endDate": "Dec-2024",
+      "city": "Cali, Valle del Cauca",
+      "position": "Frontend Developer",
+      "role": "As a front-end software developer at Corporación Talentum, I participated in the development of technology platforms focused on the educational sector in collaboration with the Secretariat of Education. My work focused on creating intuitive and interactive interfaces that facilitated student assessment, progress monitoring, and knowledge management.\n\nI used technologies such as JavaScript, React, GraphQL, and Next.js to design scalable solutions that improved user experience and optimized educational processes. I contributed to projects aimed at reducing the digital divide, implementing STEAM classrooms, and promoting inclusive education in under-resourced communities.\n\nAdditionally, I was part of the first-level support team for the Pedagogical Management Information System (SIGP), a platform used in various educational institutions in Valle del Cauca. In this role, I managed user requests, classified cases according to their complexity (levels 1, 2, or 3), and referred them to the corresponding area, ensuring agile and efficient responses that optimized user experience and improved pedagogical management."
+    }
+    
+  }
+}
+

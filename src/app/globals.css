@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,12 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --home-background: #0F172A;
+    --foreground: #0F172A;
+    --profile-background: #ededed; 
   }
 }
 
@@ -24,3 +25,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fondo exclusivo para la Home */
+.home-bg {
+  background: var(--home-background);
+}
+
+/* Fondo para el resto de las páginas */
+.profile-bg {
+  background: var(--background);
+}
+
+
