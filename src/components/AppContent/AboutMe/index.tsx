@@ -8,14 +8,13 @@ export default function AboutMe() {
     const { t } = useTranslation();
     const title = t("about_me.about_me");
     return (
-        <div className="w-full h-full bg-white   flex flex-col text-center overflow-y-auto">
-            {/* 
-bg-[url('/images/bg-about-me.png')] bg-cover */}
+        <div className="w-full h-full bg-white flex flex-col text-center overflow-y-auto 
+        items-center md:items-center lg:items-stretch xl:items-stretch">
             <div className="w-full">
                 <Contact />
             </div>
 
-            <div className="relative flex flex-col sl:w-[95%] md:w-[94%] lg:w-[75%] xl:w-[75%] h-full sm:ml-0 md:ml-0 lg:ml-[80px] xl:ml-[100px] px-10 py-2 z-10 text-[#0F172A]  bg-[#EFEFF0]" >
+            <div className="relative flex flex-col w-full md:w-[95%] lg:w-[75%] xl:w-[75%] h-full ml-0 lg:ml-[80px] xl:ml-[100px] px-6 py-2 z-10 text-[#0F172A]  bg-[#EFEFF0]" >
 
                 <div className="relative w-full p-4 sm:block flex md:block lg:hidden xl:hidden  border-1 border-[#AF9661]">
                     <div className="w-[170px] h-[180px] relative overflow-visible">

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import AboutMe from "@/components/AboutMe";
-import Experience from "@/components/Experience";
+import AboutMe from "@/components/AppContent/AboutMe";
+import Experience from "@/components/AppContent/Experience";
 import { motion } from "framer-motion";
 
 export default function Profile() {

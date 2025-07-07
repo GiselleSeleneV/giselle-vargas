@@ -50,7 +50,7 @@ export default function Welcome() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
             >
-                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[80px] xl:text-[90px] font-extrabold">
+                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[85px] xl:text-[100px] font-extrabold">
                     {t("home.greetings")}
                     <motion.span
                         className="absolute top-0 left-0 w-full h-full text-[#AF9661]"
@@ -62,7 +62,7 @@ export default function Welcome() {
             </motion.h1>
 
             <motion.p
-                className="text-[26px] md:text-[30px] lg:text-[30px] xl:text-[40px] mb-6"
+                className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[60px] mb-6"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
@@ -71,7 +71,7 @@ export default function Welcome() {
             </motion.p>
 
             <motion.p
-                className="text-[20px] md:text-[30px] lg:text-[20px] xl:text-[30px] mb-8"
+                className="text-[20px] md:text-[30px] lg:text-[22px] xl:text-[32px] mb-8"
                 initial={{ opacity: 0, rotate: -5 }}
                 animate={{ opacity: 1, rotate: 0 }}
                 transition={{ duration: 1, delay: 1.2 }}

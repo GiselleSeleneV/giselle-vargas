@@ -1,6 +1,6 @@
 'use client';
 
-import { LocationIcon, PhoneIcon, MessageIcon } from "./Icons";
+import { LocationIcon, GitHubIcon, LinkedInIcon, MessageIcon } from "../../Icons";
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -11,9 +11,14 @@ const contactInformation = [
         href: 'https://www.google.com/maps/search/?api=1&query=Cali+Valle+del+cauca,+Colombia'
     },
     {
-        img: PhoneIcon,
-        textInformation: '+57 3188156339',
-        href: 'https://wa.me/573188156339'
+        img: GitHubIcon,
+        textInformation: 'github.com',
+        href: 'https://github.com/GiselleSeleneV'
+    },
+    {
+        img: LinkedInIcon,
+        textInformation: 'www.linkedin.com',
+        href: 'https://www.linkedin.com/in/selene-vargas'
     },
     {
         img: MessageIcon,
@@ -27,7 +32,7 @@ export default function Contact() {
 
     return (
         <motion.div
-            className="flex flex-col w-full items-center bg-[#0F172A] relative overflow-hidden pt-13 pb-2"
+            className="relative flex flex-col w-full items-center bg-[#0F172A]  overflow-hidden pt-13 pb-2"
         >
             {[...Array(15)].map((_, i) => (
                 <motion.div
@@ -64,13 +69,13 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 1 }}
             >
-                <div className="flex-1 h-px bg-[#AF9661] mr-4" />
+                <div className="flex-1 h-px bg-[#AF9661] mr-0 md:mr-0 lg:mr-2 xl:mr-2" />
                 <p className="text-[#AF9661] text-[14px] md:text-[16px] lg:text-[20px] xl-[24px] ">{t('contact.software_developer')}</p>
-                <div className="flex-1 h-px bg-[#AF9661] ml-4" />
+                <div className="flex-1 h-px bg-[#AF9661] ml-0 md:ml-0 lg:ml-2 xl:ml-2" />
             </motion.div>
 
             <motion.div
-                className="flex w-full justify-between mt-6"
+                className="grid grid-cols-2 place-items-center sm:flex sm:justify-between w-full mt-4 gap-y-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, delay: 1.5 }}
@@ -82,7 +87,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`flex w-full flex-col items-center text-[#ededed] relative overflow-hidden pt-1 pl-2 pr-2 cursor-pointer
-            ${index === 1 ? "border-l border-r border-[#AF9661]" : ""}`}
+            ${index !== 0 ? "border-l border-[#AF9661]" : ""}`}
                         whileHover={{ scale: 1.1 }}
                     >
                         <item.img color="#AF9661" />

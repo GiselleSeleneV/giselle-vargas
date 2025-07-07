@@ -8,12 +8,12 @@ const skills = [
     {
         title: "Habilidades Técnicas",
         data: [
-            { category: "Lenguajes de programación", skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"] },
-            { category: "Frameworks y bibliotecas", skills: ["React", "Next.js", "Framer Motion", "Tailwind CSS", "Styled Components", "Ant Design", "Bootstrap"] },
-            { category: "APIs y manejo de datos", skills: ["GraphQL", "RESTful APIs", "JSON"] },
-            { category: "Optimización y rendimiento", skills: ["Mejoras de velocidad de carga", "SEO técnico", "SSR"] },
-            { category: "Herramientas de desarrollo", skills: ["Git", "GitHub", "Docker", "Jest", "Postman", "VS Code"] },
-            { category: "Soporte técnico", skills: ["Gestión de tickets", "Diagnóstico de errores", "Atención al cliente"] },
+            { category: "Lenguajes de programación", skills: ["JavaScript (ES6+), TypeScript, HTML5, CSS3"] },
+            { category: "Frameworks y bibliotecas", skills: ["React, Next.js, Framer Motion, Tailwind CSS, Styled Components, Ant Design, Bootstrap"] },
+            { category: "APIs y manejo de datos", skills: ["GraphQL, RESTful APIs, JSON"] },
+            { category: "Optimización y rendimiento", skills: ["Mejoras de velocidad de carga, SEO técnico, SSR"] },
+            { category: "Herramientas de desarrollo", skills: ["Git, GitHub, Docker, Jest, Postman, VS Code"] },
+            { category: "Soporte técnico", skills: ["Gestión de tickets, Diagnóstico de errores, Atención al cliente"] },
         ]
     },
     {
@@ -33,9 +33,15 @@ const skills = [
 
 export default function Skills() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const totalSteps = skills.length;
 
-    const sections = skills.flatMap(({ title, data }) => data.map(item => ({ ...item, title })));
-    const totalSteps = Math.ceil(sections.length / 2);
+    const currentSection = skills[activeIndex];
+    const data = currentSection.data;
+    const middleIndex = Math.ceil(data.length / 2); // Si es impar, izquierda tiene más
+
+    const leftItems = data.slice(0, middleIndex);
+    const rightItems = data.slice(middleIndex);
+
 
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % totalSteps);
@@ -45,30 +51,42 @@ export default function Skills() {
         setActiveIndex((prev) => (prev - 1 + totalSteps) % totalSteps);
     };
 
-    const firstItem = sections[activeIndex * 2];
-    const secondItem = sections[activeIndex * 2 + 1];
-
 
     return (
         <div className="relative h-screen w-full overflow-hidden bg-white flex flex-col items-center justify-center">
-            <div className="w-[89%] h-[80%] bg-[#EFEFF0] flex flex-col items-center justify-center">
+            <div className="w-[90%] h-[80%] bg-[#EFEFF0] flex flex-col items-center justify-center">
                 {/* Texto de fondo animado */}
                 <motion.div
-                    className="absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[clamp(80px,20vw,200px)] font-bold text-[#AF9661] opacity-10 z-0 select-none whitespace-nowrap leading-none"
+                    className="
+                     text-center 
+                     text-[clamp(20px,16vw,200px)] 
+                     font-bold 
+                     text-[#AF9661] 
+                     opacity-10 
+                     z-0 
+                     select-none 
+                     whitespace-nowrap 
+                     leading-none 
+                     mt-6
+                     md:mt-0
+                     md:absolute 
+                     md:top-1/2 
+                     lg:top-1/2 
+                     xl:top-1/2 
+                     md:left-1/2 
+                     md:-translate-x-1/2 
+                     md:-translate-y-1/2
+                   "
                     animate={{ opacity: [0.1, 0.15, 0.1] }}
                     transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
                 >
-
-                    {firstItem?.title.split(" ").map((word, index) => (
+                    {currentSection.title.split(" ").map((word, index) => (
                         <div key={index} className={`flex justify-center ${index === 0 ? "-mb-5" : "mt-5"}`}>
                             {word.split("").map((char, charIndex) => (
                                 <motion.span
                                     key={charIndex}
                                     className="inline-block"
-                                    animate={{
-                                        y: [0, -10, 0],
-                                        scale: [1, 1.1, 1],
-                                    }}
+                                    animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }}
                                     transition={{
                                         duration: 2.5,
                                         repeat: Infinity,
@@ -81,13 +99,14 @@ export default function Skills() {
                             ))}
                         </div>
                     ))}
+
                 </motion.div>
 
                 {/* Línea divisoria */}
-                <div className="absolute left-1/2 top-0 h-full w-0.5 bg-[#e9e6e6] transform -translate-x-[2px]" />
+                <div className="absolute left-1/2 top-0 h-full w-0.5 bg-[#e9e6e6]" />
 
                 {/* Secciones */}
-                <div className="flex z-10 w-[98%] h-[30%] px-10">
+                <div className="flex h-full w-full z-10 justify-center items-center mt-4 md:mt-20">
 
                     <motion.div
                         whileHover={{ scale: 1.2, x: -5 }}
@@ -95,42 +114,48 @@ export default function Skills() {
                         className="flex items-center transform z-20 cursor-pointer"
                         onClick={handlePrev}
                     >
-                        <ChevronLeft size={48} className="text-[#AF9661] hover:text-[#967c47] transition-colors duration-300" />
+                        <ChevronLeft size={48} className="text-[#AF9661] hover:text-[#967c47] transition-colors duration-300 pl-2" />
                     </motion.div>
 
-                    {/* Primera sección */}
-                    {firstItem && (
+
+                    {leftItems && (
                         <motion.div
                             initial={{ opacity: 0, x: -100 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="w-1/2 flex justify-end pr-9"
+                            className="w-full flex flex-col h-full pr-4 md:pr-4 lg:pr-6 xl:pr-6 items-end"
                         >
-                            <div className="max-w-md text-right">
-                                <h3 className="text-[32px] text-[#0F172A] font-bold mb-2">{firstItem.category}</h3>
-                                <div className="text-[28px] text-[#AF9661]">
-                                    {firstItem.skills.map((skill, idx) => (
-                                        <p key={idx} className="text-lg">{skill}</p>
-                                    ))}
+                            {leftItems.map((item, index) => (
+                                <div key={index} className="h-full w-full xl:w-[80%] flex flex-col text-end">
+                                    <h3 className="text-[16px] md:text-[22px] lg:text-[24px] xl:text-[28px] text-[#0F172A] font-bold ">{item.category}</h3>
+                                    <div className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] text-[#AF9661] ">
+                                        {item.skills.map((skill, idx) => (
+                                            <p key={idx} className="text-end">{skill}</p>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </motion.div>
                     )}
 
                     {/* Segunda sección */}
-                    {secondItem && (
+                    {rightItems && (
                         <motion.div
                             initial={{ opacity: 0, x: 100 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="w-1/2 pl-8"
+                            className="w-full flex flex-col  h-full pl-4 md:pl-4 lg:pl-6 xl:pl-6 items-start"
                         >
-                            <h3 className="text-[32px] text-[#0F172A] font-bold mb-2">{secondItem.category}</h3>
-                            <div className="text-[28px] text-[#AF9661] ">
-                                {secondItem.skills.map((skill, idx) => (
-                                    <p key={idx} className="text-lg">{skill}</p>
-                                ))}
-                            </div>
+                            {rightItems.map((item, index) => (
+                                <div key={index} className="w-full xl:w-[80%] h-full flex flex-col">
+                                    <h3 className="text-[16px] md:text-[22px] lg:text-[24px] xl:text-[28px] text-[#0F172A] font-bold">{item.category}</h3>
+                                    <div className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] text-[#AF9661] ">
+                                        {item.skills.map((skill, idx) => (
+                                            <p key={idx} className="">{skill}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </motion.div>
                     )}
 
@@ -140,7 +165,7 @@ export default function Skills() {
                         className="flex items-center transform z-20 cursor-pointer"
                         onClick={handleNext}
                     >
-                        <ChevronRight size={48} className="text-[#AF9661] hover:text-[#967c47] transition-colors duration-300" />
+                        <ChevronRight size={48} className="text-[#AF9661] hover:text-[#967c47] transition-colors duration-300 pr-2" />
                     </motion.div>
                 </div>
 
@@ -158,6 +183,6 @@ export default function Skills() {
                     ))}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }  

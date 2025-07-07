@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import AboutMe from "@/components/AboutMe";
+import AboutMe from "@/components/AppContent/AboutMe";
 import { motion } from "framer-motion";
 import Welcome from "./Welcome";
 import Skills from "./Skills";
@@ -63,7 +63,9 @@ export default function AppContent() {
             <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
                 <section ref={welcomeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+
                     <Welcome />
+
                 </section>
 
                 <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
@@ -79,7 +81,7 @@ export default function AppContent() {
                 </section>
             </div>
 
-            <div className="hidden md:flex absolute right-2 md:right-10 lg:right-10 xl:right-10 top-1/2 transform -translate-y-1/2  flex-col gap-4">
+            <div className="hidden lg:flex absolute right-2 md:right-10 lg:right-8 xl:right-8 top-1/2 transform -translate-y-1/2  flex-col gap-4">
                 {sections.map((_, index) => (
                     <motion.div
                         key={index}

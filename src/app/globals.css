@@ -26,14 +26,36 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Fondo exclusivo para la Home */
 .home-bg {
   background: var(--home-background);
 }
 
-/* Fondo para el resto de las páginas */
 .profile-bg {
   background: var(--background);
 }
 
+/* Scrollbar visible en navegadores basados en WebKit (Chrome, Edge, Opera, etc.) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scroll */
+}
 
+::-webkit-scrollbar-track {
+  background: transparent; /* Fondo del track (espacio por donde se mueve el thumb) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.6); /* Gris translúcido */
+  border-radius: 6px;
+  border: 3px solid transparent; /* Espacio alrededor del thumb para que se vea más suave */
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(150, 150, 150, 0.8); /* Gris más visible al hacer hover */
+}
+
+/* Scrollbar en Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(150, 150, 150, 0.6) transparent;
+}

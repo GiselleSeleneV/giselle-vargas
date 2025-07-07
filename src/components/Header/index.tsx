@@ -1,12 +1,11 @@
 'use client';
-import { setLanguageCookie } from '../../utils/setLanguageCookie';
+import { setLanguageCookie } from '../../../utils/setLanguageCookie';
 import { useTranslation } from 'react-i18next';
 import { useLanguageStore } from '@/store/useLanguage';
 import { useActiveComponent } from '@/store/useActiveComponent';
 import { useSectionRefs } from '@/store/useSectionsRefs';
 import { LanguageIcon } from '@/components/Icons';
-
-import SideBar from '@/components/SideBar';
+import SideBar from '@/components/Header/SideBar';
 
 export default function HeaderClient() {
     const { t, i18n } = useTranslation();
@@ -29,7 +28,7 @@ export default function HeaderClient() {
     };
 
     return (
-        <div className="absolute w-full flex justify-between z-50 p-2 bg-[#0F172A]">
+        <div className="absolute w-full flex justify-between z-50 px-4 py-2 bg-[#0F172A]">
 
             <div className="sm:block md:hidden">
                 <SideBar />

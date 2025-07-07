@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useActiveComponent } from '@/store/useActiveComponent';
 import { useSectionRefs } from '@/store/useSectionsRefs';
 import { motion } from 'framer-motion';
-import { CloseIcon } from "./Icons";
+import { CloseIcon } from "../Icons";
 
 const SideBar = () => {
     const [open, setOpen] = useState(false);
