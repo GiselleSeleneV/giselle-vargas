@@ -12,41 +12,217 @@
   },
   
   "home": {
-    "greetings": "¡Hola, bienvenidos!",
+    "greetings": "¡Hola! bienvenidos",
     "I_am": "Soy",
-    "explore": "¡Explora mi portafolio personal!",
-    "button": "¡Explorar!"
+    "position": "Desarrolladora frontend.",
+    "button": "Explorar"
   },
 
   "contact": {
-    "software_developer": "DESARROLLADORA DE SOFTWARE"
+    "software_developer": "FRONTEND DEVELOPER"
   },
 
   "about_me": {
-    "about_me": "SOBRE MI",
-    "description": "Soy una desarrolladora front-end apasionada por la creación de experiencias digitales fluidas y atractivas. Con experiencia en JavaScript, React, Next.js y GraphQL, me especializo en desarrollar aplicaciones web interactivas, optimizadas y escalables.\n\nMe destaco por mi capacidad para implementar soluciones técnicas eficientes, optimizar el rendimiento y mejorar la experiencia del usuario. Disfruto enfrentando desafíos técnicos complejos y aplicando buenas prácticas de desarrollo para garantizar código limpio, mantenible y accesible.\n\nA lo largo de mi trayectoria, he trabajado en proyectos de diseño y desarrollo web para diversos sectores, colaborando con equipos multidisciplinarios para entregar productos de alta calidad. Mi enfoque proactivo hacia el aprendizaje continuo me permite adaptarme a nuevas tecnologías y metodologías de desarrollo, asegurando soluciones innovadoras y eficientes.\n\nCreo en la importancia de la accesibilidad, la usabilidad y el diseño centrado en el usuario, y siempre busco aportar valor a cada proyecto mediante la creación de interfaces intuitivas y robustas."
+    "about_me": "SOBRE MÍ",
+    "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante."
   },
 
   "experience": {
-    "projects": "Projects",
+    "title": "EXPERIENCIA LABORAL",
+    "projects": "Proyectos",
     "company_one": {
       "company": "Corporación Talentum",
       "startDate": "Ago-2023",
       "endDate": "Dic-2024",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
-      "role": "En mi rol como desarrolladora de software front-end en Corporación Talentum, participé en el desarrollo de plataformas tecnológicas orientadas al sector educativo en colaboración con la Secretaría de Educación. Mi trabajo se centraba en crear interfaces intuitivas e interactivas que facilitaran la evaluación de estudiantes, el monitoreo de su progreso y la gestión de conocimientos.\n\nUtilicé tecnologías como JavaScript, React, GraphQL y Next.js para diseñar soluciones escalables que mejoraran la experiencia del usuario y optimizaran procesos educativos. Contribuí a proyectos que buscaban reducir la brecha digital, implementar aulas STEAM y fomentar una educación inclusiva en comunidades con recursos limitados.\n\nAdicionalmente, formé parte del equipo de soporte de primer nivel para el Sistema de Información de Gestión Pedagógica (SIGP), una plataforma utilizada en diversas instituciones educativas del Valle del Cauca. En este rol, gestionaba las solicitudes de los usuarios, clasificaba los casos según su complejidad (niveles 1, 2 o 3) y los derivaba al área correspondiente, asegurando respuestas ágiles y eficientes que optimizaban la experiencia del usuario y mejoraban la gestión pedagógica."
+      "references": [
+        {
+          "name": "Juan Pablo Victoria",
+          "number": "+57 323 5315406",
+          "email": "lider.backendn@talentum.edu.co"
+        },
+        {
+          "name": "Edwin Alexander Fajardo",
+          "number": "+57 311 2327960",
+          "email": "alexander_suarez1997@hotmail.com"
+        }
+      ],
+      "projects": [
+        {
+          "nameProject": "Soporte de primer nivel para el SIGP",
+          "logo": "/images/projects/SIGP/logo.jpeg",
+          "startDate": "Sep 2024",
+          "endDate" : "Dic 2024",
+          "role": [
+            "Asistir a los usuarios ante inquietudes, incidencias o dificultades.",
+            "Clasificar los casos según su complejidad (nivel 1, 2 o 3) y redirigirlos al área correspondiente para su atención especializada.",
+            "Brindar una respuesta oportuna y eficaz, mejorando significativamente la experiencia de las instituciones educativas con el sistema."
+          ],
+          "images": [
+           "/images/projects/SIGP/control-board.png", 
+           "/images/projects/SIGP/control-board-sec.png", 
+           "/images/projects/SIGP/dashboard-sec.png"
+          ]
+        },
+        {
+          "nameProject": "Aulas Quindío",
+          "logo": "/images/projects/quindio/logo.png",
+          "startDate": "Jul 2024",
+          "endDate" : "Dic 2024",
+          "role" : [
+            "Desarrollo de interfaces responsivas y accesibles.",
+            "Desarrollo de componentes reutilizables y escalables.",
+            "Optimización del rendimiento y la experiencia del usuario.",
+            "Integración de APIs mediante GraphQL y optimización del rendimiento.",
+            "Elaboración de la documentación oficial del proyecto, detallando procesos y guías de uso técnico para el equipo y los usuarios."
+          ],
+          "images": [
+           "/images/projects/quindio/login.png", 
+           "/images/projects/quindio/login-with-image.png", 
+            "/images/projects/quindio/user-management.png",
+            "/images/projects/quindio/accompaniment.png",
+            "/images/projects/quindio/general-statistics.png",
+            "/images/projects/quindio/statistics-by-month.png",
+            "/images/projects/quindio/statistics-by-competencies.png",
+            "/images/projects/quindio/student-profile.png",
+           "/images/projects/quindio/project-choice.png",
+            "/images/projects/quindio/choice-of-design-thinking.png",
+            "/images/projects/quindio/ova-selection.png",
+            "/images/projects/quindio/component-selection.png",
+            "/images/projects/quindio/glossary.png",
+           "/images/projects/quindio/activity-1.png",
+            "/images/projects/quindio/activity-2.png",
+            "/images/projects/quindio/activity-3.png",
+           "/images/projects/quindio/activity-4.png",
+            "/images/projects/quindio/finished-projects.png",
+            "/images/projects/quindio/conquests.png"
+          ]
+        },
+        {
+          "nameProject": "Aulas STEAM Regional",
+          "logo": "/images/projects/regional/logo.png",
+          "startDate": "Feb 2024",
+          "endDate" : "Jul 2024",
+          "role": [
+            "Desarrollo de interfaces responsivas y accesibles.",
+            "Integración de servicios REST para el registro y monitoreo de datos académicos.",
+            "Construcción de componentes reutilizables y dinámicos orientados a la visualización de resultados educativos.",
+            "Optimización del rendimiento y la experiencia del usuario.",
+            "Elaboración de la documentación oficial del proyecto, incluyendo manuales técnicos y guías de usuario.",
+            "Preparación y realización de presentaciones funcionales del sistema para los clientes."
+          ],
+           "images": [
+            "/images/projects/regional/login.png", 
+            "/images/projects/regional/landing.png", 
+            "/images/projects/regional/indicators-1.png",
+            "/images/projects/regional/indicators-2.png",
+            "/images/projects/regional/user-management.png",
+            "/images/projects/regional/user-edition.png",
+            "/images/projects/regional/reports.png",
+            "/images/projects/regional/help.png"
+           ]
+        },
+        {
+          "nameProject": "Sapere AUDE atrevete a pensar",
+          "logo": "/images/projects/sapere/logo.png",
+          "startDate": "Mar 2024",
+          "endDate" : "Jun 2024",
+          "role": [
+            "Identificación y resolución de errores en diseño y código, así como mejoras en funcionalidades existentes dentro de un proyecto ya desarrollado.",
+            "Desarrollo de interfaces responsivas y accesibles, garantizando una experiencia de usuario óptima en distintos dispositivos.",
+            "Construcción de componentes reutilizables y dinámicos enfocados en la visualización de resultados educativos.",
+            "Elaboración de la documentación oficial del proyecto, incluyendo manuales técnicos y guías de usuario para el equipo y los clientes."
+          ],
+          "images": [
+            "/images/projects/sapere/login.png",
+            "/images/projects/sapere/indicators.png",
+            "/images/projects/sapere/graphics-1.png",
+            "/images/projects/sapere/graphics-2.png"
+          ]
+        },
+        {
+          "nameProject": "Pertenezco",
+          "logo": "/images/projects/peer/logo.png",
+          "startDate": "Ago 2023",
+          "endDate" : "Feb 2024",
+          "role" : [
+            "Desarrollo de interfaces dinámicas y responsivas.",
+            "Implementación de flujos de autenticación, registro de usuarios y gestión de contenidos educativos (cartillas,módulos y guías)",
+            "Creación y optimización de componentes reutilizables, asegurando una experiencia de usuario intuitiva y consistente.",
+            "Optimización del rendimiento de la aplicación, asegurando tiempos de carga rápidos y una navegación fluida."
+          ],
+           "images": [
+             "/images/projects/peer/login.png",
+             "/images/projects/peer/app-selection.png",
+             "/images/projects/peer/profile.png",
+             "/images/projects/peer/subjects.png",
+             "/images/projects/peer/teaching-guides.png",
+             "/images/projects/peer/projects.png",
+             "/images/projects/peer/settings.png",
+             "/images/projects/peer/teacher-network.png"
+           ]
+        }
+      ]
     },
     "company_two": {
-      "company": "Deft Soluciones",
-      "startDate": "Ago-2023",
-      "endDate": "Dic-2024",
+      "company": "Deft Soluciones Tecnologicas.",
+      "startDate": "Ago 2023",
+      "endDate": "Dic 2024",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
-      "role": "En mi rol como desarrolladora de software front-end en Corporación Talentum, participé en el desarrollo de plataformas tecnológicas orientadas al sector educativo en colaboración con la Secretaría de Educación. Mi trabajo se centraba en crear interfaces intuitivas e interactivas que facilitaran la evaluación de estudiantes, el monitoreo de su progreso y la gestión de conocimientos.\n\nUtilicé tecnologías como JavaScript, React, GraphQL y Next.js para diseñar soluciones escalables que mejoraran la experiencia del usuario y optimizaran procesos educativos. Contribuí a proyectos que buscaban reducir la brecha digital, implementar aulas STEAM y fomentar una educación inclusiva en comunidades con recursos limitados.\n\nAdicionalmente, formé parte del equipo de soporte de primer nivel para el Sistema de Información de Gestión Pedagógica (SIGP), una plataforma utilizada en diversas instituciones educativas del Valle del Cauca. En este rol, gestionaba las solicitudes de los usuarios, clasificaba los casos según su complejidad (niveles 1, 2 o 3) y los derivaba al área correspondiente, asegurando respuestas ágiles y eficientes que optimizaban la experiencia del usuario y mejoraban la gestión pedagógica."
+      "references": [
+        {
+          "name": "Juan Pablo Victoria",
+          "number": "+57 323 5315406",
+          "email": "lider.backendn@talentum.edu.co"
+        },
+        {
+          "name": "Edwin Alexander Fajardo",
+          "number": "+57 311 2327960",
+          "email": "alexander_suarez1997@hotmail.com"
+        }
+      ],
+      "projects": [
+        {
+          "nameProject": "Placa y cédula",
+          "startDate": "Ene 2021",
+          "endDate" : "Jul 2022",
+          "role": [
+            "Facilitar el acceso a la información del pico y cédula durante la pandemia.",
+            "Implementación de una interfaz dinámica, intuitiva y adaptable a distintos dispositivos.",
+            "Desarrollo de componentes interactivos."
+          ],
+           "images": []
+        }
+      ]
     }
-  }
-
-    
+  },
+  "skills": [
+    {
+      "title": "Habilidades Técnicas",
+        "data": [
+            { "category": "Lenguajes de programación", "skills": ["JavaScript (ES6+), TypeScript, nHTML5, CSS3"] },
+            { "category": "Frameworks y bibliotecas", "skills": ["React, Next.js, Framer Motion, Tailwind CSS, Styled Components, Ant Design, Bootstrap"] },
+            { "category": "APIs y manejo de datos", "skills": ["GraphQL, RESTful APIs, JSON"] },
+            { "category": "Optimización y rendimiento", "skills": ["Mejoras de velocidad de carga, SEO técnico, SSR"] },
+            { "category": "Herramientas de desarrollo", "skills": ["Git, GitHub, Docker, Jest, Postman, VS Code"] },
+            { "category": "Soporte técnico", "skills": ["Gestión de tickets, Diagnóstico de errores, Atención al cliente"] }
+        ]
+      },
+    {
+      "title": "Habilidades Blandas",
+        "data": [
+          { "category": "Comunicación efectiva", "skills": ["Traducir conceptos técnicos en explicaciones claras."] },
+          { "category": "Resolución de problemas", "skills": ["Diagnosticar y solucionar errores de software de forma eficiente."] },
+          { "category": "Trabajo en equipo", "skills": ["Colaborar con distintos departamentos."] },
+          { "category": "Adaptabilidad", "skills": ["Aprendizaje continuo de nuevas tecnologías y frameworks."] },
+          { "category": "Gestión del tiempo", "skills": ["Capacidad para priorizar tareas y cumplir con los plazos."] },
+          { "category": "Creatividad", "skills": ["Buscar enfoques innovadores para resolver problemas."] },
+          { "category": "Empatía", "skills": ["Comprender las necesidades del usuario y del equipo."] },
+          { "category": "Autonomía", "skills": ["Mantener eficiencia y calidad sin supervisión constante."] }
+        ]
+    }
+  ]
 }
   

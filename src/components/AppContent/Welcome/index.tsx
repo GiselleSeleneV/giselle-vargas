@@ -50,7 +50,7 @@ export default function Welcome() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
             >
-                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[85px] xl:text-[100px] font-extrabold">
+                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[85px] xl:text-[100px] font-extrabold drop-shadow-[0_0_12px_#AF9661] text-white">
                     {t("home.greetings")}
                     <motion.span
                         className="absolute top-0 left-0 w-full h-full text-[#AF9661]"
@@ -61,32 +61,36 @@ export default function Welcome() {
                 </span>
             </motion.h1>
 
-            <motion.p
-                className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[60px] mb-6"
+            <motion.div
+                className="flex flex-col items-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
             >
-                {t("home.I_am")} <span className="text-[#AF9661]">Giselle Vargas</span>
-            </motion.p>
+                <h2 className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[65px] font-bold text-center text-[#AF9661] relative group mb-20">
+                    <span className="text-[#ededed] mr-4">{t("home.I_am")}</span>
 
-            <motion.p
-                className="text-[20px] md:text-[30px] lg:text-[22px] xl:text-[32px] mb-8"
-                initial={{ opacity: 0, rotate: -5 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 1.2 }}
-            >
-                {t('home.explore')}
-            </motion.p>
+                    Giselle Vargas
+                    <motion.span
+                        className="block text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1.2 }}
+                    >
+                        {t("home.position")}
+                    </motion.span>
+                </h2>
+            </motion.div>
 
             <motion.div
-                className="absolute bottom-12 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
+                className="absolute bottom-6 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: [20, 0, 20] }}
                 transition={{ repeat: Infinity, duration: 2 }}
 
             >
-                <ChevronDown onClick={() => scrollToSection(1)} className="w-16 h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110" />
+                <p className="text-[14px] lg:text-[16px] xl:text-[18px]">{t('home.button')}</p>
+                <ChevronDown onClick={() => scrollToSection(1)} className="w-14 h-14 lg:w-16 lg:h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110" />
 
             </motion.div>
         </div>

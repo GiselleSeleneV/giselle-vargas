@@ -56,16 +56,13 @@ export default function AppContent() {
         return () => observer.disconnect();
     }, []);
 
-
     return (
         <div className="relative h-screen w-full overflow-hidden  text-white">
 
             <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
                 <section ref={welcomeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
-
                     <Welcome />
-
                 </section>
 
                 <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center snap-start">

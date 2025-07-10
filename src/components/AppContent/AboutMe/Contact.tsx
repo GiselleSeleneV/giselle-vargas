@@ -32,7 +32,7 @@ export default function Contact() {
 
     return (
         <motion.div
-            className="relative flex flex-col w-full items-center bg-[#0F172A]  overflow-hidden pt-13 pb-2"
+            className="relative flex flex-col w-full items-center bg-[#0F172A] overflow-hidden pt-13 pb-2"
         >
             {[...Array(15)].map((_, i) => (
                 <motion.div
@@ -46,7 +46,7 @@ export default function Contact() {
             ))}
 
             <motion.p
-                className="text-[#AF9661] text-[12px] md:text-[14px] lg:text-[16px] xl-[18px]"
+                className="text-[#AF9661] text-[12px] md:text-[14px] lg:text-[16px] xl-[18px] mt-2 md:mt-0"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}

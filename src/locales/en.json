@@ -12,10 +12,10 @@
   },
   
   "home": {
-    "greetings": "Hello, welcome!",
-    "I_am": "I am",
-    "explore": "Explore my portfolio!",
-    "button": "Explore!"
+  "greetings": "Hi! Welcome",
+  "I_am": "I'm",
+  "position": "Frontend Developer.",
+  "button": "Explore"
   },
 
   "contact": {
@@ -24,28 +24,222 @@
   
   "about_me": {
     "about_me": "ABOUT ME",
-    "description": "I am a passionate front-end developer dedicated to creating seamless and engaging digital experiences. With expertise in JavaScript, React, Next.js, and GraphQL, I specialize in building interactive, optimized, and scalable web applications.\n\nI excel at implementing efficient technical solutions, optimizing performance, and enhancing user experience. I enjoy tackling complex technical challenges and applying best development practices to ensure clean, maintainable, and accessible code.\n\nThroughout my career, I have worked on design and development projects across various industries, collaborating with multidisciplinary teams to deliver high-quality products. My proactive approach to continuous learning allows me to adapt to new technologies and development methodologies, ensuring innovative and efficient solutions.\n\nI strongly believe in the importance of accessibility, usability, and user-centered design, and I always strive to add value to every project by creating intuitive and robust interfaces."
+    "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning."
   },
 
   "experience": {
-    "projects": "Proyectos",
+    "title": "PROFESSIONAL EXPERIENCE",
+    "projects": "Projects",
     "company_one": {
       "company": "Talentum Corporation",
       "startDate": "Aug-2023",
       "endDate": "Dec-2024",
-      "city": "Cali, Valle del Cauca",
-      "position": "Frontend Developer",
-      "role": "As a front-end software developer at Corporación Talentum, I participated in the development of technology platforms focused on the educational sector in collaboration with the Secretariat of Education. My work focused on creating intuitive and interactive interfaces that facilitated student assessment, progress monitoring, and knowledge management.\n\nI used technologies such as JavaScript, React, GraphQL, and Next.js to design scalable solutions that improved user experience and optimized educational processes. I contributed to projects aimed at reducing the digital divide, implementing STEAM classrooms, and promoting inclusive education in under-resourced communities.\n\nAdditionally, I was part of the first-level support team for the Pedagogical Management Information System (SIGP), a platform used in various educational institutions in Valle del Cauca. In this role, I managed user requests, classified cases according to their complexity (levels 1, 2, or 3), and referred them to the corresponding area, ensuring agile and efficient responses that optimized user experience and improved pedagogical management."
+      "city": "Cali, Colombia",
+      "position": "FRONTEND DEVELOPER",
+      "references": [
+        {
+          "name": "Juan Pablo Victoria",
+          "number": "+57 323 5315406",
+          "email": "lider.backendn@talentum.edu.co"
+        },
+        {
+          "name": "Edwin Alexander Fajardo",
+          "number": "+57 311 2327960",
+          "email": "alexander_suarez1997@hotmail.com"
+        }
+      ],
+      "projects": [
+        {
+          "nameProject": "First-level support for the SIGP",
+          "logo": "/images/projects/SIGP/logo.jpeg",
+          "startDate": "Sep 2024",
+          "endDate" : "Dec 2024",
+          "role": [
+            "Provide support to users in response to questions, issues, or technical difficulties.",
+            "Classify cases according to their complexity (Level 1, 2, or 3) and redirect them to the appropriate department for specialized assistance.",
+            "Deliver timely and effective responses, significantly improving the user experience of educational institutions using the system."
+          ],
+          "images": [
+           "/images/projects/SIGP/control-board.png", 
+           "/images/projects/SIGP/control-board-sec.png", 
+           "/images/projects/SIGP/dashboard-sec.png"
+          ]
+        },
+        {
+          "nameProject": "Aulas Quindío",
+          "logo": "/images/projects/quindio/logo.png",
+          "startDate": "Jul 2024",
+          "endDate" : "Dec 2024",
+          "role": [
+            "Development of responsive and accessible user interfaces.",
+            "Creation of reusable and scalable components.",
+            "API integration using GraphQL and performance optimization.",
+            "Preparation of the project's official documentation, including detailed processes and technical usage guides for both the team and end users."
+          ],
+          "images": [
+           "/images/projects/quindio/login.png", 
+           "/images/projects/quindio/login-with-image.png", 
+            "/images/projects/quindio/user-management.png",
+            "/images/projects/quindio/accompaniment.png",
+            "/images/projects/quindio/general-statistics.png",
+            "/images/projects/quindio/statistics-by-month.png",
+            "/images/projects/quindio/statistics-by-competencies.png",
+            "/images/projects/quindio/student-profile.png",
+           "/images/projects/quindio/project-choice.png",
+            "/images/projects/quindio/choice-of-design-thinking.png",
+            "/images/projects/quindio/ova-selection.png",
+            "/images/projects/quindio/component-selection.png",
+            "/images/projects/quindio/glossary.png",
+           "/images/projects/quindio/activity-1.png",
+            "/images/projects/quindio/activity-2.png",
+            "/images/projects/quindio/activity-3.png",
+           "/images/projects/quindio/activity-4.png",
+            "/images/projects/quindio/finished-projects.png",
+            "/images/projects/quindio/conquests.png"
+          ]
+        },
+        {
+          "nameProject": "Aulas STEAM Regional",
+          "logo": "/images/projects/regional/logo.png",
+          "startDate": "Feb 2024",
+          "endDate" : "Jul 2024",
+          "role": [
+            "Development of responsive and accessible user interfaces.",
+            "Integration of REST services for the registration and monitoring of academic data.",
+            "Construction of reusable and dynamic components focused on visualizing educational outcomes.",
+            "Performance and user experience optimization.",
+            "Creation of the project's official documentation, including technical manuals and user guides.",
+            "Preparation and delivery of functional system presentations for clients."
+          ],
+           "images": [
+            "/images/projects/regional/login.png", 
+            "/images/projects/regional/landing.png", 
+            "/images/projects/regional/indicators-1.png",
+            "/images/projects/regional/indicators-2.png",
+            "/images/projects/regional/user-management.png",
+            "/images/projects/regional/user-edition.png",
+            "/images/projects/regional/reports.png",
+            "/images/projects/regional/help.png"
+           ]
+        },
+        {
+          "nameProject": "Sapere AUDE atrevete a pensar",
+          "logo": "/images/projects/sapere/logo.png",
+          "startDate": "Mar 2024",
+          "endDate" : "Jun 2024",
+          "role": [
+            "Identified and resolved design and code issues, while improving existing functionalities in an already developed project.",
+            "Developed responsive and accessible user interfaces, ensuring an optimal user experience across various devices.",
+            "Built reusable and dynamic components focused on visualizing educational data and outcomes.",
+            "Created official project documentation, including technical manuals and user guides for both the team and clients."
+          ],
+          "images": [
+            "/images/projects/sapere/login.png",
+            "/images/projects/sapere/indicators.png",
+            "/images/projects/sapere/graphics-1.png",
+            "/images/projects/sapere/graphics-2.png"
+          ]
+        },
+        {
+          "nameProject": "Pertenezco",
+          "logo": "/images/projects/peer/logo.png",
+          "startDate": "Ago 2023",
+          "endDate" : "Feb 2024",
+          "role": [
+            "Developed dynamic and responsive user interfaces.",
+            "Implemented authentication flows, user registration, and management of educational content (booklets, modules, and guides).",
+            "Created and optimized reusable components, ensuring an intuitive and consistent user experience.",
+            "Optimized application performance, ensuring fast load times and smooth navigation."
+          ],
+          "images": [
+            "/images/projects/peer/login.png",
+            "/images/projects/peer/app-selection.png",
+            "/images/projects/peer/profile.png",
+            "/images/projects/peer/subjects.png",
+            "/images/projects/peer/teaching-guides.png",
+            "/images/projects/peer/projects.png",
+            "/images/projects/peer/settings.png",
+            "/images/projects/peer/teacher-network.png"
+          ]
+        }
+      ]
     },
     "company_two": {
-      "company": "Talentum Corporation",
-      "startDate": "Aug-2023",
-      "endDate": "Dec-2024",
-      "city": "Cali, Valle del Cauca",
-      "position": "Frontend Developer",
-      "role": "As a front-end software developer at Corporación Talentum, I participated in the development of technology platforms focused on the educational sector in collaboration with the Secretariat of Education. My work focused on creating intuitive and interactive interfaces that facilitated student assessment, progress monitoring, and knowledge management.\n\nI used technologies such as JavaScript, React, GraphQL, and Next.js to design scalable solutions that improved user experience and optimized educational processes. I contributed to projects aimed at reducing the digital divide, implementing STEAM classrooms, and promoting inclusive education in under-resourced communities.\n\nAdditionally, I was part of the first-level support team for the Pedagogical Management Information System (SIGP), a platform used in various educational institutions in Valle del Cauca. In this role, I managed user requests, classified cases according to their complexity (levels 1, 2, or 3), and referred them to the corresponding area, ensuring agile and efficient responses that optimized user experience and improved pedagogical management."
+      "company": "Deft Technological Solutions",
+      "startDate": "Aug 2023",
+      "endDate": "Dec 2024",
+      "city": "Cali, Colombia",
+      "position": "FRONTEND DEVELOPER",
+      "references": [
+        {
+          "name": "Juan Pablo Victoria",
+          "number": "+57 323 5315406",
+          "email": "lider.backendn@talentum.edu.co"
+        },
+        {
+          "name": "Edwin Alexander Fajardo",
+          "number": "+57 311 2327960",
+          "email": "alexander_suarez1997@hotmail.com"
+        }
+      ],
+      "projects": [
+        {
+          "nameProject": "Placa y cédula",
+          "startDate": "Jan 2021",
+          "endDate" : "Jul 2022",
+          "role": [
+          "Facilitated access to 'pico y cédula' information during the pandemic.",
+          "Implemented a dynamic, intuitive, and responsive interface across multiple devices.",
+          "Developed interactive components."
+          ],
+          "images": []
+        }
+      ]
     }
-    
-  }
+  },
+  "skills": [
+    {
+      "title": "Technical Skills",
+        "data": [
+          {
+            "category": "Programming Languages",
+            "skills": ["JavaScript (ES6+), TypeScript, HTML5, CSS3"]
+          },
+          {
+            "category": "Frameworks & Libraries",
+            "skills": ["React, Next.js, Framer Motion, Tailwind CSS, Styled Components, Ant Design, Bootstrap"]
+           },
+          {
+            "category": "APIs & Data Handling",
+            "skills": ["GraphQL, RESTful APIs, JSON"]
+          },
+          {
+            "category": "Performance & Optimization",
+            "skills": ["Load speed improvements, Technical SEO, SSR (Server-Side Rendering)"]
+          },
+          {
+            "category": "Development Tools",
+            "skills": ["Git, GitHub, Docker, Jest, Postman, VS Code"]
+          },
+          {
+            "category": "Technical Support",
+            "skills": ["Ticket management, Error diagnosis, Customer support"]
+          }
+        ]
+      },
+    {
+      "title": "Soft Skills",
+        "data": [
+          { "category": "Effective Communication", "skills": ["Translate technical concepts into clear explanations."] },
+          { "category": "Problem Solving", "skills": ["Diagnose and resolve software issues efficiently."] },
+          { "category": "Teamwork", "skills": ["Collaborate with various departments."] },
+          { "category": "Adaptability", "skills": ["Continuously learn new technologies and frameworks."] },
+          { "category": "Time Management", "skills": ["Ability to prioritize tasks and meet deadlines."] },
+          { "category": "Creativity", "skills": ["Seek innovative approaches to solve problems."] },
+          { "category": "Empathy", "skills": ["Understand the needs of both users and the team."] },
+          { "category": "Autonomy", "skills": ["Maintain efficiency and quality without constant supervision."] }
+        ]
+    }
+  ]
 }
 

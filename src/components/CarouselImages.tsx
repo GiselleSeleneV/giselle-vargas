@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ModalProps {
-
     selectedProjectImages: string[] | null;
 }
 
@@ -30,7 +29,7 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
     return (
         <AnimatePresence>
             {selectedProjectImages && selectedProjectImages.length > 0 && (
-                <div className="w-full h-full flex  items-center justify-center bg-[#0F172A]">
+                <div className="w-full h-full flex  items-center justify-center bg-[#0F172A] p-6">
 
                     <motion.div
                         whileHover={{ scale: 1.2, x: -5 }}
@@ -38,7 +37,7 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                         className="cursor-pointer"
                         onClick={handlePrevImage}
                     >
-                        <ChevronLeft size={48} className="text-white transition-colors duration-300" />
+                        <ChevronLeft className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-white transition-colors duration-300" />
                     </motion.div>
 
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
@@ -54,13 +53,15 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                         />
 
                         <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                            {selectedProjectImages.map((image, index) => (
+                            {selectedProjectImages.map((project, idx) => (
+
                                 <div
-                                    key={`${image}-${index}`}
-                                    className={`w-2 md:w-3 md:h-3 h-2 rounded-full ${index === currentImageIndex ? 'bg-[#AF9661]' : 'bg-gray-300'
+                                    key={`${project}-${idx}`}
+                                    className={`w-2 md:w-3 md:h-3 h-2 rounded-full ${idx === currentImageIndex ? 'bg-[#AF9661]' : 'bg-gray-300'
                                         }`}
                                 />
                             ))}
+
                         </div>
                     </div>
 
@@ -70,14 +71,10 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                         className="cursor-pointer"
                         onClick={handleNextImage}
                     >
-                        <ChevronRight size={48} className="text-white transition-colors duration-300" />
+                        <ChevronRight className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px]" />
                     </motion.div>
-
-
                 </div>
             )}
-
-
         </AnimatePresence>
     );
 }

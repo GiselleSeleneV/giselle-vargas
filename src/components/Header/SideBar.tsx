@@ -1,4 +1,3 @@
-// src/components/SideBar.tsx
 'use client';
 
 import { Drawer } from 'antd';
@@ -22,80 +21,76 @@ const SideBar = () => {
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
-        setOpen(false); // cerrar el drawer después del clic
+        setOpen(false);
     };
+
+    const sections = [
+        { label: t('header.home'), index: 0 },
+        { label: t('header.about'), index: 1 },
+        { label: t('header.experience'), index: 2 },
+        { label: t('header.skills'), index: 3 },
+    ];
 
     return (
         <>
-            {/* Hamburguesa */}
             <button onClick={() => setOpen(true)} aria-label="Open Menu">
                 <Menu size={30} className="text-[#AF9661]" />
             </button>
 
-            {/* Drawer / SideBar */}
             <Drawer
                 title={null}
                 placement="left"
                 onClose={() => setOpen(false)}
                 open={open}
                 closeIcon={false}
+                width="80%"
                 styles={{
-                    header: { backgroundColor: '#0F172A', color: '#AF9661' },
-                    body: { backgroundColor: '#0F172A' }
+                    body: {
+                        background: 'rgba(15, 23, 42, 0.9)',
+                        backdropFilter: 'blur(10px)',
+                        padding: '1.5rem',
+                    },
                 }}
             >
-                <div className="relative">
+                <div className="relative h-full flex flex-col justify-between">
+                    <div>
+                        <div className="flex items-center justify-between mb-8">
+                            <p className="text-[20px] text-[#AF9661] font-bold uppercase tracking-widest">
+                                {t('header.menu')}
+                            </p>
 
+                            <motion.button
+                                onClick={() => setOpen(false)}
+                                whileHover={{ rotate: 90, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                className="text-[#AF9661]"
+                                aria-label="Close Menu"
+                            >
+                                <CloseIcon color="#AF9661" />
+                            </motion.button>
+                        </div>
 
-                    <div className='flex items-center '>
-                        <motion.button
-                            onClick={() => setOpen(false)}
-                            whileHover={{ scale: 1.1, rotate: 90 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="absolute top-0 right-0 text-gray-500 hover:text-gray-700 transition-all cursor-pointer"
-                        >
-                            <CloseIcon color="#AF9661" />
-                        </motion.button>
-
-                        <p
-
-                            className={`text-[20px] text-[#AF9661] font-semibold`}
-                        >
-                            {t('header.menu')}
-                        </p>
+                        <nav className="flex flex-col gap-6">
+                            {sections.map(({ label, index }) => (
+                                <motion.button
+                                    key={index}
+                                    onClick={() => scrollToSection(index)}
+                                    whileHover={{ scale: 1.05, x: 6 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className={`text-left text-[18px] font-medium transition-all ${activeIndex === index ? 'text-[#AF9661] font-semibold' : 'text-[#ededed]'
+                                        }`}
+                                >
+                                    {label}
+                                </motion.button>
+                            ))}
+                        </nav>
                     </div>
 
-                    <div className="flex flex-col gap-4 text-[#ededed] text-lg mt-10">
-
-                        <button
-                            onClick={() => scrollToSection(0)}
-                            className={`text-[20px] ${activeIndex === 0 ? 'text-[#AF9661] font-semibold' : ''}`}
-                        >
-                            {t('header.home')}
-                        </button>
-
-                        <button
-                            onClick={() => scrollToSection(1)}
-                            className={activeIndex === 1 ? 'text-[#AF9661] font-semibold' : ''}
-                        >
-                            {t('header.about')}
-                        </button>
-                        <button
-                            onClick={() => scrollToSection(2)}
-                            className={activeIndex === 2 ? 'text-[#AF9661] font-semibold' : ''}
-                        >
-                            {t('header.experience')}
-                        </button>
-                        <button
-                            onClick={() => scrollToSection(3)}
-                            className={activeIndex === 3 ? 'text-[#AF9661] font-semibold' : ''}
-                        >
-                            {t('header.skills')}
-                        </button>
+                    <div className="text-sm text-[#9ca3af] text-center mt-12">
+                        © {new Date().getFullYear()} Giselle Vargas
                     </div>
                 </div>
             </Drawer>
-
         </>
     );
 };
