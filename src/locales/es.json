@@ -24,14 +24,20 @@
 
   "about_me": {
     "about_me": "SOBRE MÍ",
-    "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante."
+    "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante.",
+    "btn_download": "Descargar CV"
   },
 
   "experience": {
     "title": "EXPERIENCIA LABORAL",
     "projects": "Proyectos",
+    "responsibilities_performed": "FUNCIONES DESEMPEÑADAS",
+    "references": "REFERENCIAS",
+    "btn_view_project": "Ver proyecto",
+    "btn_close": "Cerrar",
     "company_one": {
       "company": "Corporación Talentum",
+      "company_logo": "/images/coporacion-talentum-logo.png",
       "startDate": "Ago-2023",
       "endDate": "Dic-2024",
       "city": "Cali, Valle del Cauca",
@@ -60,9 +66,10 @@
             "Brindar una respuesta oportuna y eficaz, mejorando significativamente la experiencia de las instituciones educativas con el sistema."
           ],
           "images": [
-           "/images/projects/SIGP/control-board.png", 
-           "/images/projects/SIGP/control-board-sec.png", 
-           "/images/projects/SIGP/dashboard-sec.png"
+            "/images/projects/SIGP/login.png", 
+            "/images/projects/SIGP/control-board.png", 
+            "/images/projects/SIGP/control-board-sec.png", 
+            "/images/projects/SIGP/dashboard-sec.png"
           ]
         },
         {
@@ -166,21 +173,22 @@
       ]
     },
     "company_two": {
-      "company": "Deft Soluciones Tecnologicas.",
+      "company": "Deft Soluciones Tecnologicas",
+      "company_logo": "/images/deft-logo.jpg",
       "startDate": "Ago 2023",
       "endDate": "Dic 2024",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
       "references": [
         {
-          "name": "Juan Pablo Victoria",
-          "number": "+57 323 5315406",
-          "email": "lider.backendn@talentum.edu.co"
+          "name": "Mario Payan",
+          "number": "+57 318 6151646",
+          "email": "mario.payan@correounivalle.edu.co"
         },
         {
-          "name": "Edwin Alexander Fajardo",
-          "number": "+57 311 2327960",
-          "email": "alexander_suarez1997@hotmail.com"
+          "name": "Johan Alexis Estupiñan",
+          "number": "+57 323 3794639",
+          "email": "johan.zambrano2903@gmail.com"
         }
       ],
       "projects": [
@@ -204,7 +212,7 @@
         "data": [
             { "category": "Lenguajes de programación", "skills": ["JavaScript (ES6+), TypeScript, nHTML5, CSS3"] },
             { "category": "Frameworks y bibliotecas", "skills": ["React, Next.js, Framer Motion, Tailwind CSS, Styled Components, Ant Design, Bootstrap"] },
-            { "category": "APIs y manejo de datos", "skills": ["GraphQL, RESTful APIs, JSON"] },
+            { "category": "APIs y manejo de datos", "skills": ["GraphQL, RESTful API, JSON"] },
             { "category": "Optimización y rendimiento", "skills": ["Mejoras de velocidad de carga, SEO técnico, SSR"] },
             { "category": "Herramientas de desarrollo", "skills": ["Git, GitHub, Docker, Jest, Postman, VS Code"] },
             { "category": "Soporte técnico", "skills": ["Gestión de tickets, Diagnóstico de errores, Atención al cliente"] }
@@ -216,11 +224,9 @@
           { "category": "Comunicación efectiva", "skills": ["Traducir conceptos técnicos en explicaciones claras."] },
           { "category": "Resolución de problemas", "skills": ["Diagnosticar y solucionar errores de software de forma eficiente."] },
           { "category": "Trabajo en equipo", "skills": ["Colaborar con distintos departamentos."] },
-          { "category": "Adaptabilidad", "skills": ["Aprendizaje continuo de nuevas tecnologías y frameworks."] },
           { "category": "Gestión del tiempo", "skills": ["Capacidad para priorizar tareas y cumplir con los plazos."] },
           { "category": "Creatividad", "skills": ["Buscar enfoques innovadores para resolver problemas."] },
-          { "category": "Empatía", "skills": ["Comprender las necesidades del usuario y del equipo."] },
-          { "category": "Autonomía", "skills": ["Mantener eficiencia y calidad sin supervisión constante."] }
+          { "category": "Empatía", "skills": ["Comprender las necesidades del usuario y del equipo."] }
         ]
     }
   ]

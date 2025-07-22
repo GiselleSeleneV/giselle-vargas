@@ -89,7 +89,7 @@ export default function Welcome() {
                 transition={{ repeat: Infinity, duration: 2 }}
 
             >
-                <p className="text-[14px] lg:text-[16px] xl:text-[18px]">{t('home.button')}</p>
+                {/* <p className="text-[12px] lg:text-[16px] xl:text-[16px]">{t('home.button')}</p> */}
                 <ChevronDown onClick={() => scrollToSection(1)} className="w-14 h-14 lg:w-16 lg:h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110" />
 
             </motion.div>

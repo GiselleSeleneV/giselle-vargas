@@ -6,12 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ModalProps {
-    selectedProjectImages: string[] | null;
+    readonly selectedProjectImages: string[] | null;
 }
 
 export default function CarouselImages({ selectedProjectImages }: ModalProps) {
-
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handlePrevImage = () => {
@@ -37,7 +35,7 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                         className="cursor-pointer"
                         onClick={handlePrevImage}
                     >
-                        <ChevronLeft className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-white transition-colors duration-300" />
+                        <ChevronLeft className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-[#AF9661] transition-colors duration-300" />
                     </motion.div>
 
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
@@ -52,12 +50,12 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                             className="object-cover w-full h-full rounded-xl"
                         />
 
-                        <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                        <div className="flex flex-wrap gap-2 mt-4 p-1 justify-center">
                             {selectedProjectImages.map((project, idx) => (
 
                                 <div
                                     key={`${project}-${idx}`}
-                                    className={`w-2 md:w-3 md:h-3 h-2 rounded-full ${idx === currentImageIndex ? 'bg-[#AF9661]' : 'bg-gray-300'
+                                    className={`w-2 h-2 lg:w-3 lg:h-3  rounded-full ${idx === currentImageIndex ? 'bg-[#AF9661] scale-125' : 'bg-gray-500'
                                         }`}
                                 />
                             ))}
@@ -71,7 +69,7 @@ export default function CarouselImages({ selectedProjectImages }: ModalProps) {
                         className="cursor-pointer"
                         onClick={handleNextImage}
                     >
-                        <ChevronRight className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px]" />
+                        <ChevronRight className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-[#AF9661]" />
                     </motion.div>
                 </div>
             )}

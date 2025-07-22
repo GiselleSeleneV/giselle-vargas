@@ -16,7 +16,7 @@ export type Reference = {
 
 export type WorkExperience = {
     company: string;
-    companyLogo?: string;
+    company_logo?: string;
     startDate: string;
     endDate: string;
     city: string;

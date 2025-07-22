@@ -1,3 +1,8 @@
+
+
+
+
+
 export function LocationIcon({ color = "gold" }) {
     return (
         <svg
@@ -130,6 +135,83 @@ export function CloseIcon({ color = "gold" }) {
         >
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+    );
+}
+
+export function HomeIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+    );
+}
+
+export function ContactIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
+            <circle cx="12" cy="7" r="4" />
+        </svg>
+    );
+}
+
+export function ExperienceIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M3 17l6-6 4 4 8-8" />
+            <path d="M14 7h7v7" />
+        </svg>
+    );
+}
+
+export function SkillsIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <polyline points="16 18 22 12 16 6" /> {/* > */}
+            <polyline points="8 6 2 12 8 18" />    {/* < */}
         </svg>
     );
 }

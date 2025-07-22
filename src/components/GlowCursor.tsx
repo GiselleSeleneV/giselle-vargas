@@ -12,7 +12,6 @@ const GlowCursor = () => {
             setPosition({ x: e.clientX, y: e.clientY });
 
             const target = e.target as HTMLElement;
-            // Verifica si el cursor está sobre el botón con el texto "¡Explorar!" o "Explore!"
             const isExploreButton = target.closest("a, button")?.textContent?.trim() === "¡Explorar!" ||
                 target.closest("a, button")?.textContent?.trim() === "Explore!";
             setIsTargetButton(isExploreButton);

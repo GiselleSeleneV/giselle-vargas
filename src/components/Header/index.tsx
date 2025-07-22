@@ -6,6 +6,8 @@ import { useActiveComponent } from '@/store/useActiveComponent';
 import { useSectionRefs } from '@/store/useSectionsRefs';
 import { LanguageIcon } from '@/components/Icons';
 import SideBar from '@/components/Header/SideBar';
+import { sections } from './data'
+
 
 export default function HeaderClient() {
     const { t, i18n } = useTranslation();
@@ -13,78 +15,66 @@ export default function HeaderClient() {
     const { activeIndex } = useActiveComponent();
     const { welcomeRef, aboutMeRef, experienceRef, skillsRef } = useSectionRefs();
 
+    const sectionRefs = [welcomeRef, aboutMeRef, experienceRef, skillsRef];
+
+    const languages = [
+        { code: 'en' as const, label: t('header.language.english') },
+        { code: 'es' as const, label: t('header.language.spanish') },
+    ];
+
     const scrollToSection = (index: number) => {
-        const refs = [welcomeRef, aboutMeRef, experienceRef, skillsRef];
-        const ref = refs[index];
+        const ref = sectionRefs[index];
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
-    const getButtonClass = (lang: 'en' | 'es') => {
-        return i18n.language === lang
-            ? 'text-[#ededed]'
+    const getButtonClass = (lang: string) =>
+        i18n.language === lang
+            ? 'text-[#AF9661]'
             : 'text-[#7e7e8a] hover:text-[#AF9661] cursor-pointer';
-    };
+
+    const getNavButtonClass = (index: number) =>
+        activeIndex === index
+            ? 'text-[#AF9661] border-b-1 border-[#AF9661] p-1'
+            : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer';
 
     return (
         <div className="absolute w-full flex justify-between z-50 px-4 py-2 bg-[#0F172A]">
-
             <div className="sm:block md:hidden">
                 <SideBar />
             </div>
 
-            <div className="hidden md:flex gap-4 text-[14px]">
-
-                <button
-                    onClick={() => scrollToSection(0)}
-                    className={activeIndex === 0 ? 'border border-[#AF9661] rounded-lg p-1 text-[#ededed]' : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer'}
-                >
-                    {t('header.home')}
-                </button>
-
-                <button
-                    onClick={() => scrollToSection(1)}
-                    className={activeIndex === 1 ? 'border border-[#AF9661] rounded-lg p-1 text-[#ededed]' : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer'}
-                >
-                    {t('header.about')}
-                </button>
-
-                <button
-                    onClick={() => scrollToSection(2)}
-                    className={activeIndex === 2 ? 'border border-[#AF9661] rounded-lg p-1 text-[#ededed]' : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer'}
-                >
-                    {t('header.experience')}
-                </button>
-
-                <button
-                    onClick={() => scrollToSection(3)}
-                    className={activeIndex === 3 ? 'border border-[#AF9661] rounded-lg p-1 text-[#ededed]' : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer'}
-                >
-                    {t('header.skills')}
-                </button>
-
+            <div className="hidden md:flex gap-6 text-[14px]">
+                {sections.map(({ label, index, Icon }) => (
+                    <button
+                        key={label}
+                        onClick={() => scrollToSection(index)}
+                        className={`flex items-center gap-2 ${getNavButtonClass(index)}`}
+                    >
+                        <Icon color={'#AF9661'} />
+                        {t(label)}
+                    </button>
+                ))}
             </div>
 
-            <div className={`flex items-center gap-4 text-[14px]`}>
+            <div className="flex items-center gap-4 text-[14px]">
                 <LanguageIcon color="#AF9661" />
-                <button className={getButtonClass('en')} onClick={() => {
-                    setLanguageCookie('en');
-                    changeLanguage('en');
-                }}>
-                    {t('header.language.english')}
-                </button>
-
-                <div className="h-4 border-l border-[#AF9661]" />
-
-                <button className={getButtonClass('es')} onClick={() => {
-                    setLanguageCookie('es');
-                    changeLanguage('es');
-                }}>
-                    {t('header.language.spanish')}
-                </button>
+                {languages.map(({ code, label }, idx) => (
+                    <div key={code} className="flex items-center gap-4">
+                        <button
+                            className={getButtonClass(code)}
+                            onClick={() => {
+                                setLanguageCookie(code);
+                                changeLanguage(code);
+                            }}
+                        >
+                            {label}
+                        </button>
+                        {idx === 0 && <div className="h-4 border-l border-[#AF9661]" />}
+                    </div>
+                ))}
             </div>
-
         </div>
     );
 }

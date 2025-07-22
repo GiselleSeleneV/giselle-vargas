@@ -1,96 +1,91 @@
-"use client"
-import { useTranslation } from "next-i18next";
+"use client";
+
+import { useTranslation } from "react-i18next";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Contact from "./Contact";
 
 export default function AboutMe() {
     const { t } = useTranslation();
     const title = t("about_me.about_me");
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (isInView) {
+            controls.start("visible");
+        }
+    }, [isInView, controls]);
+
     return (
-        <div className="w-full h-full bg-white flex flex-col text-center overflow-y-auto 
-        items-center md:items-center lg:items-stretch xl:items-stretch">
-            <div className="w-full">
-                <Contact />
-            </div>
+        <section className="w-full min-h-screen bg-[#0F172A] px-6 lg:px-16 py-10 flex flex-col items-center justify-center">
+            <motion.div
+                ref={ref}
+                className="relative max-w-6xl w-full rounded-xl bg-white/5 border border-white/10 shadow-lg  p-6 lg:p-8  xl:p-16 flex flex-col lg:flex-row items-center gap-6 lg:gap-8 xl:gap-12"
+                initial="hidden"
+                animate={controls}
+                variants={{
+                    hidden: { opacity: 0, scale: 0.95 },
+                    visible: {
+                        opacity: 1,
+                        scale: 1,
+                        transition: {
+                            duration: 1,
+                            when: "beforeChildren",
+                            staggerChildren: 0.15
+                        }
+                    }
+                }}
+            >
+                <motion.div
+                    className="relative w-[220px] h-[200px] lg:w-[240px] lg:h-[320px] xl:w-[300px] xl:h-[380px] rounded-3xl overflow-hidden border-2 border-[#AF9661] shadow-[0_10px_40px_rgba(175,150,97,0.3)] hover:scale-105 transition-transform duration-500 group"
+                    whileHover={{ rotate: 2 }}
+                >
+                    <Image
+                        src="/images/photo.jpeg"
+                        alt="Photo B&N"
+                        fill
+                        className="object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0 rounded-3xl"
+                    />
 
-            <div className="relative flex flex-col w-full md:w-[95%] lg:w-[75%] xl:w-[80%] h-full ml-0 lg:ml-[80px] xl:ml-[100px] px-6 py-6 z-10 text-[#0F172A] bg-[#EFEFF0]" >
+                    <Image
+                        src="/images/photo-color.jpeg"
+                        alt="Photo color"
+                        fill
+                        className="object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 rounded-3xl"
+                    />
+                </motion.div>
 
-                <div className="relative w-full p-2 md:p-4 sm:block flex md:block lg:hidden xl:hidden  border-1 border-[#AF9661]">
-                    <div className="w-[110px] h-[120px] md:w-[170px] md:h-[180px] relative overflow-visible">
-                        <Image
-                            src="/images/photo-three.jpeg"
-                            alt="Foto de perfil"
-                            fill
-                            className="absolute -right-6 brightness-75 grayscale transition-all duration-500 object-cover"
-                        />
-                    </div>
-                </div>
-
-                <div className="flex flex-col justify-center sm:w-[100%] md:w-[100%] lg:w-[83%] xl:w-[75%] relative text-left mt-6 lg:mt-15  xl:mt-18">
-
-                    <motion.div
-                        className="absolute flex flex-row top-0 md:top-[-180px] lg:top-0 xl:top-0 left-0 md:left-48 lg:left-0 text-[46px] md:text-[88px] lg:text-[112px] xl:text-[140px]  font-bold text-[#0F172A] md:text-[#AF9661] opacity-10 select-none z-0 leading-none gap-4 md:gap-10 lg:gap-8 xl:gap-18"
-                        animate={{ opacity: [0.1, 0.15, 0.1] }}
-                        transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
-                    >
-                        {title.split(" ").map((word, wordIndex) => (
-                            <div key={wordIndex} className="flex">
-                                {word.split("").map((char, index) => (
-                                    <motion.span
-                                        key={index}
-                                        className="inline-block"
-                                        animate={{
-                                            y: [0, -10, 0],
-                                            scale: [1, 1.05, 1],
-                                        }}
-                                        transition={{
-                                            duration: 3,
-                                            repeat: Infinity,
-                                            repeatType: "reverse",
-                                            delay: index * 0.1,
-                                        }}
-                                    >
-                                        {char}
-                                    </motion.span>
-                                ))}
-                            </div>
-                        ))}
-                    </motion.div>
-
-                    <motion.p
-                        className="relative mt-5 md:mt-[-150px] lg:mt-8 xl:mt-12 ml-0 md:ml-50 lg:ml-0 xl:ml-0 font-bold text-[22px] md:text-[40px] lg:text-[50px] xl:text-[60px] text-[#0F172A] z-10"
-                        initial={{ opacity: 0, filter: "blur(5px)" }}
-                        animate={{ opacity: 1, filter: "blur(0px)" }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
+                <div className="w-full lg:max-w-xl text-white flex flex-col gap-5">
+                    <h2 className="text-[#AF9661] text-[12px] lg:text-[14px] font-medium uppercase tracking-widest">
                         {title}
-                    </motion.p>
+                    </h2>
 
-                    <p className="text-justify text-[#0F172A] mr-0 md:mr-0 lg:mr-10 xl:mr-10 text-[12px] md:text-[18px] lg:text-[20px] xl:text-[24px] mt-2 md:mt-22 lg:mt-10 xl:mt-6 whitespace-pre-line z-10">
+                    <h1 className="text-[18px] md:text-[28px] lg:text-[38px] xl:text-[48px]  font-bold leading-tight">
+                        Giselle Vargas
+                    </h1>
+
+                    <p className="text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] md:text-lg text-gray-300 leading-relaxed text-justify">
                         {t("about_me.description")}
                     </p>
-                </div>
 
-
-                <div className="sm:hidden md:hidden lg:block xl:block absolute lg:top-30 xl:top-34 lg:right-[-130px] xl:right-[-152px] lg:w-[250px] xl:w-[340px] lg:h-[350px] xl:h-[450px] border border-[#AF9661] overflow-visible">
-
-                    <motion.div
-                        initial={{ scale: 1.5, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="absolute left-[-40px] top-[-42px] lg:w-[250px] xl:w-[340px] lg:h-[350px] xl:h-[450px]"
+                    <motion.a
+                        href="/pdf/CV-giselle-vargas-benitez.pdf"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 lg:mt-4 inline-block self-start border border-[#AF9661] px-4 py-2 lg:px-5 lg:py-3 rounded-full text-[#AF9661] text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] transition-transform duration-300"
+                        whileHover={{ scale: 1.05 }}
                     >
-                        <Image
-                            src="/images/photo-three.jpeg"
-                            layout="fill"
-                            objectFit="cover"
-                            alt="Foto de perfil"
-                            className="brightness-75 grayscale transition-all duration-500"
-                        />
-                    </motion.div>
+                        {t("about_me.btn_download")}
+                    </motion.a>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+
+            <Contact />
+        </section>
     );
 }

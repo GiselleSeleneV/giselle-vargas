@@ -1,18 +1,23 @@
 "use client";
 import { useEffect, useRef } from "react";
-import AboutMe from "@/components/AppContent/AboutMe";
-import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Welcome from "./Welcome";
+import AboutMe from "@/components/AppContent/AboutMe";
+import Experiences from "./Experience";
 import Skills from "./Skills";
+import { motion } from "framer-motion";
 import { useActiveComponent } from "@/store/useActiveComponent";
 import { useSectionRefs } from "@/store/useSectionsRefs";
-import Experience from "./Experience";
-
+import { WorkExperience } from "@/types/experience";
 
 export default function AppContent() {
+    const { t } = useTranslation();
+
     const sections = ["Welcome", "AboutMe", "Experience", "Skills"];
     const { activeIndex, setActiveIndex } = useActiveComponent();
 
+    const experienceTalentum = t("experience.company_one", { returnObjects: true }) as WorkExperience;
+    const experienceDeft = t("experience.company_two", { returnObjects: true }) as WorkExperience;
 
     const welcomeRef = useRef<HTMLDivElement>(null);
     const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -70,7 +75,11 @@ export default function AppContent() {
                 </section>
 
                 <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
-                    <Experience />
+                    <Experiences experience={experienceTalentum} />
+                </section>
+
+                <section className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Experiences experience={experienceDeft} />
                 </section>
 
                 <section ref={skillsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
@@ -79,9 +88,9 @@ export default function AppContent() {
             </div>
 
             <div className="hidden lg:flex absolute right-2 md:right-10 lg:right-8 xl:right-8 top-1/2 transform -translate-y-1/2  flex-col gap-4">
-                {sections.map((_, index) => (
+                {sections.map((item, index) => (
                     <motion.div
-                        key={index}
+                        key={`${item}-${index}`}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"}`}
                     />
                 ))}

@@ -24,14 +24,20 @@
   
   "about_me": {
     "about_me": "ABOUT ME",
-    "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning."
+    "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning.",
+     "btn_download": "Download CV"
   },
 
   "experience": {
     "title": "PROFESSIONAL EXPERIENCE",
     "projects": "Projects",
+    "responsibilities_performed": "RESPONSIBILITIES PERFORMED",
+     "references": "REFERENCES",
+    "btn_view_project": "View project",
+    "btn_close": "Close",
     "company_one": {
       "company": "Talentum Corporation",
+      "company_logo": "/images/coporacion-talentum-logo.png",
       "startDate": "Aug-2023",
       "endDate": "Dec-2024",
       "city": "Cali, Colombia",
@@ -60,9 +66,10 @@
             "Deliver timely and effective responses, significantly improving the user experience of educational institutions using the system."
           ],
           "images": [
-           "/images/projects/SIGP/control-board.png", 
-           "/images/projects/SIGP/control-board-sec.png", 
-           "/images/projects/SIGP/dashboard-sec.png"
+            "/images/projects/SIGP/login.png", 
+            "/images/projects/SIGP/control-board.png", 
+            "/images/projects/SIGP/control-board-sec.png", 
+            "/images/projects/SIGP/dashboard-sec.png"
           ]
         },
         {
@@ -166,20 +173,21 @@
     },
     "company_two": {
       "company": "Deft Technological Solutions",
+      "company_logo": "/images/deft-logo.jpg",
       "startDate": "Aug 2023",
       "endDate": "Dec 2024",
       "city": "Cali, Colombia",
       "position": "FRONTEND DEVELOPER",
       "references": [
         {
-          "name": "Juan Pablo Victoria",
-          "number": "+57 323 5315406",
-          "email": "lider.backendn@talentum.edu.co"
+          "name": "Mario Payan",
+          "number": "+57 318 6151646",
+          "email": "mario.payan@correounivalle.edu.co"
         },
         {
-          "name": "Edwin Alexander Fajardo",
-          "number": "+57 311 2327960",
-          "email": "alexander_suarez1997@hotmail.com"
+          "name": "Johan Alexis Estupiñan",
+          "number": "+57 323 3794639",
+          "email": "johan.zambrano2903@gmail.com"
         }
       ],
       "projects": [
@@ -233,11 +241,9 @@
           { "category": "Effective Communication", "skills": ["Translate technical concepts into clear explanations."] },
           { "category": "Problem Solving", "skills": ["Diagnose and resolve software issues efficiently."] },
           { "category": "Teamwork", "skills": ["Collaborate with various departments."] },
-          { "category": "Adaptability", "skills": ["Continuously learn new technologies and frameworks."] },
           { "category": "Time Management", "skills": ["Ability to prioritize tasks and meet deadlines."] },
           { "category": "Creativity", "skills": ["Seek innovative approaches to solve problems."] },
-          { "category": "Empathy", "skills": ["Understand the needs of both users and the team."] },
-          { "category": "Autonomy", "skills": ["Maintain efficiency and quality without constant supervision."] }
+          { "category": "Empathy", "skills": ["Understand the needs of both users and the team."] }
         ]
     }
   ]
