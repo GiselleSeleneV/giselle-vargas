@@ -28,6 +28,7 @@ export default async function RootLayout({
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="manifest" href="/site.webmanifest" />
+
       <body className="home-bg">
         <I18nProvider lang={lang}>
           <Header />
