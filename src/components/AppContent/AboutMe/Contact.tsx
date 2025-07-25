@@ -18,7 +18,7 @@ export default function Contact() {
     return (
         <motion.div
             ref={ref}
-            className="mt-4 lg:mt-6 xl:mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl w-full"
+            className="mt-2 lg:mt-6 xl:mt-10 grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6 max-w-6xl w-full"
             initial="hidden"
             animate={controls}
             variants={{
@@ -37,10 +37,10 @@ export default function Contact() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 }
                     }}
-                    className="flex flex-col items-center text-center p-2 lg:p-3 xl:p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg hover:shadow-[#AF9661]/30 hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-center text-center p-1 lg:p-3 xl:p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg hover:shadow-[#AF9661]/30 hover:scale-105 transition-all duration-300"
                 >
                     <item.img color="#AF9661" />
-                    <span className="mt-3 text-[12px] lg:text-[14px] text-white">{item.text}</span>
+                    <span className="mt-1 lg:mt-3 text-[11px] lg:text-[14px] text-white">{item.text}</span>
                 </motion.a>
             ))}
         </motion.div>

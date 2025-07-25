@@ -34,10 +34,10 @@ export default function Modal({
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
     const getImageDimensions = (logo: string) => {
-        if (logo === "/images/projects/SIGP/logo.jpeg") return { className: "w-[140px]" };
-        if (logo === "/images/projects/regional/logo.png") return { className: "w-[90px]" };
-        if (logo === "/images/projects/peer/logo.png") return { className: "w-[78px]" };
-        return { className: "w-[80px]" };
+        if (logo === "/images/projects/SIGP/logo.jpeg") return { className: "w-[110px] lg:w-[140px]" };
+        if (logo === "/images/projects/regional/logo.png") return { className: "w-[70px] lg:w-[90px]" };
+        if (logo === "/images/projects/peer/logo.png") return { className: "w-[48px] lg:w-[78px]" };
+        return { className: "w-[65px] lg:w-[80px]" };
     };
 
     const { className } = getImageDimensions(projectLogo ?? "");
@@ -72,7 +72,7 @@ export default function Modal({
 
                             <div className="flex flex-col md:flex-row items-center justify-between border-b border-[#AF9661]/30 pb-4 gap-4">
                                 <div>
-                                    <h2 className="text-[18px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-[#AF9661]">{selectedProject}</h2>
+                                    <h2 className="text-[16px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-[#AF9661]">{selectedProject}</h2>
                                     <p className="text-[12px] lg:text-[14px] text-white text-center md:text-start mt-1">{t('experience.responsibilities_performed')}</p>
                                 </div>
 
@@ -87,7 +87,7 @@ export default function Modal({
                                 )}
                             </div>
 
-                            <div className="mt-4 text-[12px] lg:text-[14px] leading-relaxed text-gray-300">
+                            <div className="mt-4 text-justify text-[12px] lg:text-[14px] leading-relaxed text-gray-300">
                                 <ul className="list-disc pl-5 space-y-3">
                                     {selectedRole?.filter(Boolean).map((role, idx) => (
                                         <li key={`${role}-${idx}`}>{role}</li>
@@ -101,7 +101,7 @@ export default function Modal({
                                         onClick={() => setIsGalleryOpen(true)}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="w-[160px] animate-[pulse_2.5s_ease-in-out_infinite] backdrop-blur-sm bg-white/5 border border-[#AF9661] text-[#AF9661] px-2 py-1 mt-3 rounded-full text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-semibold transition-all duration-300 cursor-pointer"
+                                        className="w-[160px] animate-[pulse_2.5s_ease-in-out_infinite] backdrop-blur-sm bg-white/5 border border-[#AF9661] text-[#AF9661] px-2 py-1 mt-1 lg:mt-3 rounded-full text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-semibold transition-all duration-300 cursor-pointer"
                                     >
                                         {t('experience.btn_view_project')}
                                     </motion.button>
@@ -111,11 +111,11 @@ export default function Modal({
 
                         <div className="mt-6">
                             <h3 className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold text-[#AF9661] mb-4">{t('experience.references')}</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4">
                                 {workExperience[currentIndex].references?.map((ref, idx) => (
                                     <div
                                         key={`${ref.email}-${idx}`}
-                                        className="bg-white/5 p-4 rounded-xl border border-[#AF9661]/20 shadow"
+                                        className="bg-white/5 p-2 lg:p-4 rounded-xl border border-[#AF9661]/20 shadow"
                                     >
                                         <p className="text-white text-[12px] lg:text-[16px] font-semibold">{ref.name}</p>
                                         <p className="text-[#AF9661] text-sm">{ref.company}</p>

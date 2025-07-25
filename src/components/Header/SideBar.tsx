@@ -72,9 +72,9 @@ const SideBar = () => {
                                         onClick={() => scrollToSection(index)}
                                         whileHover={{ scale: 1.05, x: 6 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className={`flex items-center gap-3 text-left text-[18px] font-medium transition-all ${activeIndex === index
+                                        className={`flex items-center gap-3 text-left text-[16px] font-medium transition-all ${activeIndex === index
                                             ? 'text-[#AF9661] font-semibold'
-                                            : 'text-[#ededed]'
+                                            : 'text-[#7e7e8a]'
                                             }`}
                                     >
                                         <Icon color={'#AF9661'} />

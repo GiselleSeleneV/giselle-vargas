@@ -45,17 +45,21 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative w-full min-h-screen bg-gradient-to-b from-[#0F172A] text-white overflow-hidden px-6 py-8 flex flex-col justify-between "
+            className="relative w-full min-h-screen text-white overflow-hidden px-6 py-8 flex flex-col justify-between "
         >
             <div className="max-w-7xl mx-auto flex flex-col items-center justify-center flex-grow">
-                <motion.h2
-                    className="flex text-center text-[26px] md:text-[48px] lg:text-[58px] xl:text-[72px] font-extrabold tracking-tight font-playfair text-[#AF9661] mb-1 lg:mb-4 xl:mb-10"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    {currentSection.title}
-                </motion.h2>
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.h2
+                        key={activeIndex}
+                        className="flex text-center text-[20px] md:text-[48px] lg:text-[58px] xl:text-[72px] font-extrabold tracking-tight font-playfair text-[#AF9661] mb-1 lg:mb-4 xl:mb-10"
+                        initial={{ opacity: 0, x: direction === "right" ? 50 : -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: direction === "right" ? -50 : 50 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                    >
+                        {currentSection.title}
+                    </motion.h2>
+                </AnimatePresence>
 
                 <div className="relative w-full">
 
@@ -114,7 +118,7 @@ export default function Skills() {
                         </motion.button>
                     </div>
 
-                    <div className="flex flex-col items-center md:hidden mt-4 w-full">
+                    <div className="flex flex-col items-center md:hidden mt-2 w-full">
                         <div className="w-full">
                             <AnimatePresence mode="wait" initial={false}>
                                 <motion.div
@@ -123,16 +127,16 @@ export default function Skills() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: direction === "right" ? -80 : 80 }}
                                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                                    className="grid grid-cols-1 gap-4 min-h-[330px]"
+                                    className="grid grid-cols-1 gap-2"
                                 >
                                     {[...leftItems, ...rightItems].map((item, idx) => (
                                         <motion.div
                                             key={`${item.category}-${idx}`}
                                             whileHover={{ scale: 1.03, boxShadow: "0px 8px 30px rgba(175,150,97,0.15)" }}
                                             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                                            className="bg-white/5 border border-white/10 shadow-lg px-4 py-4 rounded-2xl backdrop-blur-md h-[100px] md:h-[116px] lg:h-[110px] xl:h-[130px] flex flex-col overflow-hidden w-full"
+                                            className="bg-white/5 border border-white/10 shadow-lg px-3 py-2 rounded-2xl backdrop-blur-md flex flex-col overflow-hidden w-full"
                                         >
-                                            <h3 className="text-[16px] font-bold text-[#AF9661] mb-2">{item.category}</h3>
+                                            <h3 className="text-[12px] font-bold text-[#AF9661] mb-2">{item.category}</h3>
                                             <ul className="space-y-1 text-[12px] text-gray-300 overflow-hidden">
                                                 {item.skills.map((skill, skillIdx) => (
                                                     <li key={`${skill}-${skillIdx}`} className="flex before:content-['•'] before:mr-2 before:text-[#AF9661]">

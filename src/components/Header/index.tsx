@@ -36,8 +36,8 @@ export default function HeaderClient() {
 
     const getNavButtonClass = (index: number) =>
         activeIndex === index
-            ? 'text-[#AF9661] border-b-1 border-[#AF9661] p-1'
-            : 'text-[#7e7e8a] p-1 hover:text-[#AF9661] cursor-pointer';
+            ? 'text-[#AF9661] font-semibold border-b-1 border-[#AF9661] p-1'
+            : 'text-[#7e7e8a] font-semibold p-1 hover:text-[#AF9661] cursor-pointer';
 
     return (
         <div className="absolute w-full flex justify-between z-50 px-4 py-2 bg-[#0F172A]">
@@ -58,7 +58,7 @@ export default function HeaderClient() {
                 ))}
             </div>
 
-            <div className="flex items-center gap-4 text-[14px]">
+            <div className="flex items-center gap-4 text-[14px] font-semibold">
                 <LanguageIcon color="#AF9661" />
                 {languages.map(({ code, label }, idx) => (
                     <div key={code} className="flex items-center gap-4">
