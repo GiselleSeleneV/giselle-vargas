@@ -7,10 +7,10 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
-                sm: "640px",   // Small (móviles)
-                md: "768px",   // Medium (tablets)
-                lg: "1024px",  // Large (laptops)
-                xl: "1280px",  // Extra large
+                sm: "640px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
                 '2xl': "1536px",
             }
         },

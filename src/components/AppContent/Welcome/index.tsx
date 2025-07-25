@@ -68,9 +68,7 @@ export default function Welcome() {
                 transition={{ duration: 1, delay: 0.8 }}
             >
                 <h2 className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[65px] font-bold text-center text-[#AF9661] relative group mb-20">
-                    <span className="text-[#ededed] mr-4">{t("home.I_am")}</span>
-
-                    Giselle Vargas
+                    <span className="text-[#ededed] mr-4">{t("home.I_am")}</span>Giselle Vargas
                     <motion.span
                         className="block text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
                         initial={{ opacity: 0, y: 10 }}
@@ -83,15 +81,20 @@ export default function Welcome() {
             </motion.div>
 
             <motion.div
-                className="absolute bottom-6 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: [20, 0, 20] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-
+                className="absolute bottom-34 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.8 }}
             >
-                {/* <p className="text-[12px] lg:text-[16px] xl:text-[16px]">{t('home.button')}</p> */}
-                <ChevronDown onClick={() => scrollToSection(1)} className="w-14 h-14 lg:w-16 lg:h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110" />
-
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2, delay: 2.8 }}
+                >
+                    <ChevronDown
+                        onClick={() => scrollToSection(1)}
+                        className="w-14 h-14 lg:w-16 lg:h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110"
+                    />
+                </motion.div>
             </motion.div>
         </div>
     );
