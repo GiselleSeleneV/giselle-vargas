@@ -28,7 +28,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
         projectLogo,
     };
     return (
-        <section className="relative w-full min-h-screen bg-[#0F172A] px-6 lg:px-24 overflow-y-auto snap-start">
+        <section className="relative w-full min-h-screen px-6 lg:px-24 overflow-y-auto snap-start">
             <div className="w-full h-[100vh] flex flex-col items-center">
                 <div className="absolute top-0 left-1/2 w-[0.5px] h-full bg-[#AF9661]/40 rounded-full transform -translate-x-1/2 z-0" />
 

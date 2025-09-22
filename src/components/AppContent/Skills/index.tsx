@@ -45,7 +45,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative w-full min-h-screen bg-[#0F172A] overflow-hidden px-6 py-8 flex flex-col justify-between bg"
+            className="relative w-full min-h-screen overflow-hidden px-6 py-8 flex flex-col justify-between"
         >
             <div className="max-w-7xl mx-auto flex flex-col items-center justify-center flex-grow">
                 <AnimatePresence mode="wait" initial={false}>

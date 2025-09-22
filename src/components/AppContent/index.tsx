@@ -62,7 +62,7 @@ export default function AppContent() {
     }, []);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden  text-white">
+        <div className="relative h-screen w-full overflow-hidden text-white ">
 
             <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 

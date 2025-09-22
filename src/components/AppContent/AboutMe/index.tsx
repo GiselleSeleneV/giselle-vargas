@@ -21,7 +21,7 @@ export default function AboutMe() {
     }, [isInView, controls]);
 
     return (
-        <section className="w-full min-h-screen bg-[#0F172A] px-6 lg:px-16 py-10 flex flex-col items-center justify-center">
+        <section className="w-full min-h-screen px-6 lg:px-16 py-10 flex flex-col items-center justify-center">
             <motion.div
                 ref={ref}
                 className="relative max-w-6xl w-full rounded-xl bg-white/5 border border-white/10 shadow-lg  p-4 lg:p-8 xl:p-16 flex flex-col lg:flex-row items-center gap-4 lg:gap-8 xl:gap-12"
