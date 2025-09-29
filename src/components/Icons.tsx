@@ -1,6 +1,21 @@
-
-
-
+export function CodeIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 26 26"
+            fill="none"
+            stroke="#AF9661"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+        </svg>
+    );
+}
 
 
 export function LocationIcon({ color = "gold" }) {
@@ -193,6 +208,25 @@ export function ExperienceIcon({ color = "gold" }) {
         >
             <path d="M3 17l6-6 4 4 8-8" />
             <path d="M14 7h7v7" />
+        </svg>
+    );
+}
+
+export function ProjectsIcon({ color = "gold" }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+            <path d="M16 3h-8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z" />
         </svg>
     );
 }

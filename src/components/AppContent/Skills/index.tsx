@@ -4,8 +4,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
-import { techStack } from "./data";
+import { techStack } from "./TechStackData";
+import TechStack from "@/components/TechStack/TechStack";
+
+export type TechItem = {
+    name: string;
+    icon: string;
+};
 
 export default function Skills() {
     const [direction, setDirection] = useState<"left" | "right">("right");
@@ -47,11 +52,11 @@ export default function Skills() {
             viewport={{ once: true }}
             className="relative w-full min-h-screen overflow-hidden px-6 py-8 flex flex-col justify-between"
         >
-            <div className="max-w-7xl mx-auto flex flex-col items-center justify-center flex-grow">
+            <div className="w-full lg:max-w-7xl mx-auto flex flex-col items-center justify-center flex-grow">
                 <AnimatePresence mode="wait" initial={false}>
                     <motion.h2
                         key={activeIndex}
-                        className="flex text-center text-[24px] md:text-[48px] lg:text-[58px] xl:text-[72px] font-extrabold tracking-tight font-playfair text-[#AF9661]"
+                        className="flex text-center text-[24px] md:text-[38px] lg:text-[48px] xl:text-[68px] font-extrabold tracking-tight font-playfair text-[#AF9661] mb-4 md:mb-6 lg:mb-8 xl:mb-10"
                         initial={{ opacity: 0, x: direction === "right" ? 50 : -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: direction === "right" ? -50 : 50 }}
@@ -61,19 +66,19 @@ export default function Skills() {
                     </motion.h2>
                 </AnimatePresence>
 
-                <div className="relative w-full mt-4 md:mt-6 lg:mt-8 xl:mt-10">
+                <div className="relative w-full">
 
-                    <div className="md:flex items-center justify-between w-full">
+                    <div className="md:flex items-center justify-between w-full ">
                         <motion.button
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={handlePrev}
-                            className="hidden md:block z-10 text-[#AF9661] hover:text-[#d0b97b] cursor-pointer px-6"
+                            className="hidden md:block z-10 text-[#AF9661] hover:text-[#d0b97b] cursor-pointer pl-0 lg:pl-4"
                         >
                             <ChevronLeft size={48} />
                         </motion.button>
 
-                        <div className="relative flex-1 max-w-5xl ">
+                        <div className="relative flex-1 ">
                             <AnimatePresence mode="wait" initial={false}>
                                 <motion.div
                                     key={activeIndex}
@@ -112,7 +117,7 @@ export default function Skills() {
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={handleNext}
-                            className="hidden md:block z-10 text-[#AF9661] hover:text-[#d0b97b] cursor-pointer px-6"
+                            className="hidden md:block z-10 text-[#AF9661] hover:text-[#d0b97b] cursor-pointer pr-0 lg:pr-4"
                         >
                             <ChevronRight size={48} />
                         </motion.button>
@@ -152,30 +157,7 @@ export default function Skills() {
                 </div>
             </div>
 
-            {techStack && techStack.length > 0 && (
-                <div className="absolute bottom-6 left-0 w-full z-0 overflow-hidden">
-                    <motion.div
-                        className="flex gap-0 md:gap-2 lg:gap-4 xl:gap-8 w-max mx-auto opacity-30 blur-[2.5px]"
-                        animate={{ x: ["0%", "-50%"] }}
-                        transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-                    >
-                        {[...techStack, ...techStack].map((tech, idx) => (
-                            <div
-                                key={`${tech.name}-${idx}`}
-                                className="flex flex-col items-center justify-center min-w-[50px]"
-                            >
-                                <Image
-                                    src={tech.icon}
-                                    alt={tech.name}
-                                    width={32}
-                                    height={32}
-                                    className="object-contain"
-                                />
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            )}
+            <TechStack techStack={techStack} />
 
             <footer className="mt-2 text-center text-[12px] lg:text-[14px] text-gray-400 relative z-10">
                 © {new Date().getFullYear()} Giselle Vargas.

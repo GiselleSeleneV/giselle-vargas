@@ -6,6 +6,7 @@ type Refs = {
     welcomeRef: RefObject<HTMLDivElement | null>;
     aboutMeRef: RefObject<HTMLDivElement | null>;
     experienceRef: RefObject<HTMLDivElement | null>;
+    projectsRef: RefObject<HTMLDivElement | null>;
     skillsRef: RefObject<HTMLDivElement | null>;
 };
 
@@ -17,6 +18,7 @@ export const useSectionRefs = create<SectionRefs>((set) => ({
     welcomeRef: undefined,
     aboutMeRef: undefined,
     experienceRef: undefined,
+    projectsRef: undefined,
     skillsRef: undefined,
     setRefs: (refs) => set(refs),
 }));

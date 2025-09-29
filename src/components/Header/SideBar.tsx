@@ -48,7 +48,7 @@ const SideBar = () => {
                 }}
             >
                 <div className="h-full w-full p-4 flex items-center justify-center bg-[#0F172A]">
-                    <div className="w-full h-full bg-white/5 border border-white/10 shadow-lg rounded-2xl p-6 flex flex-col justify-between">
+                    <div className="w-full h-full  bg-white/5 border border-white/10 shadow-lg backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <div className="flex items-center justify-between mb-8">
                                 <p className="text-[20px] text-[#AF9661] font-bold uppercase tracking-widest">

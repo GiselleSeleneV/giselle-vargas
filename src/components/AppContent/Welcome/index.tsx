@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import { useSectionRefs } from '@/store/useSectionsRefs';
 import { ChevronDown } from "lucide-react";
+import { CodeIcon } from "@/components/Icons";
 
 const generateParticles = (count: number) =>
 
@@ -68,13 +69,16 @@ export default function Welcome() {
                 transition={{ duration: 1, delay: 0.8 }}
             >
                 <h2 className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[65px] font-bold text-center text-[#AF9661] relative group mb-20">
-                    <span className="text-[#ededed] mr-1 md:mr-2 lg:mr-4 xl:mr-4">{t("home.I_am")}</span>Giselle Vargas
+                    <span className="text-[rgb(237,237,237)] mr-1 md:mr-2 lg:mr-4 xl:mr-4">{t("home.I_am")}</span>Giselle Vargas
                     <motion.span
-                        className="block text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
+                        className="flex justify-center text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1.2 }}
                     >
+                        <div className="flex items-center mr-1 lg:mr-2">
+                            <CodeIcon />
+                        </div>
                         {t("home.position")}
                     </motion.span>
                 </h2>

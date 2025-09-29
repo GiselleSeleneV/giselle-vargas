@@ -3,8 +3,9 @@
     "menu": "Menú",
     "home": "Inicio",
     "about": "Sobre mí",
-    "skills": "Habilidades",
     "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
     "language": {
       "english": "Inglés",
       "spanish": "Español"
@@ -205,6 +206,69 @@
         }
       ]
     }
+  },
+  "projects":{
+    "title": "Proyectos",
+    "buttonText": "Visitar",
+    "data": [
+      {
+        "title": "Heroes app",
+        "description": "Aplicación web de héroes para buscar personajes, ver su información detallada, estadísticas de poder, imágenes,  agregarlos a favoritos, etc.",
+        "techStack": [
+         { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
+         { "name": "React", "icon": "/icons/react-icon.svg.png" },
+         { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
+         { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
+         { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
+         { "name": "SweetAlert2", "icon": "/icons/SweetAlert2.svg" },
+         { "name": "Emotion", "icon": "/icons/emotion.svg" },
+         { "name": "Firebase", "icon": "/icons/firebase.svg" },
+         { "name": "Git", "icon": "/icons/git-icon.svg.png" },
+         { "name": "Github", "icon": "/icons/github-icon.svg" },
+         { "name": "Postman", "icon": "/icons/postman-icon.svg" },
+         { "name": "VS Code", "icon": "/icons/visual-studio-icon.svg.png" }
+        ]
+      },
+      {
+        "title": "Aplicación de diario",
+        "description": "Aplicación web tipo diario personal para crear y organizar notas, registrando experiencias diarias de manera visual y segura.",
+        "link": "",
+        "techStack": [
+          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
+          { "name": "React", "icon": "/icons/react-icon.svg.png" },
+          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
+          { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
+          { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
+          { "name": "SweetAlert2", "icon": "/icons/SweetAlert2.svg" },
+          { "name": "Emotion", "icon": "/icons/emotion.svg" },
+          { "name": "Firebase", "icon": "/icons/firebase.svg" },
+          { "name": "Git", "icon": "/icons/git-icon.svg.png" },
+          { "name": "Github", "icon": "/icons/github-icon.svg" },
+          { "name": "Postman", "icon": "/icons/postman-icon.svg" },
+          { "name": "VS Code", "icon": "/icons/visual-studio-icon.svg.png" }
+        ]
+      },
+      {
+        "title": "Aplicación de calendario",
+        "description": "Aplicación web para crear y compartir eventos en vistas grupales por mes, semana, día y agenda.",
+        "link": "https://calendar-back-henna.vercel.app",
+        "techStack": [
+          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
+          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
+          { "name": "React", "icon": "/icons/react-icon.svg.png" },
+          { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
+          { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
+          { "name": "CSS3", "icon": "/icons/CSS3-logo.svg" },
+          { "name": "Axios", "icon": "/icons/Axios.svg" },
+          { "name": "Redux-toolkit", "icon": "/icons/redux-toolkit.svg" },
+          { "name": "SweetAlert2", "icon": "/icons/SweetAlert2.svg" },
+          { "name": "Git", "icon": "/icons/git-icon.svg.png" },
+          { "name": "Github", "icon": "/icons/github-icon.svg" },
+          { "name": "Postman", "icon": "/icons/postman-icon.svg" },
+          { "name": "VS Code", "icon": "/icons/visual-studio-icon.svg.png" }
+        ]
+      }
+    ]
   },
   "skills": [
     {

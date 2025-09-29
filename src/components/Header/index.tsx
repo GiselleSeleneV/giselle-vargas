@@ -13,9 +13,9 @@ export default function HeaderClient() {
     const { t, i18n } = useTranslation();
     const { changeLanguage } = useLanguageStore();
     const { activeIndex } = useActiveComponent();
-    const { welcomeRef, aboutMeRef, experienceRef, skillsRef } = useSectionRefs();
+    const { welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef } = useSectionRefs();
 
-    const sectionRefs = [welcomeRef, aboutMeRef, experienceRef, skillsRef];
+    const sectionRefs = [welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef];
 
     const languages = [
         { code: 'en' as const, label: t('header.language.english') },

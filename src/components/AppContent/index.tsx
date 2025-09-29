@@ -4,26 +4,29 @@ import { useTranslation } from "react-i18next";
 import Welcome from "./Welcome";
 import AboutMe from "@/components/AppContent/AboutMe";
 import Experiences from "./Experience";
+import Projects from "./Projects";
 import Skills from "./Skills";
 import { motion } from "framer-motion";
 import { useActiveComponent } from "@/store/useActiveComponent";
 import { useSectionRefs } from "@/store/useSectionsRefs";
 import { WorkExperience } from "@/types/experience";
+import { ProjectsType } from "@/types/projects";
 
 export default function AppContent() {
     const { t } = useTranslation();
 
-    const sections = ["Welcome", "AboutMe", "Experience", "Skills"];
+    const sections = ["Welcome", "AboutMe", "Experience", "Projects", "Skills"];
     const { activeIndex, setActiveIndex } = useActiveComponent();
-
-    const experienceTalentum = t("experience.company_one", { returnObjects: true }) as WorkExperience;
-    const experienceDeft = t("experience.company_two", { returnObjects: true }) as WorkExperience;
 
     const welcomeRef = useRef<HTMLDivElement>(null);
     const aboutMeRef = useRef<HTMLDivElement>(null);
     const experienceRef = useRef<HTMLDivElement>(null);
+    const projectsRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
 
+    const experienceTalentum = t("experience.company_one", { returnObjects: true }) as WorkExperience;
+    const experienceDeft = t("experience.company_two", { returnObjects: true }) as WorkExperience;
+    const projectsData = t("projects.data", { returnObjects: true }) as ProjectsType[];
     const sectionRefs = useSectionRefs();
 
     useEffect(() => {
@@ -31,7 +34,8 @@ export default function AppContent() {
             welcomeRef,
             aboutMeRef,
             experienceRef,
-            skillsRef,
+            projectsRef,
+            skillsRef
         });
 
         const observer = new IntersectionObserver(
@@ -44,8 +48,10 @@ export default function AppContent() {
                             setActiveIndex(1);
                         } else if (entry.target === experienceRef.current) {
                             setActiveIndex(2);
-                        } else if (entry.target === skillsRef.current) {
+                        } else if (entry.target === projectsRef.current) {
                             setActiveIndex(3);
+                        } else if (entry.target === skillsRef.current) {
+                            setActiveIndex(4);
                         }
                     }
                 });
@@ -56,13 +62,14 @@ export default function AppContent() {
         if (welcomeRef.current) observer.observe(welcomeRef.current);
         if (aboutMeRef.current) observer.observe(aboutMeRef.current);
         if (experienceRef.current) observer.observe(experienceRef.current);
+        if (projectsRef.current) observer.observe(projectsRef.current);
         if (skillsRef.current) observer.observe(skillsRef.current);
 
         return () => observer.disconnect();
     }, []);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden  text-white bg-[#0F172A]">
+        <div className="relative h-screen w-full overflow-hidden  text-white">
 
             <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
@@ -80,6 +87,10 @@ export default function AppContent() {
 
                 <section className="scroll-section h-screen flex items-center justify-center snap-start">
                     <Experiences experience={experienceDeft} />
+                </section>
+
+                <section ref={projectsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Projects projectsData={projectsData} />
                 </section>
 
                 <section ref={skillsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
