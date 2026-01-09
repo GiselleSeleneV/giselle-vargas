@@ -83,11 +83,11 @@ export default function AppContent() {
                     <AboutMe />
                 </section>
 
-                <section className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
                     <Experiences experience={experienceAndromeda} />
                 </section>
 
-                <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section className="scroll-section h-screen flex items-center justify-center snap-start">
                     <Experiences experience={experienceTalentum} />
                 </section>
 

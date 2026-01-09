@@ -83,6 +83,16 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 </h4>
                                 <p className="text-[11px] md:text-[12px] lg:text-[14px] text-gray-400 mt-1">
                                     {project.startDate} – {project.endDate}
+                                    {project.startDate} –{" "}
+                                    <span
+                                        className={
+                                            project.endDate === "Present" || project.endDate === "Presente"
+                                                ? "text-[#AF9661]"
+                                                : "text-gray-400"
+                                        }
+                                    >
+                                        {project.endDate}
+                                    </span>
                                 </p>
 
                                 {project.logo && (
