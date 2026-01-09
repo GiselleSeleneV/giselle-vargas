@@ -52,7 +52,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                     src={experience.company_logo}
                                     alt="Logo empresa"
                                     fill
-                                    className="object-contain rounded-lg shadow-md"
+                                    className="object-contain rounded-sm shadow-md"
                                 />
                             </div>
                         )}

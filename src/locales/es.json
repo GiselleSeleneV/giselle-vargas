@@ -36,7 +36,46 @@
     "references": "REFERENCIAS",
     "btn_view_project": "Ver proyecto",
     "btn_close": "Cerrar",
-    "company_one": {
+
+   "company_three": {
+      "company": "ANDROMEDA TECH S.A.S",
+      "company_logo": "/images/andromeda-logo.png",
+      "startDate": "Oct 2025",
+      "endDate": "Present",
+      "city": "Cali, Valle del Cauca",
+      "position": "DESARROLLADORA FRONTEND",
+      "references": [
+        {
+          "name": "Gustavo Adolfo Ramírez Inchima",
+          "number": "+57 317 3107206",
+          "email": "92tavo29@gmail.com"
+        },
+        {
+          "name": "Edwin Alexander Fajardo",
+          "number": "+57 311 2327960",
+          "email": "alexander_suarez1997@hotmail.com"
+        }
+      ],
+      "projects": [
+        {
+          "nameProject": "Nebula",
+          "logo": "/images/nebula/nebula-logo.svg",
+          "startDate": "Oct 2025",
+          "endDate" : "Presente",
+          "role": [
+            "Desarrollo y mantenimiento de la PWA Nebula, asegurando rendimiento, usabilidad y adaptabilidad a múltiples dispositivos.",
+            "Implementación de autenticación y seguridad integrando flujos del backend.",
+            "Consumo e integración de APIs para manejo y visualización de datos del sistema.",
+            "Diseño de interfaces para gestión operativa: creación, asignación y monitoreo de rutas, tareas y actividades.",
+            "Funcionalidades offline/online, geolocalización y sincronización de datos móviles.",
+            "Aplicación de buenas prácticas de desarrollo: modularidad, accesibilidad, rendimiento y seguridad.",
+            "Pruebas funcionales, documentación técnica y seguimiento de integraciones con backend."
+          ],
+           "images": []
+        }
+      ]
+    },
+    "company_two": {
       "company": "Corporación Talentum",
       "company_logo": "/images/coporacion-talentum-logo.png",
       "startDate": "Ago-2023",
@@ -173,7 +212,7 @@
         }
       ]
     },
-    "company_two": {
+    "company_one": {
       "company": "Deft Soluciones Tecnologicas",
       "company_logo": "/images/deft-logo.jpg",
       "startDate": "Ago 2023",

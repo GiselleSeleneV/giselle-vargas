@@ -82,7 +82,7 @@ export default function Modal({
                                     alt="Logo del proyecto"
                                     width={80}
                                     height={80}
-                                    className={`object-contain ${className} rounded-xl shadow-md`}
+                                    className={`object-contain ${className} shadow-md`}
                                 />
                             )}
                         </div>

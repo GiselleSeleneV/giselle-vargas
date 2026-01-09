@@ -24,8 +24,10 @@ export default function AppContent() {
     const projectsRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
 
-    const experienceTalentum = t("experience.company_one", { returnObjects: true }) as WorkExperience;
-    const experienceDeft = t("experience.company_two", { returnObjects: true }) as WorkExperience;
+
+    const experienceAndromeda = t("experience.company_three", { returnObjects: true }) as WorkExperience;
+    const experienceTalentum = t("experience.company_two", { returnObjects: true }) as WorkExperience;
+    const experienceDeft = t("experience.company_one", { returnObjects: true }) as WorkExperience;
     const projectsData = t("projects.data", { returnObjects: true }) as ProjectsType[];
     const sectionRefs = useSectionRefs();
 
@@ -79,6 +81,10 @@ export default function AppContent() {
 
                 <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
                     <AboutMe />
+                </section>
+
+                <section className="scroll-section h-screen flex items-center justify-center snap-start">
+                    <Experiences experience={experienceAndromeda} />
                 </section>
 
                 <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
