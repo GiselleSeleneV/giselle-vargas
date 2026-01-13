@@ -1,5 +1,5 @@
 export const techStack = [
-    { name: "React", icon: "/icons/react-icon.svg.png" },
+    { name: "React", icon: "/icons/react-icon-temp.svg.png" },
     { name: "TypeScript", icon: "/icons/typescript-icon.svg.png" },
     { name: "Tailwind", icon: "/icons/tailwind-CSS-icon.svg.png" },
     { name: "Framer Motion", icon: "/icons/framer-motion-icon.svg" },

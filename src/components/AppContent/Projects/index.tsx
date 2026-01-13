@@ -10,8 +10,6 @@ type ProjectsProps = {
     projectsData: ProjectsType[];
 };
 
-
-
 export default function Projects({ projectsData }: ProjectsProps) {
 
     const { t } = useTranslation();
@@ -75,7 +73,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
 
                             <div className="flex flex-col">
                                 <div>
-                                    <TechStack techStack={project.techStack} />
+                                    <TechStack techStack={project?.techStack} />
                                 </div>
                                 {project.link ? (
                                     <a

@@ -255,7 +255,7 @@
         "description": "Aplicación web de héroes para buscar personajes, ver su información detallada, estadísticas de poder, imágenes,  agregarlos a favoritos, etc.",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
-         { "name": "React", "icon": "/icons/react-icon.svg.png" },
+         { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
          { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
          { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
