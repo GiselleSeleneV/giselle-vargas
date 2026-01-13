@@ -3,6 +3,7 @@
 import TechStack from "@/components/TechStack/TechStack";
 import { ProjectsType } from "@/types/projects";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 type ProjectsProps = {
@@ -49,13 +50,24 @@ export default function Projects({ projectsData }: ProjectsProps) {
                         className="relative bg-white/5 border border-white/10 backdrop-blur-md shadow-lg rounded-2xl  flex justify-between transition-all px-3 py-2 md:px-4 md:py-4 hover:shadow-[#AF9661]/30 hover:scale-[1.03]"
                     >
                         <div className="flex flex-col w-full lg:w-[66%] justify-between">
+
                             {/* Título */}
-                            <h3 className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-bold text-white mb-2">
-                                {project.title}
-                            </h3>
+                            <div className="flex items-center gap-2">
+                                <Image
+                                    src="/images/photo-projects.png"
+                                    alt="Photo caricatura"
+                                    width={26}
+                                    height={26}
+                                    className="rounded-[6px] lg:hidden"
+                                />
+
+                                <h3 className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-bold text-white">
+                                    {project.title}
+                                </h3>
+                            </div>
 
                             {/* Descripción */}
-                            <p className="text-gray-300 text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-justify mb-4">
+                            <p className="text-gray-300 text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-justify mb-4 mt-2">
                                 {project.description}
                             </p>
 

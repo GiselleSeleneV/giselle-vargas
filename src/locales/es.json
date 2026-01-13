@@ -251,7 +251,7 @@
     "buttonText": "Visitar",
     "data": [
       {
-        "title": "Heroes app",
+        "title": "Aplicación de heroes",
         "description": "Aplicación web de héroes para buscar personajes, ver su información detallada, estadísticas de poder, imágenes,  agregarlos a favoritos, etc.",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },

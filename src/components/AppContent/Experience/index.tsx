@@ -97,7 +97,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
 
                                 {project.logo && (
                                     <div
-                                        className={`absolute right-2 top-1/2 transform -translate-y-1/2 opacity-40 group-hover:opacity-100 transition-opacity ${project.logo === "/images/projects/SIGP/logo.jpeg"
+                                        className={`absolute right-2 top-1/2 transform -translate-y-1/2  lg:opacity-40 lg:group-hover:opacity-100 lg:transition-opacity ${project.logo === "/images/projects/SIGP/logo.jpeg"
                                             ? "w-[90px] h-[90px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px]"
                                             : "w-[45px] h-[45px] lg:w-[70px] lg:h-[70px] xl:w-[90px] xl:h-[90px]"
                                             }`}
