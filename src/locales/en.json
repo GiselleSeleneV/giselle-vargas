@@ -254,7 +254,7 @@
         "description": "Web application for searching heroes, viewing detailed information, power statistics, images, adding them to favorites, etc.",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
-         { "name": "React", "icon": "/icons/react-icon.svg.png" },
+         { "name": "React", "icon": "/icons/react-icon.svg.png"},
          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
          { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
          { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },

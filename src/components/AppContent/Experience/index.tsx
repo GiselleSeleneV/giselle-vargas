@@ -81,9 +81,9 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 <h4 className="text-white text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold group-hover:text-[#AF9661] transition-colors">
                                     {project.nameProject}
                                 </h4>
-                                <p className="text-[11px] md:text-[12px] lg:text-[14px] text-gray-400 mt-1">
-                                    {project.startDate} – {project.endDate}
-                                    {project.startDate} –{" "}
+                                <p className="flex text-[11px] md:text-[12px] lg:text-[14px] text-gray-400 mt-1">
+                                    {project.startDate}
+                                    <span className="mx-1">-</span>
                                     <span
                                         className={
                                             project.endDate === "Present" || project.endDate === "Presente"
