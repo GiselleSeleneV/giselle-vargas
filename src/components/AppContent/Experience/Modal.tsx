@@ -70,10 +70,10 @@ export default function Modal({
                             <CloseIcon color="#AF9661" />
                         </motion.button>
 
-                        <div className="flex flex-col md:flex-row items-center justify-between border-b border-[#AF9661]/30 pb-2">
-                            <div>
+                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full border-b border-[#AF9661]/30 pb-2 gap-2">
+                            <div className="w-full lg:w-auto text-center lg:text-start">
                                 <h2 className="text-[16px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-[#AF9661]">{selectedProject}</h2>
-                                <p className="text-[12px] lg:text-[14px] text-white text-center md:text-start mt-1">{t('experience.responsibilities_performed')}</p>
+                                <p className="hidden lg:block text-[12px] lg:text-[14px] text-white mt-1">{t('experience.responsibilities_performed')}</p>
                             </div>
 
                             {projectLogo && (
@@ -82,9 +82,13 @@ export default function Modal({
                                     alt="Logo del proyecto"
                                     width={80}
                                     height={80}
-                                    className={`object-contain ${className} shadow-md`}
+                                    className={`object-contain ${className} shadow-md mx-auto lg:mx-0`}
                                 />
                             )}
+
+                            <p className="lg:hidden w-full text-left text-[12px] text-white self-start">
+                                {t('experience.responsibilities_performed')}
+                            </p>
                         </div>
 
                         <div className="overflow-auto">
@@ -166,7 +170,10 @@ export default function Modal({
                                 <CloseIcon color="#AF9661" />
                             </motion.button>
                         </div>
-                        <CarouselImages selectedProjectImages={selectedProjectImages} />
+                        <CarouselImages
+                            selectedProjectImages={selectedProjectImages}
+                            projectName={selectedProject}
+                        />
                     </motion.div>
                 )
             }

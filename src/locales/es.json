@@ -36,12 +36,15 @@
     "references": "REFERENCIAS",
     "btn_view_project": "Ver proyecto",
     "btn_close": "Cerrar",
+    "rotate_device_title": "Gira tu dispositivo",
+    "rotate_device_description": "Para una mejor visualización de las  imágenes, coloca tu celular en modo horizontal.",
+    "rotate_device_hint": "Modo horizontal",
 
    "company_three": {
       "company": "ANDROMEDA TECH S.A.S",
       "company_logo": "/images/andromeda-logo.png",
       "startDate": "Oct 2025",
-      "endDate": "Present",
+      "endDate": "Mar 2026",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
       "references": [
@@ -61,7 +64,7 @@
           "nameProject": "Nebula",
           "logo": "/images/nebula/nebula-logo.svg",
           "startDate": "Oct 2025",
-          "endDate" : "Presente",
+          "endDate" : "Mar 2026",
           "role": [
             "Desarrollo y mantenimiento de la PWA Nebula, asegurando rendimiento, usabilidad y adaptabilidad a múltiples dispositivos.",
             "Implementación de autenticación y seguridad integrando flujos del backend.",
@@ -71,7 +74,25 @@
             "Aplicación de buenas prácticas de desarrollo: modularidad, accesibilidad, rendimiento y seguridad.",
             "Pruebas funcionales, documentación técnica y seguimiento de integraciones con backend."
           ],
-           "images": []
+          "images": [
+            "/images/projects/nebula/Block-session-from-the-browser.jpeg",
+            "/images/projects/nebula/login.jpeg",
+            "/images/projects/nebula/home.jpeg",
+            "/images/projects/nebula/routes.jpeg",
+            "/images/projects/nebula/calendar.jpeg",
+            "/images/projects/nebula/add-route.jpeg",
+            "/images/projects/nebula/route-home.jpeg",
+            "/images/projects/nebula/visit-verification.jpeg",
+            "/images/projects/nebula/ok-verification.jpeg",
+            "/images/projects/nebula/forms.jpeg",
+            "/images/projects/nebula/finished-store.jpeg",
+            "/images/projects/nebula/update-form.jpeg",
+            "/images/projects/nebula/offline-functionality.jpeg",
+            "/images/projects/nebula/synchronization-when-having-internet.jpeg",
+            "/images/projects/nebula/Synchronization-complete.jpeg",
+            "/images/projects/nebula/profile.jpeg",
+            "/images/projects/nebula/change-password.jpeg"
+          ]
         }
       ]
     },

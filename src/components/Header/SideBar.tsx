@@ -14,18 +14,16 @@ const SideBar = () => {
     const [open, setOpen] = useState(false);
     const { t } = useTranslation();
     const { activeIndex } = useActiveComponent();
-    const { welcomeRef, aboutMeRef, experienceRef, skillsRef } = useSectionRefs();
+    const { welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef } = useSectionRefs();
 
     const scrollToSection = (index: number) => {
-        const refs = [welcomeRef, aboutMeRef, experienceRef, skillsRef];
+        const refs = [welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef];
         const ref = refs[index];
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
         setOpen(false);
     };
-
-
 
     return (
         <>
