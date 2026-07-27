@@ -18,7 +18,7 @@ export default function Contact() {
     return (
         <motion.div
             ref={ref}
-            className="mt-2 lg:mt-6 xl:mt-10 grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6 max-w-6xl w-full"
+            className="mt-2 lg:mt-4 xl:mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6 w-full max-w-[min(94vw,1600px)]"
             initial="hidden"
             animate={controls}
             variants={{

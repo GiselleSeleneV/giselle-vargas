@@ -52,7 +52,7 @@ export default function Skills() {
             viewport={{ once: true }}
             className="relative w-full min-h-screen overflow-hidden px-6 py-8 flex flex-col justify-between"
         >
-            <div className="w-full lg:max-w-7xl mx-auto flex flex-col items-center justify-center flex-grow">
+            <div className="w-full lg:max-w-[min(94vw,1600px)] mx-auto flex flex-col items-center justify-center flex-grow">
                 <AnimatePresence mode="wait" initial={false}>
                     <motion.h2
                         key={activeIndex}

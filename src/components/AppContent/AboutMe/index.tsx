@@ -22,10 +22,10 @@ export default function AboutMe() {
     }, [isInView, controls]);
 
     return (
-        <section className="w-full min-h-screen px-6 lg:px-16 py-10 flex flex-col items-center justify-center">
+        <section className="w-full px-6 lg:px-8 flex flex-col items-center">
             <motion.div
                 ref={ref}
-                className="relative max-w-6xl w-full rounded-xl bg-white/5 border border-white/10 shadow-lg  p-4 lg:p-8 xl:p-16 flex flex-col lg:flex-row items-center gap-4 lg:gap-8 xl:gap-12"
+                className="relative w-full max-w-[min(94vw,1600px)] rounded-xl bg-white/5 border border-white/10 shadow-lg  p-4 lg:p-8 xl:p-16 flex flex-col lg:flex-row items-center gap-4 lg:gap-8 xl:gap-12"
                 initial="hidden"
                 animate={controls}
                 variants={{
@@ -42,7 +42,7 @@ export default function AboutMe() {
                 }}
             >
                 <motion.div
-                    className="relative w-[140px] h-[130px] md:w-[220px] md:h-[200px] lg:w-[240px] lg:h-[320px] xl:w-[300px] xl:h-[380px] rounded-3xl overflow-hidden border-1 lg:border-2 border-[#AF9661] shadow-[0_10px_40px_rgba(175,150,97,0.3)] hover:scale-105 transition-transform duration-500 group"
+                    className="relative shrink-0 w-[140px] h-[130px] md:w-[220px] md:h-[200px] lg:w-[240px] lg:h-[320px] xl:w-[300px] xl:h-[380px] rounded-3xl overflow-hidden border-1 lg:border-2 border-[#AF9661] shadow-[0_10px_40px_rgba(175,150,97,0.3)] hover:scale-105 transition-transform duration-500 group"
                     whileHover={{ rotate: 2 }}
                 >
                     <Image
@@ -60,18 +60,20 @@ export default function AboutMe() {
                     />
                 </motion.div>
 
-                <div className="w-full lg:max-w-xl text-white flex flex-col gap-2 lg:gap-5">
+                <div className="w-full flex-1 min-w-0 flex flex-col text-white gap-2 lg:gap-5">
                     <h2 className="text-[#AF9661] text-[12px] lg:text-[14px] font-medium uppercase tracking-widest">
                         {title}
                     </h2>
 
-                    <h1 className="text-[16px] md:text-[28px] lg:text-[38px] xl:text-[48px] font-bold leading-tight">
-                        Giselle Vargas
-                    </h1>
+                    <div className="flex flex-col gap-3">
+                      <h1 className="text-[16px] md:text-[28px] lg:text-[38px] xl:text-[48px] font-bold leading-tight">
+                         Giselle Vargas
+                      </h1>
 
-                    <p className="text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] md:text-lg text-gray-300 leading-relaxed text-justify">
-                        {t("about_me.description")}
-                    </p>
+                      <p className="text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] md:text-lg text-gray-300 leading-relaxed text-justify">
+                         {t("about_me.description")}
+                      </p>
+                    </div>
 
                     <div className="mt-2 lg:mt-4 flex flex-wrap items-center gap-3">
                         <motion.a

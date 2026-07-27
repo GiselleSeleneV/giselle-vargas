@@ -28,8 +28,8 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
         projectLogo,
     };
     return (
-        <section className="relative w-full lg:max-w-7xl min-h-screen px-6 lg:px-14 overflow-y-auto snap-start">
-            <div className="w-full h-[100vh] flex flex-col items-center">
+        <section className="relative w-full lg:max-w-[min(94vw,1600px)] px-6 lg:px-8 min-h-screen snap-start overflow-visible">
+            <div className="w-full min-h-[100vh] flex flex-col items-center">
                 <div className="absolute top-0 left-1/2 w-[0.5px] h-full bg-[#AF9661]/40 rounded-full transform -translate-x-1/2 z-0" />
 
                 <div className="w-full flex flex-col items-center z-10">
@@ -68,7 +68,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`relative group p-2 lg:p-4 xl:p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-[1.03] cursor-pointer hover:shadow-[#AF9661]/30 hover:scale-105 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
+                                className={`relative group p-2 lg:p-4 xl:p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-[1.03] cursor-pointer hover:shadow-[#AF9661]/30 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
                                     }`}
                                 onClick={() => {
                                     setSelectedProject(project.nameProject);

@@ -51,7 +51,7 @@ export default function Welcome() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
             >
-                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[85px] xl:text-[100px] font-extrabold drop-shadow-[0_0_12px_#AF9661] text-white">
+                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[95px] xl:text-[120px] font-extrabold drop-shadow-[0_0_12px_#AF9661] text-white">
                     {t("home.greetings")}
                     <motion.span
                         className="absolute top-0 left-0 w-full h-full text-[#AF9661]"
@@ -68,10 +68,10 @@ export default function Welcome() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
             >
-                <h2 className="text-[26px] md:text-[30px] lg:text-[50px] xl:text-[65px] font-bold text-center text-[#AF9661] relative group mb-20">
+                <h2 className="text-[26px] md:text-[30px] lg:text-[56px] xl:text-[76px] font-bold text-center text-[#AF9661] relative group mb-20">
                     <span className="text-[rgb(237,237,237)] mr-1 md:mr-2 lg:mr-4 xl:mr-4">{t("home.I_am")}</span>Giselle Vargas
                     <motion.span
-                        className="flex justify-center text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
+                        className="flex justify-center text-[16px] md:text-[18px] lg:text-[28px] xl:text-[34px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1.2 }}
@@ -96,7 +96,7 @@ export default function Welcome() {
                 >
                     <ChevronDown
                         onClick={() => scrollToSection(1)}
-                        className="w-14 h-14 lg:w-16 lg:h-16 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110"
+                        className="w-14 h-14 lg:w-[4.5rem] lg:h-[4.5rem] xl:w-20 xl:h-20 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110"
                     />
                 </motion.div>
             </motion.div>

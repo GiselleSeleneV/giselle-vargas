@@ -21,7 +21,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className=" flex-1 w-full lg:max-w-7xl px-6 lg:px-14"
+            className="flex-1 w-full lg:max-w-[min(94vw,1600px)] px-6 lg:px-8"
         >
             <motion.div
                 initial={{ opacity: 0, y: 40 }}

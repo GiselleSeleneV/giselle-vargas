@@ -79,7 +79,7 @@ export default function AppContent() {
                     <Welcome />
                 </section>
 
-                <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center pt-10 lg:pt-12 snap-start ">
                     <AboutMe />
                 </section>
 
@@ -104,11 +104,11 @@ export default function AppContent() {
                 </section>
             </div>
 
-            <div className="hidden lg:flex absolute right-2 md:right-10 lg:right-8 xl:right-8 top-1/2 transform -translate-y-1/2  flex-col gap-4">
+            <div className="hidden lg:flex absolute right-2 md:right-4 lg:right-4 xl:right-5 top-1/2 transform -translate-y-1/2  flex-col gap-4">
                 {sections.map((item, index) => (
                     <motion.div
                         key={`${item}-${index}`}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"}`}
+                        className={`w-2 h-2 md:w-2 md:h-2 lg:w-2 lg:h-2 xl:w-3 xl:h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"}`}
                     />
                 ))}
             </div>
