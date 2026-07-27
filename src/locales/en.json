@@ -4,7 +4,7 @@
     "home": "Home",
     "about": "About Me",
     "experience": "Experience",
-    "projects": "Projects",
+    "projects": "Own projects",
     "skills": "Skills",
     "language": {
       "english": "English",
@@ -32,7 +32,7 @@
 
   "experience": {
     "title": "PROFESSIONAL EXPERIENCE",
-    "projects": "Projects",
+    "projects": "Own projects",
     "responsibilities_performed": "RESPONSIBILITIES PERFORMED",
      "references": "REFERENCES",
     "btn_view_project": "View project",
@@ -261,7 +261,7 @@
     }
   },
   "projects":{
-    "title": "Projects",
+    "title": "Own projects",
     "buttonText": "Visit",
     "data": [
       {
