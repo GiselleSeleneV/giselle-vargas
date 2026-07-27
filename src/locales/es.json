@@ -26,7 +26,8 @@
   "about_me": {
     "about_me": "SOBRE MÍ",
     "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante.",
-    "btn_download": "Descargar CV"
+    "btn_download": "CV",
+    "btn_certifications": "Certificados"
   },
 
   "experience": {
@@ -61,38 +62,23 @@
       ],
       "projects": [
         {
-          "nameProject": "Nebula",
-          "logo": "/images/nebula/nebula-logo.svg",
+          "nameProject": "Andromeda",
+          "logo": "/images/andromeda-logo.png",
           "startDate": "Oct 2025",
           "endDate" : "Mar 2026",
           "role": [
-            "Desarrollo y mantenimiento de la PWA Nebula, asegurando rendimiento, usabilidad y adaptabilidad a múltiples dispositivos.",
-            "Implementación de autenticación y seguridad integrando flujos del backend.",
-            "Consumo e integración de APIs para manejo y visualización de datos del sistema.",
-            "Diseño de interfaces para gestión operativa: creación, asignación y monitoreo de rutas, tareas y actividades.",
-            "Funcionalidades offline/online, geolocalización y sincronización de datos móviles.",
-            "Aplicación de buenas prácticas de desarrollo: modularidad, accesibilidad, rendimiento y seguridad.",
+            "Desarrollo y mantenimiento de la aplicación para gestión operativa en campo, enfocada en rendimiento, usabilidad y adaptabilidad móvil.",
+            "Implementación de autenticación, manejo de sesión e integración segura con servicios backend.",
+            "Consumo e integración de APIs para consulta, registro y sincronización de información operativa.",
+            "Diseño e implementación de interfaces para gestión de rutas, actividades, visitas y novedades.",
+            "Desarrollo de funcionalidades offline-first, con persistencia local, sincronización diferida y recuperación de datos al restablecer conectividad.",
+            "Implementación de formularios dinámicos con validaciones condicionales, guardado de progreso y envío online/offline.",
+            "Integración de geolocalización, NFC y captura de evidencias fotográficas para validación de visitas en campo.",
+            "Integración de notificaciones push y flujos PWA con Service Worker.",
+            "Aplicación de buenas prácticas de modularidad, mantenibilidad, rendimiento y calidad de interfaz.",
             "Pruebas funcionales, documentación técnica y seguimiento de integraciones con backend."
           ],
-          "images": [
-            "/images/projects/nebula/Block-session-from-the-browser.jpeg",
-            "/images/projects/nebula/login.jpeg",
-            "/images/projects/nebula/home.jpeg",
-            "/images/projects/nebula/routes.jpeg",
-            "/images/projects/nebula/calendar.jpeg",
-            "/images/projects/nebula/add-route.jpeg",
-            "/images/projects/nebula/route-home.jpeg",
-            "/images/projects/nebula/visit-verification.jpeg",
-            "/images/projects/nebula/ok-verification.jpeg",
-            "/images/projects/nebula/forms.jpeg",
-            "/images/projects/nebula/finished-store.jpeg",
-            "/images/projects/nebula/update-form.jpeg",
-            "/images/projects/nebula/offline-functionality.jpeg",
-            "/images/projects/nebula/synchronization-when-having-internet.jpeg",
-            "/images/projects/nebula/Synchronization-complete.jpeg",
-            "/images/projects/nebula/profile.jpeg",
-            "/images/projects/nebula/change-password.jpeg"
-          ]
+          "images": []
         }
       ]
     },
@@ -139,11 +125,14 @@
           "startDate": "Jul 2024",
           "endDate" : "Dic 2024",
           "role" : [
-            "Desarrollo de interfaces responsivas y accesibles.",
             "Desarrollo de componentes reutilizables y escalables.",
-            "Optimización del rendimiento y la experiencia del usuario.",
             "Integración de APIs mediante GraphQL y optimización del rendimiento.",
-            "Elaboración de la documentación oficial del proyecto, detallando procesos y guías de uso técnico para el equipo y los usuarios."
+            "Implementación de más de 20 tipos de actividades interactivas (quiz, H5P, drag-and-drop, infografías, flip cards) en una plataforma educativa STEAM.",
+            "Desarrollo de flujos completos para estudiantes y docentes: proyectos, aventuras, OVAs (Objeto Virtual de Aprendizaje), conquistas y acompañamiento pedagógico.",
+            "Implementación de autenticación con NextAuth, login dual (contraseña/imagen) y control de acceso por roles.",
+            "Construcción del dashboard de estadísticas con ECharts, filtros avanzados e indicadores de participación y competencias.",
+            "Elaboración de la documentación oficial del proyecto, detallando procesos y guías de uso técnico para el equipo y los usuarios.",
+            "Contenedorización Docker multi-stage y despliegue en GCR para entornos de producción."
           ],
           "images": [
            "/images/projects/quindio/login.png", 
@@ -173,12 +162,14 @@
           "startDate": "Feb 2024",
           "endDate" : "Jul 2024",
           "role": [
-            "Desarrollo de interfaces responsivas y accesibles.",
-            "Integración de servicios REST para el registro y monitoreo de datos académicos.",
-            "Construcción de componentes reutilizables y dinámicos orientados a la visualización de resultados educativos.",
-            "Optimización del rendimiento y la experiencia del usuario.",
-            "Elaboración de la documentación oficial del proyecto, incluyendo manuales técnicos y guías de usuario.",
-            "Preparación y realización de presentaciones funcionales del sistema para los clientes."
+            "Desarrollo de interfaces responsivas y accesibles con React, Next.js y TypeScript para gestión y visualización de datos académicos.",
+            "Diseño de dashboards interactivos y visualizaciones con ECharts (STEAM, habilidades del siglo XXI, rankings y tablas).",
+            "Integración de APIs REST con Axios para autenticación, usuarios e indicadores educativos.",
+            "Gestión de usuarios con control de acceso por roles: creación, edición, habilitación/deshabilitación y perfiles.",
+            "Carga masiva de usuarios con Excel (XLSX) y generación de reportes PDF descargables.",
+            "Construcción de componentes reutilizables con Ant Design y Tailwind CSS; estado global con Zustand.",
+            "Implementación de autenticación JWT y flujos de login, registro y cambio de contraseña.",
+            "Pruebas unitarias con Jest, calidad con SonarQube, y documentación técnica / presentaciones a clientes."
           ],
            "images": [
             "/images/projects/regional/login.png", 
@@ -215,10 +206,12 @@
           "startDate": "Ago 2023",
           "endDate" : "Feb 2024",
           "role" : [
-            "Desarrollo de interfaces dinámicas y responsivas.",
-            "Implementación de flujos de autenticación, registro de usuarios y gestión de contenidos educativos (cartillas,módulos y guías)",
-            "Creación y optimización de componentes reutilizables, asegurando una experiencia de usuario intuitiva y consistente.",
-            "Optimización del rendimiento de la aplicación, asegurando tiempos de carga rápidos y una navegación fluida."
+            "Desarrollo de interfaces dinámicas y responsivas con React, Next.js y TypeScript para una plataforma educativa multirol.",
+            "Implementación de flujos de autenticación, registro y control de acceso por roles con JWT y protección de rutas.",
+            "Integración del frontend con APIs GraphQL mediante Apollo Client, incluyendo consultas, mutaciones y gestión de contenidos educativos (cartillas, módulos y guías).",
+            "Desarrollo de módulos clave como red social educativa (publicaciones, comentarios y likes) y dashboards con visualizaciones interactivas (gráficas y mapas).",
+            "Creación de componentes reutilizables y optimización del rendimiento, asegurando una UX consistente, tiempos de carga rápidos y navegación fluida.",
+            "Gestión del estado global con Zustand y construcción de formularios complejos con react-hook-form (registro, configuración de usuario y modelos educativos)."
           ],
            "images": [
              "/images/projects/peer/login.png",

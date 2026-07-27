@@ -26,7 +26,8 @@
   "about_me": {
     "about_me": "ABOUT ME",
     "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning.",
-     "btn_download": "Download CV"
+    "btn_download": "CV",
+    "btn_certifications": "Certifications"
   },
 
   "experience": {
@@ -61,38 +62,23 @@
       ],
       "projects": [
         {
-          "nameProject": "Nebula",
-          "logo": "/images/nebula/nebula-logo.svg",
+          "nameProject": "Andromeda",
+          "logo": "/images/andromeda-logo.png",
           "startDate": "Oct 2025",
           "endDate" : "Mar 2026",
           "role": [
-            "Development and maintenance of the Nebula PWA, ensuring performance, usability, and adaptability across multiple devices.",
-            "Implementation of authentication and security by integrating backend workflows.",
-            "Consumption and integration of APIs for data management and system visualization.",
-            "Interface design for operational management: creation, assignment, and monitoring of routes, tasks, and activities.",
-            "Offline/online functionality, geolocation, and synchronization of mobile data.",
-            "Application of development best practices: modularity, accessibility, performance, and security.",
+            "Development and maintenance of a field operations management application, with a focus on performance, usability, and mobile adaptability.",
+            "Implementation of authentication, session management, and secure integration with backend services.",
+            "API consumption and integration for querying, registering, and synchronizing operational data.",
+            "Design and implementation of interfaces for managing routes, activities, visits, and incident reports.",
+            "Development of offline-first features, including local persistence, deferred synchronization, and data recovery upon reconnectivity.",
+            "Implementation of dynamic forms with conditional validations, progress saving, and online/offline submission.",
+            "Integration of geolocation, NFC, and photographic evidence capture for field visit validation.",
+            "Integration of push notifications and PWA workflows with Service Workers.",
+            "Application of best practices in modularity, maintainability, performance, and UI quality.",
             "Functional testing, technical documentation, and coordination of backend integrations."
           ],
-          "images": [
-            "/images/projects/nebula/Block-session-from-the-browser.jpeg",
-            "/images/projects/nebula/login.jpeg",
-            "/images/projects/nebula/home.jpeg",
-            "/images/projects/nebula/routes.jpeg",
-            "/images/projects/nebula/calendar.jpeg",
-            "/images/projects/nebula/add-route.jpeg",
-            "/images/projects/nebula/route-home.jpeg",
-            "/images/projects/nebula/visit-verification.jpeg",
-            "/images/projects/nebula/ok-verification.jpeg",
-            "/images/projects/nebula/forms.jpeg",
-            "/images/projects/nebula/finished-store.jpeg",
-            "/images/projects/nebula/update-form.jpeg",
-            "/images/projects/nebula/offline-functionality.jpeg",
-            "/images/projects/nebula/synchronization-when-having-internet.jpeg",
-            "/images/projects/nebula/Synchronization-complete.jpeg",
-            "/images/projects/nebula/profile.jpeg",
-            "/images/projects/nebula/change-password.jpeg"
-          ]
+          "images": []
         }
       ]
     },
@@ -139,10 +125,14 @@
           "startDate": "Jul 2024",
           "endDate" : "Dec 2024",
           "role": [
-            "Development of responsive and accessible user interfaces.",
-            "Creation of reusable and scalable components.",
+            "Development of reusable and scalable components.",
             "API integration using GraphQL and performance optimization.",
-            "Preparation of the project's official documentation, including detailed processes and technical usage guides for both the team and end users."
+            "Implementation of more than 20 interactive activity types (quizzes, H5P, drag-and-drop, infographics, flip cards) within a STEAM educational platform.",
+            "Development of end-to-end workflows for students and teachers: projects, adventures, VLOs (Virtual Learning Objects), achievements, and pedagogical support.",
+            "Implementation of authentication with NextAuth, dual login (password/image), and role-based access control.",
+            "Construction of an analytics dashboard with ECharts, advanced filters, and indicators for engagement and competencies.",
+            "Preparation of the project's official documentation, including detailed processes and technical usage guides for both the team and end users.",
+            "Multi-stage Docker containerization and deployment to GCR for production environments."
           ],
           "images": [
            "/images/projects/quindio/login.png", 
@@ -172,12 +162,14 @@
           "startDate": "Feb 2024",
           "endDate" : "Jul 2024",
           "role": [
-            "Development of responsive and accessible user interfaces.",
-            "Integration of REST services for the registration and monitoring of academic data.",
-            "Construction of reusable and dynamic components focused on visualizing educational outcomes.",
-            "Performance and user experience optimization.",
-            "Creation of the project's official documentation, including technical manuals and user guides.",
-            "Preparation and delivery of functional system presentations for clients."
+            "Development of responsive and accessible interfaces with React, Next.js, and TypeScript for academic data management and visualization.",
+            "Design of interactive dashboards and visualizations with ECharts (STEAM, 21st-century skills, rankings, and tables).",
+            "REST API integration with Axios for authentication, users, and educational indicators.",
+            "User management with role-based access control: creation, editing, enable/disable workflows, and profiles.",
+            "Bulk user upload via Excel (XLSX) and generation of downloadable PDF reports.",
+            "Construction of reusable components with Ant Design and Tailwind CSS; global state management with Zustand.",
+            "Implementation of JWT authentication and login, registration, and password recovery flows.",
+            "Unit testing with Jest, code quality with SonarQube, and technical documentation / client presentations."
           ],
            "images": [
             "/images/projects/regional/login.png", 
@@ -196,10 +188,10 @@
           "startDate": "Mar 2024",
           "endDate" : "Jun 2024",
           "role": [
-            "Identified and resolved design and code issues, while improving existing functionalities in an already developed project.",
-            "Developed responsive and accessible user interfaces, ensuring an optimal user experience across various devices.",
-            "Built reusable and dynamic components focused on visualizing educational data and outcomes.",
-            "Created official project documentation, including technical manuals and user guides for both the team and clients."
+            "Identification and resolution of design and code issues, as well as improvements to existing functionalities within an already developed project.",
+            "Development of responsive and accessible interfaces, ensuring an optimal user experience across multiple devices.",
+            "Construction of reusable and dynamic components focused on the visualization of educational outcomes.",
+            "Preparation of the project's official documentation, including technical manuals and user guides for both the team and clients."
           ],
           "images": [
             "/images/projects/sapere/login.png",
@@ -214,10 +206,12 @@
           "startDate": "Ago 2023",
           "endDate" : "Feb 2024",
           "role": [
-            "Developed dynamic and responsive user interfaces.",
-            "Implemented authentication flows, user registration, and management of educational content (booklets, modules, and guides).",
-            "Created and optimized reusable components, ensuring an intuitive and consistent user experience.",
-            "Optimized application performance, ensuring fast load times and smooth navigation."
+            "Development of dynamic and responsive interfaces with React, Next.js, and TypeScript for a multi-role educational platform.",
+            "Implementation of authentication, registration, and role-based access control flows with JWT and route protection.",
+            "Frontend integration with GraphQL APIs using Apollo Client, including queries, mutations, and educational content management (booklets, modules, and guides).",
+            "Development of key modules such as an educational social network (posts, comments, and likes) and dashboards with interactive visualizations (charts and maps).",
+            "Creation of reusable components and performance optimization, ensuring a consistent UX, fast load times, and smooth navigation.",
+            "Global state management with Zustand and construction of complex forms with react-hook-form (registration, user settings, and educational models)."
           ],
           "images": [
             "/images/projects/peer/login.png",
@@ -257,9 +251,9 @@
           "startDate": "Jan 2021",
           "endDate" : "Jul 2022",
           "role": [
-          "Facilitated access to 'pico y cédula' information during the pandemic.",
-          "Implemented a dynamic, intuitive, and responsive interface across multiple devices.",
-          "Developed interactive components."
+            "Facilitation of access to 'pico y cédula' information during the pandemic.",
+            "Implementation of a dynamic, intuitive, and responsive interface across multiple devices.",
+            "Development of interactive components."
           ],
           "images": []
         }

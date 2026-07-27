@@ -18,7 +18,7 @@ export const contactData = [
     },
     {
         img: MessageIcon,
-        text: "selenegiss23@gmail.com",
-        href: 'https://mail.google.com/mail/?view=cm&fs=1&to=selenegiss23@gmail.com'
+        text: "selenepersonal23@gmail.com",
+        href: 'https://mail.google.com/mail/?view=cm&fs=1&to=selenepersonal23@gmail.com'
     }
 ];

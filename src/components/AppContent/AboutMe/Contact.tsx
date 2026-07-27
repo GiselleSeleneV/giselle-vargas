@@ -37,10 +37,12 @@ export default function Contact() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 }
                     }}
-                    className="flex flex-col items-center text-center p-1 lg:p-3 xl:p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg hover:shadow-[#AF9661]/30 hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-center justify-center text-center min-w-0 p-1 lg:p-3 xl:p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg hover:shadow-[#AF9661]/30 hover:scale-105 transition-all duration-300"
                 >
                     <item.img color="#AF9661" />
-                    <span className="mt-1 lg:mt-3 text-[11px] lg:text-[14px] text-white">{item.text}</span>
+                    <span className="mt-1 lg:mt-3 w-full text-[10px] sm:text-[11px] lg:text-[14px] text-white break-all leading-tight">
+                        {item.text}
+                    </span>
                 </motion.a>
             ))}
         </motion.div>

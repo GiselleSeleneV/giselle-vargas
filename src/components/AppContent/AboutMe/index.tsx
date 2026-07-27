@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import Contact from "./Contact";
+import { DownloadIcon } from "@/components/Icons";
 
 export default function AboutMe() {
     const { t } = useTranslation();
@@ -72,16 +73,31 @@ export default function AboutMe() {
                         {t("about_me.description")}
                     </p>
 
-                    <motion.a
-                        href="/pdf/CV-giselle-vargas-benitez.pdf"
-                        download
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-2 lg:mt-4 inline-block self-start border border-[#AF9661] px-4 py-1 lg:px-5 lg:py-3 rounded-full text-[#AF9661] text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        {t("about_me.btn_download")}
-                    </motion.a>
+                    <div className="mt-2 lg:mt-4 flex flex-wrap items-center gap-3">
+                        <motion.a
+                            href="/pdf/CV-giselle-vargas-benitez.pdf"
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            {t("about_me.btn_download")}
+                            <DownloadIcon color="#AF9661" />
+                        </motion.a>
+
+                        <motion.a
+                            href="/pdf/certificados-certifications.pdf"
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            {t("about_me.btn_certifications")}
+                            <DownloadIcon color="#AF9661" />
+                        </motion.a>
+                    </div>
                 </div>
             </motion.div>
 
