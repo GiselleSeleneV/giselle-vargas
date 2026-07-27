@@ -288,7 +288,7 @@
         "link": "",
         "techStack": [
           { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
-          { "name": "React", "icon": "/icons/react-icon.svg.png" },
+          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
           { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
           { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
           { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
@@ -308,7 +308,7 @@
         "techStack": [
           { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
           { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
-          { "name": "React", "icon": "/icons/react-icon.svg.png" },
+          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
           { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
           { "name": "HTML5", "icon": "/icons/HTML5-icon.svg.png" },
           { "name": "CSS3", "icon": "/icons/CSS3-logo.svg" },
