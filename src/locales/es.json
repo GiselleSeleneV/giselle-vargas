@@ -265,8 +265,9 @@
     "buttonText": "Visitar",
     "data": [
       {
-        "title": "Aplicación de heroes",
+        "title": "Heroes",
         "description": "Aplicación web de héroes para buscar personajes, ver su información detallada, estadísticas de poder, imágenes,  agregarlos a favoritos, etc.",
+        "link": "https://heroes-app-front.vercel.app",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
@@ -283,7 +284,7 @@
         ]
       },
       {
-        "title": "Aplicación de diario",
+        "title": "Diario",
         "description": "Aplicación web tipo diario personal para crear y organizar notas, registrando experiencias diarias de manera visual y segura.",
         "link": "",
         "techStack": [
@@ -302,7 +303,7 @@
         ]
       },
       {
-        "title": "Aplicación de calendario",
+        "title": "Calendario",
         "description": "Aplicación web para crear y compartir eventos en vistas grupales por mes, semana, día y agenda.",
         "link": "https://calendar-back-henna.vercel.app",
         "techStack": [

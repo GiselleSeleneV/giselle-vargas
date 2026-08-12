@@ -265,8 +265,9 @@
     "buttonText": "Visit",
     "data": [
       {
-        "title": "Heroes app",
+        "title": "Heroes",
         "description": "Web application for searching heroes, viewing detailed information, power statistics, images, adding them to favorites, etc.",
+        "link": "https://heroes-app-front.vercel.app",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "React", "icon": "/icons/react-icon-temp.svg.png"},
@@ -283,7 +284,7 @@
         ]
       },
       {
-        "title": "Journal app",
+        "title": "Journal",
         "description": "Web application personal journal for creating and organizing notes, recording daily experiences in a visual and secure way.",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
@@ -301,7 +302,7 @@
         ]
       },
       {
-        "title": "Calendar app",
+        "title": "Calendar",
         "description": "Web application to create and share events in group views by month, week, day, and agenda.",
         "link": "https://calendar-back-henna.vercel.app",
         "techStack": [
