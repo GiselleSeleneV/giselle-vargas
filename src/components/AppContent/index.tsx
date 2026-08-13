@@ -95,7 +95,7 @@ export default function AppContent() {
                     <Experiences experience={experienceDeft} />
                 </section>
 
-                <section ref={projectsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={projectsRef} className="scroll-section h-screen box-border flex items-center justify-center snap-start pt-14 md:pt-12 lg:pt-14 pb-4 overflow-y-auto md:overflow-visible">
                     <Projects projectsData={projectsData} />
                 </section>
 

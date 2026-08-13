@@ -19,16 +19,17 @@ const generateParticles = (count: number) =>
 const particles = generateParticles(25);
 
 export default function Welcome() {
-    const { welcomeRef, aboutMeRef, experienceRef, skillsRef } = useSectionRefs();
+    const { welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef } = useSectionRefs();
     const { t } = useTranslation();
 
     const scrollToSection = (index: number) => {
-        const refs = [welcomeRef, aboutMeRef, experienceRef, skillsRef];
+        const refs = [welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef];
         const ref = refs[index];
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
     return (
         <div className="flex flex-col w-full items-center justify-center min-h-screen text-[#ededed] text-center overflow-hidden relative">
             {particles.map((particle) => (
@@ -68,7 +69,7 @@ export default function Welcome() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
             >
-                <h2 className="text-[26px] md:text-[30px] lg:text-[56px] xl:text-[76px] font-bold text-center text-[#AF9661] relative group mb-20">
+                <h2 className="text-[26px] md:text-[30px] lg:text-[56px] xl:text-[76px] font-bold text-center text-[#AF9661] relative group mb-6 lg:mb-8">
                     <span className="text-[rgb(237,237,237)] mr-1 md:mr-2 lg:mr-4 xl:mr-4">{t("home.I_am")}</span>Giselle Vargas
                     <motion.span
                         className="flex justify-center text-[16px] md:text-[18px] lg:text-[28px] xl:text-[34px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
@@ -82,10 +83,23 @@ export default function Welcome() {
                         {t("home.position")}
                     </motion.span>
                 </h2>
+
+                <motion.button
+                    type="button"
+                    onClick={() => scrollToSection(3)}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.4 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1.5 lg:px-5 lg:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[14px] font-semibold bg-white/5 backdrop-blur-sm cursor-pointer"
+                >
+                    {t("home.cta_projects")}
+                </motion.button>
             </motion.div>
 
             <motion.div
-                className="absolute bottom-34 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
+                className="absolute bottom-34 md:bottom-10 lg:bottom-10 xl:bottom-10 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1.8 }}

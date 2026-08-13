@@ -16,7 +16,8 @@
     "greetings": "¡Hola! bienvenidos",
     "I_am": "Soy",
     "position": "Desarrolladora frontend",
-    "button": "Explorar"
+    "button": "Explorar",
+    "cta_projects": "Mis proyectos"
   },
 
   "contact": {
@@ -27,7 +28,8 @@
     "about_me": "SOBRE MÍ",
     "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante.",
     "btn_download": "CV",
-    "btn_certifications": "Certificados"
+    "btn_certifications": "Certificados",
+    "btn_projects": "Mis proyectos"
   },
 
   "experience": {
@@ -263,11 +265,14 @@
   "projects":{
     "title": "Proyectos propios",
     "buttonText": "Visitar",
+    "githubText": "Código",
+    "calendar_subtitle": "Organiza tu día con claridad",
     "data": [
       {
-        "title": "Heroes",
+        "title": "Universo de superheroes",
         "description": "Aplicación web de héroes para buscar personajes, ver su información detallada, estadísticas de poder, imágenes,  agregarlos a favoritos, etc.",
         "link": "https://heroes-app-front.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/heroes-app-front",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
@@ -286,7 +291,8 @@
       {
         "title": "Diario",
         "description": "Aplicación web tipo diario personal para crear y organizar notas, registrando experiencias diarias de manera visual y segura.",
-        "link": "",
+        "link": "https://journal-app-steel-delta.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/Journal-app",
         "techStack": [
           { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
           { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
@@ -306,6 +312,7 @@
         "title": "Calendario",
         "description": "Aplicación web para crear y compartir eventos en vistas grupales por mes, semana, día y agenda.",
         "link": "https://calendar-back-henna.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/calendar",
         "techStack": [
           { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
           { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },

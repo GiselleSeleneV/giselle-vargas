@@ -6,10 +6,12 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import Contact from "./Contact";
 import { DownloadIcon } from "@/components/Icons";
+import { useSectionRefs } from "@/store/useSectionsRefs";
 
 export default function AboutMe() {
     const { t } = useTranslation();
     const title = t("about_me.about_me");
+    const { projectsRef } = useSectionRefs();
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -20,6 +22,10 @@ export default function AboutMe() {
             controls.start("visible");
         }
     }, [isInView, controls]);
+
+    const scrollToProjects = () => {
+        projectsRef?.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <section className="w-full px-6 lg:px-8 flex flex-col items-center">
@@ -75,30 +81,42 @@ export default function AboutMe() {
                       </p>
                     </div>
 
-                    <div className="mt-2 lg:mt-4 flex flex-wrap items-center gap-3">
-                        <motion.a
-                            href="/pdf/CV-giselle-vargas-benitez.pdf"
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
+                    <div className="mt-2 lg:mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 w-full">
+                        <motion.button
+                            type="button"
+                            onClick={scrollToProjects}
                             whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="inline-flex items-center justify-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300 cursor-pointer w-fit"
                         >
-                            {t("about_me.btn_download")}
-                            <DownloadIcon color="#AF9661" />
-                        </motion.a>
+                            {t("about_me.btn_projects")}
+                        </motion.button>
 
-                        <motion.a
-                            href="/pdf/certificados-certifications.pdf"
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            {t("about_me.btn_certifications")}
-                            <DownloadIcon color="#AF9661" />
-                        </motion.a>
+                        <div className="flex flex-wrap items-center gap-3 sm:justify-end">
+                            <motion.a
+                                href="/pdf/CV-giselle-vargas-benitez.pdf"
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                {t("about_me.btn_download")}
+                                <DownloadIcon color="#AF9661" />
+                            </motion.a>
+
+                            <motion.a
+                                href="/pdf/certificados-certifications.pdf"
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1 lg:px-4 lg:py-1.5 xl:px-5 xl:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[13px] xl:text-[14px] transition-transform duration-300"
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                {t("about_me.btn_certifications")}
+                                <DownloadIcon color="#AF9661" />
+                            </motion.a>
+                        </div>
                     </div>
                 </div>
             </motion.div>

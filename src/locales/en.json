@@ -16,7 +16,8 @@
   "greetings": "Hi! Welcome",
   "I_am": "I'm",
   "position": "Frontend Developer.",
-  "button": "Explore"
+  "button": "Explore",
+  "cta_projects": "My projects"
   },
 
   "contact": {
@@ -27,7 +28,8 @@
     "about_me": "ABOUT ME",
     "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning.",
     "btn_download": "CV",
-    "btn_certifications": "Certifications"
+    "btn_certifications": "Certifications",
+    "btn_projects": "My projects"
   },
 
   "experience": {
@@ -263,11 +265,14 @@
   "projects":{
     "title": "Own projects",
     "buttonText": "Visit",
+    "githubText": "Code",
+    "calendar_subtitle": "Organize your day with clarity",
     "data": [
       {
-        "title": "Heroes",
+        "title": "Universe of Superheroes",
         "description": "Web application for searching heroes, viewing detailed information, power statistics, images, adding them to favorites, etc.",
         "link": "https://heroes-app-front.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/heroes-app-front",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "React", "icon": "/icons/react-icon-temp.svg.png"},
@@ -286,6 +291,8 @@
       {
         "title": "Journal",
         "description": "Web application personal journal for creating and organizing notes, recording daily experiences in a visual and secure way.",
+        "link": "https://journal-app-steel-delta.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/Journal-app",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
@@ -305,6 +312,7 @@
         "title": "Calendar",
         "description": "Web application to create and share events in group views by month, week, day, and agenda.",
         "link": "https://calendar-back-henna.vercel.app",
+        "githubLink": "https://github.com/GiselleSeleneV/calendar",
         "techStack": [
          { "name": "javaScript", "icon": "/icons/javaScript-icon.svg.png" },
          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
