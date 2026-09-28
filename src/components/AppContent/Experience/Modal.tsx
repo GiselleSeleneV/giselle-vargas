@@ -58,21 +58,21 @@ export default function Modal({
                         animate={{ y: 0, opacity: 1, scale: 1 }}
                         exit={{ y: 50, opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
-                        className="relative w-full max-w-5xl max-h-[680px] rounded-2xl shadow-2xl bg-gradient-to-br from-[#1E293B] to-black text-white pr-8 pl-4 pt-2 pb-4 flex flex-col justify-between"
+                        className="relative w-full max-w-5xl max-h-[680px] rounded-2xl shadow-2xl bg-gradient-to-br from-[#221C26] to-black text-white pr-8 pl-4 pt-2 pb-4 flex flex-col justify-between"
                     >
 
                         <motion.button
                             onClick={() => setIsModalOpen(false)}
                             whileHover={{ rotate: 90 }}
                             whileTap={{ scale: 0.95 }}
-                            className="absolute top-1 right-1 text-[#AF9661] hover:text-white transition-all cursor-pointer"
+                            className="absolute top-1 right-1 text-(--accent) hover:text-white transition-all cursor-pointer"
                         >
-                            <CloseIcon color="#AF9661" />
+                            <CloseIcon color="var(--accent)" />
                         </motion.button>
 
-                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full border-b border-[#AF9661]/30 pb-2 gap-2">
+                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full border-b border-(--accent)/30 pb-2 gap-2">
                             <div className="w-full lg:w-auto text-center lg:text-start">
-                                <h2 className="text-[16px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-[#AF9661]">{selectedProject}</h2>
+                                <h2 className="text-[16px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-(--accent)">{selectedProject}</h2>
                                 <p className="hidden lg:block text-[12px] lg:text-[14px] text-white mt-1">{t('experience.responsibilities_performed')}</p>
                             </div>
 
@@ -92,7 +92,7 @@ export default function Modal({
                         </div>
 
                         <div className="overflow-auto">
-                            <div className="mt-2 text-justify text-[12px] lg:text-[14px] leading-relaxed text-gray-300">
+                            <div className="mt-2 text-justify text-[12px] lg:text-[14px] leading-relaxed text-[#E6E1E8]">
                                 <ul className="list-disc pl-5 space-y-2">
                                     {selectedRole?.filter(Boolean).map((role, idx) => (
                                         <li key={`${role}-${idx}`}>{role}</li>
@@ -102,53 +102,51 @@ export default function Modal({
 
                             {selectedProjectImages && selectedProjectImages.length > 0 && (
                                 <div className="mt-2">
-                                    <motion.button
+                                    <button
+                                        type="button"
                                         onClick={() => setIsGalleryOpen(true)}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="w-[160px] ml-2 animate-[pulse_2.5s_ease-in-out_infinite] backdrop-blur-sm bg-white/5 border border-[#AF9661] text-[#AF9661] px-2 py-1 mt-1 lg:mt-3 rounded-full text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-semibold transition-all duration-300 cursor-pointer"
+                                        className="ml-2 mt-1 lg:mt-3 cursor-pointer border border-(--accent)/40 px-4 py-1.5 text-[11px] lg:text-[12px] uppercase tracking-[0.16em] text-[#F6F1EC] transition-colors duration-300 hover:border-(--accent) hover:text-(--accent)"
                                     >
                                         {t('experience.btn_view_project')}
-                                    </motion.button>
+                                    </button>
                                 </div>
                             )}
 
                             <div className="mt-6">
-                                <h3 className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold text-[#AF9661] mb-4">{t('experience.references')}</h3>
+                                <h3 className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold text-(--accent) mb-4">{t('experience.references')}</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4">
                                     {workExperience[currentIndex].references?.map((ref, idx) => (
                                         <div
                                             key={`${ref.email}-${idx}`}
-                                            className="bg-white/5 p-2 lg:py-2 lg:px-4 rounded-xl border border-[#AF9661]/20 shadow"
+                                            className="bg-white/5 p-2 lg:py-2 lg:px-4 rounded-xl border border-(--accent)/20 shadow"
                                         >
                                             <p className="text-white text-[12px] lg:text-[16px] font-semibold">{ref.name}</p>
-                                            <p className="text-[#AF9661] text-sm">{ref.company}</p>
-                                            <div className="flex items-center gap-2 mt-2 text-[12px] lg:text-[14px] text-gray-300">
-                                                <PhoneIcon color="#AF9661" />
+                                            <p className="text-(--accent) text-sm">{ref.company}</p>
+                                            <div className="flex items-center gap-2 mt-2 text-[12px] lg:text-[14px] text-[#E6E1E8]">
+                                                <PhoneIcon color="var(--accent)" />
                                                 <p>{ref.number}</p>
                                             </div>
-                                            <div className="flex items-center gap-2 mt-1 text-[12px] lg:text-[14px] text-gray-300">
-                                                <MessageIcon color="#AF9661" />
+                                            <div className="flex items-center gap-2 mt-1 text-[12px] lg:text-[14px] text-[#E6E1E8]">
+                                                <MessageIcon color="var(--accent)" />
                                                 <p>{ref.email}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className="flex justify-center mt-6">
-                                    <motion.button
+                                    <button
+                                        type="button"
                                         onClick={() => setIsModalOpen(false)}
-                                        whileHover={{ scale: 1.05 }}
-                                        className="w-full md:w-[60%] py-2 bg-[#7A2E2E] text-white rounded-xl hover:bg-[#B55442] transition-all cursor-pointer"
+                                        className="w-full md:w-[60%] cursor-pointer border border-(--accent)/40 py-2 text-[11px] uppercase tracking-[0.18em] text-[#F6F1EC] transition-colors duration-300 hover:border-(--accent) hover:text-(--accent)"
                                     >
                                         {t('experience.btn_close')}
-                                    </motion.button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
                 </motion.div>
-            )
-            }
+            )}
 
             {
                 isGalleryOpen && (
@@ -167,7 +165,7 @@ export default function Modal({
                                 whileTap={{ scale: 0.95 }}
                                 className="transition-all cursor-pointer"
                             >
-                                <CloseIcon color="#AF9661" />
+                                <CloseIcon color="var(--accent)" />
                             </motion.button>
                         </div>
                         <CarouselImages

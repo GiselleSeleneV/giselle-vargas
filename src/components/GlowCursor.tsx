@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useActiveComponent } from "@/store/useActiveComponent";
+import { sectionThemes } from "@/theme/sections";
 
 const GlowCursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isTargetButton, setIsTargetButton] = useState(false);
+    const { activeIndex } = useActiveComponent();
+    const theme = sectionThemes[activeIndex] ?? sectionThemes[0];
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -21,6 +25,8 @@ const GlowCursor = () => {
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
+    const glow = isTargetButton ? 0.55 : 0.38;
+
     return (
         <div className="pointer-events-none fixed inset-0 z-50" aria-hidden="true">
             <motion.div
@@ -30,10 +36,9 @@ const GlowCursor = () => {
                     left: position.x - 300,
                     width: "600px",
                     height: "600px",
-                    background: isTargetButton
-                        ? "radial-gradient(circle, rgba(255,165,0,0.35) 0%, rgba(0,0,0,0) 70%)"
-                        : "radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 70%)",
-                    mixBlendMode: "overlay",
+                    background: `radial-gradient(circle, rgba(${theme.rgb},${glow}) 0%, rgba(${theme.rgb},0) 68%)`,
+                    mixBlendMode: "screen",
+                    transition: "background 0.45s ease",
                 }}
                 animate={{ scale: isTargetButton ? 1.7 : 1 }}
                 transition={{ type: "tween", duration: 0.2, ease: "easeOut" }}

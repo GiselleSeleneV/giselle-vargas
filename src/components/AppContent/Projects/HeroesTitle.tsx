@@ -19,7 +19,7 @@ export default function HeroesTitle({ title }: HeroesTitleProps) {
 
     return (
         <motion.h3
-            className="m-0 flex flex-wrap text-[14px] sm:text-[16px] md:text-[16px] lg:text-[32px] tracking-wider uppercase leading-tight max-w-full"
+            className="m-0 flex flex-wrap text-[14px] sm:text-[16px] md:text-[16px] lg:text-[32px] short:lg:text-[20px]! short:xl:text-[24px]! tracking-wider uppercase leading-tight max-w-full"
             style={{ fontFamily: '"Bangers", system-ui, sans-serif' }}
             viewport={{ once: true, amount: 0.6 }}
             onViewportEnter={() => setReady(true)}

@@ -28,7 +28,7 @@ const SideBar = () => {
     return (
         <>
             <button onClick={() => setOpen(true)} aria-label="Open Menu">
-                <Menu size={30} className="text-[#AF9661]" />
+                <Menu size={30} className="text-(--accent)" />
             </button>
 
             <Drawer
@@ -41,25 +41,25 @@ const SideBar = () => {
                 styles={{
                     body: {
                         padding: 0,
-                        backgroundColor: '#0F172A',
+                        backgroundColor: '#100E12',
                     },
                 }}
             >
-                <div className="h-full w-full p-4 flex items-center justify-center bg-[#0F172A]">
+                <div className="h-full w-full p-4 flex items-center justify-center bg-[#100E12]">
                     <div className="w-full h-full  bg-white/5 border border-white/10 shadow-lg backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <div className="flex items-center justify-between mb-8">
-                                <p className="text-[20px] text-[#AF9661] font-bold uppercase tracking-widest">
+                                <p className="text-[20px] text-(--accent) font-bold uppercase tracking-widest">
                                     {t('header.menu')}
                                 </p>
                                 <motion.button
                                     onClick={() => setOpen(false)}
                                     whileHover={{ rotate: 90, scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="text-[#AF9661]"
+                                    className="text-(--accent)"
                                     aria-label="Close Menu"
                                 >
-                                    <CloseIcon color="#AF9661" />
+                                    <CloseIcon color="var(--accent)" />
                                 </motion.button>
                             </div>
 
@@ -71,18 +71,18 @@ const SideBar = () => {
                                         whileHover={{ scale: 1.05, x: 6 }}
                                         whileTap={{ scale: 0.95 }}
                                         className={`flex items-center gap-3 text-left text-[16px] font-medium transition-all ${activeIndex === index
-                                            ? 'text-[#AF9661] font-semibold'
-                                            : 'text-[#7e7e8a]'
+                                            ? 'text-(--accent) font-semibold'
+                                            : 'text-[#C8C2CC]'
                                             }`}
                                     >
-                                        <Icon color={'#AF9661'} />
+                                        <Icon color={'var(--accent)'} />
                                         {t(label)}
                                     </motion.button>
                                 ))}
                             </nav>
                         </div>
 
-                        <div className="text-[12px] text-[#9ca3af] text-center mt-12">
+                        <div className="text-[12px] text-[#C8C2CC] text-center mt-12">
                             © {new Date().getFullYear()} Giselle Vargas.
                         </div>
                     </div>

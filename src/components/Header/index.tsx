@@ -31,16 +31,16 @@ export default function HeaderClient() {
 
     const getButtonClass = (lang: string) =>
         i18n.language === lang
-            ? 'text-[#AF9661]'
-            : 'text-[#7e7e8a] hover:text-[#AF9661] cursor-pointer';
+            ? 'text-(--accent)'
+            : 'text-[#C8C2CC] hover:text-(--accent) cursor-pointer';
 
     const getNavButtonClass = (index: number) =>
         activeIndex === index
-            ? 'text-[#AF9661] font-semibold border-b-1 border-[#AF9661] p-1'
-            : 'text-[#7e7e8a] font-semibold p-1 hover:text-[#AF9661] cursor-pointer';
+            ? 'text-(--accent) tracking-[0.14em] uppercase text-[12px] border-b border-(--accent) pb-1'
+            : 'text-[#C8C2CC] tracking-[0.14em] uppercase text-[12px] pb-1 hover:text-(--accent) cursor-pointer transition-colors';
 
     return (
-        <div className="absolute w-full flex justify-between z-50 px-4 py-2 bg-[#0F172A]">
+        <div className="absolute w-full flex justify-between z-50 px-4 py-2 bg-[#100E12]">
             <div className="sm:block md:hidden">
                 <SideBar />
             </div>
@@ -52,14 +52,14 @@ export default function HeaderClient() {
                         onClick={() => scrollToSection(index)}
                         className={`flex items-center gap-2 ${getNavButtonClass(index)}`}
                     >
-                        <Icon color={'#AF9661'} />
+                        <Icon color={'var(--accent)'} />
                         {t(label)}
                     </button>
                 ))}
             </div>
 
             <div className="flex items-center gap-4 text-[14px] font-semibold">
-                <LanguageIcon color="#AF9661" />
+                <LanguageIcon color="var(--accent)" />
                 {languages.map(({ code, label }, idx) => (
                     <div key={code} className="flex items-center gap-4">
                         <button
@@ -71,7 +71,7 @@ export default function HeaderClient() {
                         >
                             {label}
                         </button>
-                        {idx === 0 && <div className="h-4 border-l border-[#AF9661]" />}
+                        {idx === 0 && <div className="h-4 border-l border-(--accent)" />}
                     </div>
                 ))}
             </div>

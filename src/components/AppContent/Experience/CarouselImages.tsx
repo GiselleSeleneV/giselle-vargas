@@ -58,14 +58,14 @@ export default function CarouselImages({ selectedProjectImages, projectName }: C
 
     return (
         <AnimatePresence>
-            <div className="w-full h-full flex items-center justify-center bg-[#0F172A] p-6">
+            <div className="w-full h-full flex items-center justify-center bg-[#100E12] p-6">
                 <motion.div
                     whileHover={{ scale: 1.2, x: -5 }}
                     whileTap={{ scale: 0.9 }}
                     className="cursor-pointer"
                     onClick={handlePrevImage}
                 >
-                    <ChevronLeft className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-[#AF9661] transition-colors duration-300" />
+                    <ChevronLeft className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-(--accent) transition-colors duration-300" />
                 </motion.div>
 
                 <div className="relative rounded-xl overflow-hidden shadow-lg">
@@ -85,7 +85,7 @@ export default function CarouselImages({ selectedProjectImages, projectName }: C
                             <div
                                 key={`${project}-${idx}`}
                                 className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full ${
-                                    idx === currentImageIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"
+                                    idx === currentImageIndex ? "bg-(--accent) scale-125" : "bg-gray-500"
                                 }`}
                             />
                         ))}
@@ -98,7 +98,7 @@ export default function CarouselImages({ selectedProjectImages, projectName }: C
                     className="cursor-pointer"
                     onClick={handleNextImage}
                 >
-                    <ChevronRight className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-[#AF9661]" />
+                    <ChevronRight className="w-[30px] h-[30px] lg:w-[48px] lg:h-[48px] text-(--accent)" />
                 </motion.div>
             </div>
         </AnimatePresence>

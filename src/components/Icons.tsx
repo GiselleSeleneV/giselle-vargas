@@ -6,7 +6,7 @@ export function CodeIcon() {
             height="24"
             viewBox="0 0 26 26"
             fill="none"
-            stroke="#AF9661"
+            stroke="var(--accent)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -18,7 +18,7 @@ export function CodeIcon() {
 }
 
 
-export function LocationIcon({ color = "gold" }) {
+export function LocationIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export function LocationIcon({ color = "gold" }) {
     );
 }
 
-export function GitHubIcon({ color = "gold" }) {
+export function GitHubIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export function GitHubIcon({ color = "gold" }) {
     );
 }
 
-export function LinkedInIcon({ color = "gold" }) {
+export function LinkedInIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ export function LinkedInIcon({ color = "gold" }) {
     );
 }
 
-export function MessageIcon({ color = "gold" }) {
+export function MessageIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export function MessageIcon({ color = "gold" }) {
 }
 
 
-export function PhoneIcon({ color = "gold" }) {
+export function PhoneIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export function PhoneIcon({ color = "gold" }) {
     );
 }
 
-export function LanguageIcon({ color = "gold" }) {
+export function LanguageIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export function LanguageIcon({ color = "gold" }) {
     );
 }
 
-export function CloseIcon({ color = "gold" }) {
+export function CloseIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ export function CloseIcon({ color = "gold" }) {
     );
 }
 
-export function HomeIcon({ color = "gold" }) {
+export function HomeIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +173,7 @@ export function HomeIcon({ color = "gold" }) {
     );
 }
 
-export function ContactIcon({ color = "gold" }) {
+export function ContactIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ export function ContactIcon({ color = "gold" }) {
     );
 }
 
-export function ExperienceIcon({ color = "gold" }) {
+export function ExperienceIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +212,7 @@ export function ExperienceIcon({ color = "gold" }) {
     );
 }
 
-export function ProjectsIcon({ color = "gold" }) {
+export function ProjectsIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +231,7 @@ export function ProjectsIcon({ color = "gold" }) {
     );
 }
 
-export function SkillsIcon({ color = "gold" }) {
+export function SkillsIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +250,7 @@ export function SkillsIcon({ color = "gold" }) {
     );
 }
 
-export function DownloadIcon({ color = "gold" }) {
+export function DownloadIcon({ color = "var(--accent)" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

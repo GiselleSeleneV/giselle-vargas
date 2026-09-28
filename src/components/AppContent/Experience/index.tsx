@@ -28,25 +28,25 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
         projectLogo,
     };
     return (
-        <section className="relative w-full lg:max-w-[min(94vw,1600px)] px-6 lg:px-8 min-h-screen snap-start overflow-visible">
-            <div className="w-full min-h-[100vh] flex flex-col items-center">
-                <div className="absolute top-0 left-1/2 w-[0.5px] h-full bg-[#AF9661]/40 rounded-full transform -translate-x-1/2 z-0" />
+        <section className="relative w-full mx-auto flex-1 min-h-0 lg:max-w-[min(94vw,1600px)] px-6 lg:px-8 flex flex-col overflow-hidden">
+            <div className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center">
+                <div className="absolute inset-y-0 left-1/2 w-[0.5px] bg-(--accent)/40 rounded-full transform -translate-x-1/2 z-0" />
 
                 <div className="w-full flex flex-col items-center z-10">
 
-                    <div className="absolute w-2 h-2 lg:w-4 lg:h-4 bg-[#AF9661] rounded-full border-1 lg:border-2 border-white shadow-lg z-10 top-14 lg:top-12" />
+                    <div className="absolute w-1.5 h-1.5 lg:w-2 lg:h-2 short:w-1.5! short:h-1.5! bg-(--accent) rounded-full z-10 -top-3" />
 
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="text-center mt-24"
+                        className="text-center"
                     >
                         {experience.company_logo && (
-                            <div className={`relative top-1 lg:top-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${experience.company_logo === "/images/deft-logo.jpg"
-                                ? "w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
-                                : "w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
+                            <div className={`relative left-1/2 transform -translate-x-1/2 mb-1 ${experience.company_logo === "/images/deft-logo.jpg"
+                                ? "w-[40px] h-[40px] md:w-[60px] md:h-[60px] short:w-[36px]! short:h-[36px]! short:md:w-[44px]! short:md:h-[44px]!"
+                                : "w-[60px] h-[60px] md:w-[80px] md:h-[80px] short:w-[44px]! short:h-[44px]! short:md:w-[52px]! short:md:h-[52px]!"
                                 }`}>
                                 <Image
                                     src={experience.company_logo}
@@ -56,11 +56,11 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 />
                             </div>
                         )}
-                        <h3 className="text-[#AF9661] text-[16px] md:text-[18px] lg:text-[24px] xl:text-[28px] font-semibold uppercase">{experience.company}</h3>
-                        <p className="text-white text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] mt-1">{experience.position}</p>
+                        <h3 className="display-title text-(--accent) text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] short:text-[20px]! short:lg:text-[26px]! short:xl:text-[30px]! leading-none">{experience.company}</h3>
+                        <p className="text-[#B7AFA8] text-[11px] md:text-[13px] lg:text-[15px] xl:text-[16px] short:text-[11px]! short:lg:text-[13px]! mt-2 uppercase tracking-[0.22em]">{experience.position}</p>
                     </motion.div>
 
-                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-6 xl:gap-10 mt-6 xl:mt-14 mb-2">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-6 xl:gap-10 short:gap-2! short:md:gap-2.5! short:lg:gap-3! short:xl:gap-3! mt-6 xl:mt-14 short:mt-3! short:xl:mt-4! mb-2">
                         {experience.projects.map((project, i) => (
                             <motion.div
                                 key={project.nameProject}
@@ -68,7 +68,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`relative group p-2 lg:p-4 xl:p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg transition-transform hover:scale-[1.03] cursor-pointer hover:shadow-[#AF9661]/30 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
+                                className={`relative group min-h-[80px] lg:min-h-[132px] xl:min-h-[150px] short:min-h-[64px]! short:lg:min-h-[92px]! short:xl:min-h-[100px]! p-2 lg:p-4 xl:p-6 short:p-2! short:lg:p-2.5! short:xl:p-3! rounded-xl bg-white/5 border border-white/10 backdrop-blur-md transition-colors duration-300 hover:border-(--accent)/40 cursor-pointer overflow-hidden ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
                                     }`}
                                 onClick={() => {
                                     setSelectedProject(project.nameProject);
@@ -78,17 +78,17 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                     setIsModalOpen(true);
                                 }}
                             >
-                                <h4 className="text-white text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold group-hover:text-[#AF9661] transition-colors">
+                                <h4 className="text-white text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] short:text-[12px]! short:lg:text-[14px]! short:xl:text-[15px]! font-semibold group-hover:text-(--accent) transition-colors pr-[5.5rem] lg:pr-[8.5rem] short:pr-[4.5rem]! short:lg:pr-[6rem]!">
                                     {project.nameProject}
                                 </h4>
-                                <p className="flex text-[11px] md:text-[12px] lg:text-[14px] text-gray-400 mt-1">
+                                <p className="flex text-[11px] md:text-[12px] lg:text-[14px] text-[#C8C2CC] mt-1 pr-[5.5rem] lg:pr-[8.5rem] short:pr-[4.5rem]! short:lg:pr-[6rem]!">
                                     {project.startDate}
                                     <span className="mx-1">-</span>
                                     <span
                                         className={
                                             project.endDate === "Present" || project.endDate === "Presente"
-                                                ? "text-[#AF9661]"
-                                                : "text-gray-400"
+                                                ? "text-(--accent)"
+                                                : "text-[#C8C2CC]"
                                         }
                                     >
                                         {project.endDate}
@@ -98,8 +98,8 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 {project.logo && (
                                     <div
                                         className={`absolute right-2 top-1/2 transform -translate-y-1/2  lg:opacity-40 lg:group-hover:opacity-100 lg:transition-opacity ${project.logo === "/images/projects/SIGP/logo.jpeg"
-                                            ? "w-[90px] h-[90px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px]"
-                                            : "w-[45px] h-[45px] lg:w-[70px] lg:h-[70px] xl:w-[90px] xl:h-[90px]"
+                                            ? "w-[90px] h-[90px] lg:w-[130px] lg:h-[130px] xl:w-[140px] xl:h-[140px] short:w-[52px]! short:h-[52px]! short:lg:w-[72px]! short:lg:h-[72px]! short:xl:w-[80px]! short:xl:h-[80px]!"
+                                            : "w-[45px] h-[45px] lg:w-[70px] lg:h-[70px] xl:w-[90px] xl:h-[90px] short:w-[36px]! short:h-[36px]! short:lg:w-[44px]! short:lg:h-[44px]! short:xl:w-[48px]! short:xl:h-[48px]!"
                                             }`}
                                     >
                                         <Image

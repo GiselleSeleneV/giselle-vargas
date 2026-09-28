@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Welcome from "./Welcome";
 import AboutMe from "@/components/AppContent/AboutMe";
@@ -11,6 +11,7 @@ import { useActiveComponent } from "@/store/useActiveComponent";
 import { useSectionRefs } from "@/store/useSectionsRefs";
 import { WorkExperience } from "@/types/experience";
 import { ProjectsType } from "@/types/projects";
+import { sectionAccentStyle, sectionThemes } from "@/theme/sections";
 
 export default function AppContent() {
     const { t } = useTranslation();
@@ -30,6 +31,14 @@ export default function AppContent() {
     const experienceDeft = t("experience.company_one", { returnObjects: true }) as WorkExperience;
     const projectsData = t("projects.data", { returnObjects: true }) as ProjectsType[];
     const sectionRefs = useSectionRefs();
+
+    useLayoutEffect(() => {
+        const theme = sectionThemes[activeIndex] ?? sectionThemes[0];
+        const root = document.documentElement;
+        root.style.setProperty("--accent", theme.accent);
+        root.style.setProperty("--accent-soft", theme.soft);
+        root.style.setProperty("--accent-rgb", theme.rgb);
+    }, [activeIndex]);
 
     useEffect(() => {
         sectionRefs.setRefs({
@@ -71,35 +80,35 @@ export default function AppContent() {
     }, []);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden text-white bg-[#0F172A]">
+        <div className="relative h-dvh w-full overflow-hidden text-white bg-[#100E12]">
 
-            <div className="h-screen overflow-y-scroll snap-mandatory snap-y scrollbar-none">
+            <div className="h-dvh overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
-                <section ref={welcomeRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={welcomeRef} style={sectionAccentStyle(0)} className="scroll-section h-dvh overflow-hidden flex items-center justify-center snap-start">
                     <Welcome />
                 </section>
 
-                <section ref={aboutMeRef} className="scroll-section h-screen flex items-center justify-center pt-10 lg:pt-12 snap-start ">
+                <section ref={aboutMeRef} style={sectionAccentStyle(1)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <AboutMe />
                 </section>
 
-                <section ref={experienceRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={experienceRef} style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <Experiences experience={experienceAndromeda} />
                 </section>
 
-                <section className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <Experiences experience={experienceTalentum} />
                 </section>
 
-                <section className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <Experiences experience={experienceDeft} />
                 </section>
 
-                <section ref={projectsRef} className="scroll-section h-screen box-border flex items-center justify-center snap-start pt-14 md:pt-12 lg:pt-14 pb-4 overflow-y-auto md:overflow-visible">
+                <section ref={projectsRef} style={sectionAccentStyle(3)} className="scroll-section h-dvh box-border flex flex-col snap-start pt-14 pb-3 overflow-y-auto md:overflow-hidden">
                     <Projects projectsData={projectsData} />
                 </section>
 
-                <section ref={skillsRef} className="scroll-section h-screen flex items-center justify-center snap-start">
+                <section ref={skillsRef} style={sectionAccentStyle(4)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <Skills />
                 </section>
             </div>
@@ -108,7 +117,7 @@ export default function AppContent() {
                 {sections.map((item, index) => (
                     <motion.div
                         key={`${item}-${index}`}
-                        className={`w-2 h-2 md:w-2 md:h-2 lg:w-2 lg:h-2 xl:w-3 xl:h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-[#AF9661] scale-125" : "bg-gray-500"}`}
+                        className={`w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full transition-colors duration-300 ${index === activeIndex ? "bg-(--accent)" : "bg-white/25"}`}
                     />
                 ))}
             </div>

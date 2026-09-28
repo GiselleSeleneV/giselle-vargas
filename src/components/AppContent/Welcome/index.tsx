@@ -1,119 +1,101 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslation } from 'react-i18next';
-import { useSectionRefs } from '@/store/useSectionsRefs';
-import { ChevronDown } from "lucide-react";
-import { CodeIcon } from "@/components/Icons";
-
-const generateParticles = (count: number) =>
-
-    Array.from({ length: count }, (_, i) => ({
-        x: Math.random() * 600 - 300,
-        y: Math.random() * 600 - 300,
-        delay: Math.random() * 2,
-        scale: Math.random() * 1.5 + 0.5,
-        index: i,
-    }));
-
-const particles = generateParticles(25);
+import { useTranslation } from "react-i18next";
+import { useSectionRefs } from "@/store/useSectionsRefs";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Welcome() {
-    const { welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef } = useSectionRefs();
-    const { t } = useTranslation();
+  const { welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef } =
+    useSectionRefs();
+  const { t } = useTranslation();
 
-    const scrollToSection = (index: number) => {
-        const refs = [welcomeRef, aboutMeRef, experienceRef, projectsRef, skillsRef];
-        const ref = refs[index];
-        if (ref?.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const scrollToSection = (index: number) => {
+    const refs = [
+      welcomeRef,
+      aboutMeRef,
+      experienceRef,
+      projectsRef,
+      skillsRef,
+    ];
+    const ref = refs[index];
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-    return (
-        <div className="flex flex-col w-full items-center justify-center min-h-screen text-[#ededed] text-center overflow-hidden relative">
-            {particles.map((particle) => (
-                <motion.div
-                    key={particle.index}
-                    className="absolute w-6 h-6 bg-gradient-to-br from-[#AF9661] to-[#ededed] rounded-full opacity-30"
-                    initial={{ x: particle.x, y: particle.y, scale: particle.scale }}
-                    animate={{
-                        x: [particle.x, particle.x + 100 * Math.sin(particle.index)],
-                        y: [particle.y, particle.y + 100 * Math.cos(particle.index)],
-                        rotate: 360,
-                    }}
-                    transition={{ repeat: Infinity, duration: 8 + Math.random() * 4, delay: particle.delay }}
-                />
-            ))}
+  return (
+    <div className="relative flex h-dvh w-full items-center justify-center overflow-hidden px-6 text-center">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[46%] h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--accent) opacity-[0.09] blur-3xl md:h-[32rem] md:w-[32rem]"
+      />
 
-            <motion.h1
-                className="font-extrabold mb-2 tracking-wide relative p-2"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-            >
-                <span className="relative inline-block text-[40px] md:text-[60px] lg:text-[95px] xl:text-[120px] font-extrabold drop-shadow-[0_0_12px_#AF9661] text-white">
-                    {t("home.greetings")}
-                    <motion.span
-                        className="absolute top-0 left-0 w-full h-full text-[#AF9661]"
-                        initial={{ x: -2 }}
-                        animate={{ x: [0, -2, 2, 0] }}
-                        transition={{ repeat: Infinity, duration: 0.2 }}
-                    />
-                </span>
-            </motion.h1>
+      <div className="relative z-10 flex w-full max-w-5xl flex-col items-center">
+        <motion.p
+          className="mb-5 text-[11px] uppercase tracking-[0.42em] text-(--accent) short:mb-3! lg:mb-7 lg:text-[13px]"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          {t("home.greetings")}
+        </motion.p>
 
-            <motion.div
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-            >
-                <h2 className="text-[26px] md:text-[30px] lg:text-[56px] xl:text-[76px] font-bold text-center text-[#AF9661] relative group mb-6 lg:mb-8">
-                    <span className="text-[rgb(237,237,237)] mr-1 md:mr-2 lg:mr-4 xl:mr-4">{t("home.I_am")}</span>Giselle Vargas
-                    <motion.span
-                        className="flex justify-center text-[16px] md:text-[18px] lg:text-[28px] xl:text-[34px] text-[#ededed] drop-shadow-[0_0_6px_#AF9661]"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 1.2 }}
-                    >
-                        <div className="flex items-center mr-1 lg:mr-2">
-                            <CodeIcon />
-                        </div>
-                        {t("home.position")}
-                    </motion.span>
-                </h2>
+        <motion.h1
+          className="display-title text-[clamp(3.4rem,12vw,8.5rem)] leading-[0.88] text-[#F6F1EC] short:text-[clamp(2.8rem,10vw,4.5rem)]!"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.12, ease: "easeOut" }}
+        >
+          Giselle
+          <span className="block text-(--accent)">Vargas</span>
+        </motion.h1>
 
-                <motion.button
-                    type="button"
-                    onClick={() => scrollToSection(3)}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.4 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center gap-2 border border-[#AF9661] px-4 py-1.5 lg:px-5 lg:py-2 rounded-full text-[#AF9661] text-[12px] lg:text-[14px] font-semibold bg-white/5 backdrop-blur-sm cursor-pointer"
-                >
-                    {t("home.cta_projects")}
-                </motion.button>
-            </motion.div>
+        <motion.div
+          className="my-6 h-px w-14 bg-(--accent)/55 short:my-4! lg:my-8"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+        />
 
-            <motion.div
-                className="absolute bottom-34 md:bottom-10 lg:bottom-10 xl:bottom-10 flex flex-col items-center text-[#AF9661] cursor-pointer z-10"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1.8 }}
-            >
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, delay: 2.8 }}
-                >
-                    <ChevronDown
-                        onClick={() => scrollToSection(1)}
-                        className="w-14 h-14 lg:w-[4.5rem] lg:h-[4.5rem] xl:w-20 xl:h-20 drop-shadow-[0_0_6px_#AF9661] transition-transform hover:scale-110"
-                    />
-                </motion.div>
-            </motion.div>
-        </div>
-    );
+        <motion.p
+          className="text-[13px] uppercase tracking-[0.28em] text-[#B7AFA8] lg:text-[16px] short:text-[12px]!"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+        >
+          {t("home.position")}
+        </motion.p>
+
+        <motion.button
+          type="button"
+          onClick={() => scrollToSection(3)}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+          whileTap={{ scale: 0.98 }}
+          className="mt-8 inline-flex cursor-pointer items-center gap-2 border border-(--accent)/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.28em] text-[#F6F1EC] transition-colors duration-300 hover:border-(--accent) hover:text-(--accent) short:mt-5! lg:mt-10 lg:text-[12px]"
+        >
+          {t("home.cta_projects")}
+          <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.75} />
+        </motion.button>
+      </div>
+
+      <motion.button
+        type="button"
+        onClick={() => scrollToSection(1)}
+        className="absolute bottom-16 z-10 flex cursor-pointer flex-col items-center md:bottom-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        aria-label={t("home.button")}
+      >
+        <motion.span
+          className="block h-12 w-px origin-top bg-(--accent)/70 short:h-8!"
+          animate={{ scaleY: [0.35, 1, 0.35] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+        />
+      </motion.button>
+    </div>
+  );
 }

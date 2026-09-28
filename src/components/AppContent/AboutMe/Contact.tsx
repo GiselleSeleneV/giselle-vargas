@@ -18,7 +18,7 @@ export default function Contact() {
     return (
         <motion.div
             ref={ref}
-            className="mt-2 lg:mt-4 xl:mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6 w-full max-w-[min(94vw,1600px)]"
+            className="mt-2 lg:mt-4 xl:mt-6 short:mt-2! short:lg:mt-2! short:xl:mt-3! grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6 short:gap-2! short:lg:gap-3! w-full max-w-[min(94vw,1600px)] shrink-0"
             initial="hidden"
             animate={controls}
             variants={{
@@ -37,9 +37,9 @@ export default function Contact() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 }
                     }}
-                    className="flex flex-col items-center justify-center text-center min-w-0 p-1 lg:p-3 xl:p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg hover:shadow-[#AF9661]/30 hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-center justify-center text-center min-w-0 p-1 lg:p-3 xl:p-5 short:p-1.5! short:lg:p-2! short:xl:p-2.5! rounded-xl bg-white/5 border border-white/10 backdrop-blur-md transition-colors duration-300 hover:border-(--accent)/40"
                 >
-                    <item.img color="#AF9661" />
+                    <item.img color="var(--accent)" />
                     <span className="mt-1 lg:mt-3 w-full text-[10px] sm:text-[11px] lg:text-[14px] text-white break-all leading-tight">
                         {item.text}
                     </span>

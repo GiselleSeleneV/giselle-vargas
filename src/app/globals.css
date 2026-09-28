@@ -1,17 +1,26 @@
 @import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --home-background: #0F172A;
-    --foreground: #0F172A;
-    --profile-background: #0F172A; 
-  }
+@custom-variant short (@media (max-height: 860px));
+
+:root {
+  --home-background: #100E12;
+  --foreground: #F4F0F3;
+  --profile-background: #100E12;
+  --accent: #C97A70;
+  --accent-soft: #E4B4AC;
+  --accent-rgb: 201, 122, 112;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.display-title {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .home-bg {
@@ -92,7 +101,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: #0F172A;
+  background: #100E12;
   color: #fff;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -117,7 +126,7 @@ body {
 
 .auth-brand__subtitle {
   margin: 0.15rem 0 0;
-  color: #94a3b8;
+  color: #C8C2CC;
   font-size: 0.72rem;
   line-height: 1.25;
   opacity: 0;
@@ -226,6 +235,26 @@ body {
   .auth-brand__subtitle {
     display: block;
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 860px) {
+  .auth-brand {
+    gap: 0.4rem;
+  }
+
+  .auth-brand__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .auth-brand__title {
+    font-size: 1.05rem;
+  }
+
+  .auth-brand__subtitle {
+    display: none;
   }
 }
 

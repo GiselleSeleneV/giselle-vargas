@@ -34,7 +34,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="flex-1 w-full max-h-full lg:max-w-[min(94vw,1600px)] px-4 sm:px-6 md:px-8 flex flex-col justify-center min-h-0"
+      className="w-full md:flex-1 md:min-h-0 lg:max-w-[min(94vw,1600px)] mx-auto px-4 sm:px-6 md:px-8 flex flex-col"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -43,12 +43,12 @@ export default function Projects({ projectsData }: ProjectsProps) {
         viewport={{ once: true }}
         className="text-center shrink-0"
       >
-        <h2 className="text-center text-[22px] sm:text-[24px] md:text-[38px] xl:text-[68px] font-extrabold text-[#AF9661] mb-2 sm:mb-3 md:mb-3">
+        <h2 className="display-title text-center text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] short:text-[28px]! short:md:text-[32px]! short:lg:text-[36px]! short:xl:text-[40px]! text-(--accent) mb-2 sm:mb-3 md:mb-4 short:mb-2!">
           {t("projects.title")}
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 lg:gap-6 xl:gap-8 min-h-0 p-0.5 md:p-2 items-stretch md:auto-rows-fr">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-4 lg:gap-5 xl:gap-6 short:gap-2! short:md:gap-2.5! short:lg:gap-3! md:flex-1 md:min-h-0 p-0.5 md:p-1">
         {projectsData.map((project, idx) => {
           const showJournalBrand = isJournalProject(project.title);
           const showHeroesTitle = isHeroesProject(project.title);
@@ -61,11 +61,11 @@ export default function Projects({ projectsData }: ProjectsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="relative h-full md:min-h-[168px] lg:min-h-[220px] bg-white/5 border border-white/10 backdrop-blur-md shadow-lg rounded-xl md:rounded-2xl flex justify-between transition-transform duration-300 px-2.5 py-2 sm:px-3 sm:py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 hover:shadow-[#AF9661]/30 lg:hover:scale-[1.03] overflow-hidden origin-center will-change-transform"
+              className="relative h-auto md:h-full md:min-h-0 bg-white/5 border border-white/10 backdrop-blur-md rounded-xl md:rounded-2xl flex justify-between transition-colors duration-300 px-2.5 py-2 sm:px-3 sm:py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 short:py-1.5! short:md:py-2! hover:border-(--accent)/40 overflow-hidden"
             >
               <div className="relative z-10 flex flex-col w-full lg:w-[66%] h-full justify-between min-w-0 gap-1 md:gap-1 lg:gap-2">
                 <div className="min-w-0 min-h-0 overflow-hidden">
-                  <div className="flex items-center min-w-0 md:min-h-0 lg:min-h-[3.75rem]">
+                  <div className="flex items-center min-w-0 md:min-h-0 lg:min-h-[2.75rem] xl:min-h-[3.75rem] short:lg:min-h-0!">
                     {showJournalBrand ? (
                       <JournalBrand label={project.title} />
                     ) : showHeroesTitle ? (
@@ -88,7 +88,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
                     )}
                   </div>
 
-                  <p className="text-gray-300 text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px] text-justify mb-1 mt-1 md:mb-1 md:mt-1 lg:mb-2 lg:mt-2 leading-snug line-clamp-3 md:line-clamp-2 lg:line-clamp-none">
+                  <p className="text-[#E6E1E8] text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px] short:lg:text-[12px]! short:xl:text-[13px]! text-justify mb-1 mt-1 md:mb-1 md:mt-1 lg:mb-2 lg:mt-2 short:mb-0.5! short:mt-0.5! leading-snug line-clamp-3 md:line-clamp-2 lg:line-clamp-3 xl:line-clamp-4 short:line-clamp-2! short:lg:line-clamp-2!">
                     {project.description}
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 min-w-0 inline-flex items-center justify-center gap-1 text-center text-[10px] md:text-[13px] bg-[#AF9661] text-black font-semibold py-0.5 md:py-1 px-1.5 sm:px-2 md:px-3 rounded-md md:rounded-lg hover:bg-[#d0b97b] transition-all"
+                        className="flex-1 min-w-0 inline-flex items-center justify-center gap-1 text-center text-[10px] md:text-[12px] uppercase tracking-[0.12em] bg-(--accent) text-[#100E12] font-medium py-1 md:py-1.5 px-2 md:px-3 hover:bg-(--accent-soft) transition-colors"
                       >
                         <ExternalLink
                           className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0"
@@ -115,7 +115,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
                         </span>
                       </a>
                     ) : (
-                      <div className="flex-1 min-w-0 text-center text-[10px] md:text-[12px] bg-gray-600/40 text-gray-400 font-semibold py-0.5 md:py-1 px-1.5 sm:px-2 rounded-md md:rounded-lg cursor-not-allowed">
+                      <div className="flex-1 min-w-0 text-center text-[10px] md:text-[12px] bg-gray-600/40 text-[#C8C2CC] font-semibold py-0.5 md:py-1 px-1.5 sm:px-2 rounded-md md:rounded-lg cursor-not-allowed">
                         {t("projects.buttonText")} 🔒
                       </div>
                     )}
@@ -126,10 +126,10 @@ export default function Projects({ projectsData }: ProjectsProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${project.title} GitHub`}
-                        className="shrink-0 inline-flex items-center justify-center gap-0.5 sm:gap-1 text-[9px] md:text-[12px] font-semibold py-0.5 md:py-1 px-2 sm:px-2.5 md:px-3 rounded-md md:rounded-lg border border-[#AF9661]/70 text-[#AF9661] bg-white/5 hover:bg-[#AF9661]/15 hover:border-[#AF9661] transition-all whitespace-nowrap"
+                        className="shrink-0 inline-flex items-center justify-center gap-0.5 sm:gap-1 text-[9px] md:text-[11px] uppercase tracking-[0.12em] font-medium py-1 md:py-1.5 px-2 sm:px-2.5 md:px-3 border border-(--accent)/40 text-[#F6F1EC] bg-transparent hover:border-(--accent) hover:text-(--accent) transition-colors whitespace-nowrap"
                       >
                         <span className="scale-75 origin-center inline-flex shrink-0">
-                          <GitHubIcon color="#AF9661" />
+                          <GitHubIcon color="var(--accent)" />
                         </span>
                         <span>{t("projects.githubText")}</span>
                       </a>
