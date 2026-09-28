@@ -9,7 +9,10 @@ import { DownloadIcon } from "@/components/Icons";
 import { useSectionRefs } from "@/store/useSectionsRefs";
 
 export default function AboutMe() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const cvHref = i18n.language.startsWith("es")
+        ? "/pdf/CV_Selene_Vargas_Espanol.pdf"
+        : "/pdf/Selene_Vargas_CV_English.pdf";
     const title = t("about_me.about_me");
     const { projectsRef } = useSectionRefs();
 
@@ -28,10 +31,14 @@ export default function AboutMe() {
     };
 
     return (
-        <section className="w-full flex-1 min-h-0 px-6 lg:px-8 flex flex-col items-center justify-center">
+        <section className="relative w-full flex-1 min-h-0 px-6 lg:px-8 flex flex-col items-center justify-center">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[18%] top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-(--accent) opacity-[0.08] blur-3xl lg:h-80 lg:w-80"
+            />
             <motion.div
                 ref={ref}
-                className="relative w-full max-w-[min(94vw,1600px)] max-h-full overflow-hidden rounded-xl bg-white/5 border border-white/10 shadow-lg p-4 lg:p-8 xl:p-16 short:p-3! short:lg:p-4! short:xl:p-6! flex flex-col lg:flex-row items-center gap-4 lg:gap-8 xl:gap-12 short:gap-3! short:lg:gap-4! short:xl:gap-5!"
+                className="relative w-full max-w-[min(94vw,1600px)] max-h-full overflow-hidden p-1 lg:p-4 xl:p-8 short:p-1! short:lg:p-2! short:xl:p-4! flex flex-col lg:flex-row items-center gap-4 lg:gap-10 xl:gap-14 short:gap-3! short:lg:gap-4! short:xl:gap-5!"
                 initial="hidden"
                 animate={controls}
                 variants={{
@@ -71,8 +78,10 @@ export default function AboutMe() {
                     </h2>
 
                     <div className="flex flex-col gap-3">
-                      <h1 className="display-title text-[22px] md:text-[32px] lg:text-[42px] xl:text-[52px] short:text-[22px]! short:lg:text-[30px]! short:xl:text-[34px]! leading-[0.95] text-[#F6F1EC]">
-                         Giselle Vargas
+                      <div className="my-1 h-px w-10 bg-(--accent)/55 short:hidden lg:my-2" />
+                      <h1 className="display-title text-[22px] md:text-[32px] lg:text-[42px] xl:text-[52px] short:text-[22px]! short:lg:text-[30px]! short:xl:text-[34px]! leading-[0.92] text-[#F6F1EC]">
+                         Giselle
+                         <span className="text-(--accent)"> Vargas</span>
                       </h1>
 
                       <p className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px] short:text-[12px]! short:lg:text-[13px]! short:xl:text-[13px]! text-[#E6E1E8] leading-relaxed short:leading-snug! text-left">
@@ -91,7 +100,7 @@ export default function AboutMe() {
 
                         <div className="flex flex-wrap items-center gap-3 sm:justify-end">
                             <motion.a
-                                href="/pdf/CV-giselle-vargas-benitez.pdf"
+                                href={cvHref}
                                 download
                                 target="_blank"
                                 rel="noopener noreferrer"

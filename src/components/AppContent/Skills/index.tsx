@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,6 @@ export type TechItem = {
 };
 
 export default function Skills() {
-  const [direction, setDirection] = useState<"left" | "right">("right");
   const { t } = useTranslation();
 
   const skills = t("skills", { returnObjects: true }) as {
@@ -35,80 +34,107 @@ export default function Skills() {
   const rightItems = data.slice(middleIndex);
 
   const handleNext = () => {
-    setDirection("right");
     setActiveIndex((prev) => (prev + 1) % totalSteps);
   };
 
   const handlePrev = () => {
-    setDirection("left");
     setActiveIndex((prev) => (prev - 1 + totalSteps) % totalSteps);
+  };
+
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
+
+  const onTouchStart = (event: React.TouchEvent) => {
+    const touch = event.changedTouches[0];
+    swipeStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const onTouchEnd = (event: React.TouchEvent) => {
+    if (!swipeStart.current) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - swipeStart.current.x;
+    const deltaY = touch.clientY - swipeStart.current.y;
+    swipeStart.current = null;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    if (deltaX < 0) handleNext();
+    else handlePrev();
   };
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true }}
       className="relative w-full flex-1 min-h-0 overflow-hidden px-6 flex flex-col justify-between"
     >
-      <div className="w-full lg:max-w-[min(94vw,1600px)] mx-auto flex flex-col items-center justify-center flex-grow">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-24 h-64 w-64 -translate-x-1/2 rounded-full bg-(--accent) opacity-[0.09] blur-3xl"
+      />
+      <div
+        className="relative z-10 w-full lg:max-w-[min(94vw,1600px)] mx-auto flex flex-col items-center justify-center flex-grow touch-pan-y"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onTouchCancel={() => {
+          swipeStart.current = null;
+        }}
+      >
         <AnimatePresence mode="wait" initial={false}>
-          <motion.h2
+          <motion.div
             key={activeIndex}
-            className="display-title flex text-center text-[28px] md:text-[40px] lg:text-[48px] xl:text-[56px] short:text-[28px]! short:lg:text-[34px]! short:xl:text-[40px]! text-(--accent) mb-4 md:mb-6 lg:mb-8 xl:mb-10 short:mb-3! short:lg:mb-4! short:xl:mb-4!"
-            initial={{ opacity: 0, x: direction === "right" ? 50 : -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: direction === "right" ? -50 : 50 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="mb-4 md:mb-6 lg:mb-8 short:mb-3! flex flex-col items-center"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
           >
-            {currentSection.title}
-          </motion.h2>
+            <p className="mb-2 text-[11px] uppercase tracking-[0.42em] text-(--accent)">
+              {String(activeIndex + 1).padStart(2, "0")}
+            </p>
+            <h2 className="display-title text-center text-[28px] md:text-[40px] lg:text-[48px] xl:text-[56px] short:text-[26px]! short:lg:text-[34px]! short:xl:text-[40px]! leading-[0.92] text-[#F6F1EC]">
+              {currentSection.title}
+            </h2>
+            <div className="mt-3 h-px w-12 bg-(--accent)/55" />
+          </motion.div>
         </AnimatePresence>
 
         <div className="relative w-full">
-          <div className="md:flex items-center justify-between w-full ">
+          <div className="md:flex items-center justify-between w-full md:gap-8 md:px-4 lg:gap-14 lg:px-8 xl:gap-20 xl:px-12 short:md:gap-6! short:lg:gap-8! short:xl:gap-10!">
             <motion.button
               whileTap={{ scale: 0.96 }}
               onClick={handlePrev}
-              className="hidden md:block z-10 text-(--accent)/80 hover:text-(--accent) cursor-pointer pl-0 lg:pl-4 transition-colors"
+              className="hidden md:block z-10 shrink-0 text-(--accent)/80 hover:text-(--accent) cursor-pointer transition-colors"
             >
               <ChevronLeft size={28} strokeWidth={1.5} />
             </motion.button>
 
-            <div className="relative flex-1 ">
+            <div className="relative min-w-0 flex-1">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, x: direction === "right" ? 80 : -80 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: direction === "right" ? -80 : 80 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-6 xl:gap-16 short:gap-2.5! short:md:gap-3! short:xl:gap-6! min-h-0"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 xl:gap-x-20 short:gap-x-6! min-h-0"
                 >
                   {[leftItems, rightItems].map((side, sideIndex) => (
                     <div
                       key={sideIndex === 0 ? "left" : "right"}
-                      className="space-y-4 xl:space-y-8 short:space-y-2.5! short:xl:space-y-3! w-full"
+                      className="w-full"
                     >
                       {side.map((item, idx) => (
                         <div
                           key={`${item.category}-${idx}`}
-                          className="bg-white/5 border border-white/10 px-3 py-2 md:px-4 md:py-4 short:py-2! short:md:py-2.5! rounded-xl backdrop-blur-md md:h-[116px] lg:h-[110px] xl:h-[130px] short:md:h-[92px]! short:lg:h-[96px]! short:xl:h-[100px]! flex flex-col overflow-hidden w-full"
+                          className="border-b border-white/10 py-2.5 md:py-3 lg:py-4 short:py-1.5! short:lg:py-2!"
                         >
-                          <h3 className="flex text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] short:text-[14px]! short:lg:text-[16px]! short:xl:text-[18px]! font-bold md:text-white mb-2 short:mb-1!">
+                          <h3 className="text-[11px] md:text-[12px] lg:text-[13px] uppercase tracking-[0.2em] text-(--accent)">
                             {item.category}
                           </h3>
-                          <ul className="space-y-1 text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px] short:lg:text-[13px]! short:xl:text-[14px]! text-[#E6E1E8] overflow-hidden">
-                            {item.skills.map((skill, idx) => (
-                              <li
-                                key={`${skill}-${idx}`}
-                                className="flex before:content-['•'] before:mr-2 before:text-(--accent)"
-                              >
-                                {skill}
-                              </li>
-                            ))}
-                          </ul>
+                          <p className="mt-1 text-[12px] md:text-[13px] lg:text-[15px] short:text-[12px]! leading-snug text-[#F6F1EC]">
+                            {item.skills.join(" ")}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -120,14 +146,14 @@ export default function Skills() {
             <motion.button
               whileTap={{ scale: 0.96 }}
               onClick={handleNext}
-              className="hidden md:block z-10 text-(--accent)/80 hover:text-(--accent) cursor-pointer pr-0 lg:pr-4 transition-colors"
+              className="hidden md:block z-10 shrink-0 text-(--accent)/80 hover:text-(--accent) cursor-pointer transition-colors"
             >
               <ChevronRight size={28} strokeWidth={1.5} />
             </motion.button>
           </div>
 
-          <div className="flex flex-col items-center md:hidden mt-2 w-full">
-            <div className="flex items-center justify-center gap-6 mt-6">
+          <div className="flex flex-col items-center md:hidden mt-8 w-full">
+            <div className="flex items-center justify-center gap-10">
               <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={handlePrev}
@@ -160,7 +186,7 @@ export default function Skills() {
 
       <TechStack techStack={techStack} />
 
-      <footer className="mt-2 text-center text-[12px] lg:text-[14px] text-[#C8C2CC] relative z-10">
+      <footer className="mt-2 text-center text-[11px] lg:text-[12px] uppercase tracking-[0.22em] text-[#B7AFA8] relative z-10">
         © {new Date().getFullYear()} Giselle Vargas.
       </footer>
     </motion.section>

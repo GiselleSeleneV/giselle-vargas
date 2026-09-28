@@ -1,7 +1,6 @@
 "use client";
 
 import { BookOpen } from "lucide-react";
-import { motion } from "framer-motion";
 
 type JournalBrandProps = {
     readonly label?: string;
@@ -10,31 +9,13 @@ type JournalBrandProps = {
 
 export default function JournalBrand({ label = "Journal", className = "" }: JournalBrandProps) {
     return (
-        <motion.div
-            className={`flex items-center gap-2 md:gap-2 lg:gap-3 min-w-0 ${className}`}
-            animate={{ y: [0, -3] }}
-            transition={{
-                duration: 2.8,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-            }}
-        >
-            <div
-                className="grid place-items-center w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-11 lg:h-11 rounded-lg md:rounded-xl shrink-0"
-                style={{
-                    background: "rgba(var(--accent-rgb),0.22)",
-                    border: "1px solid rgba(var(--accent-rgb),0.45)",
-                }}
-            >
-                <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4 md:h-4 lg:w-[22px] lg:h-[22px] text-(--accent-soft)" strokeWidth={1.75} />
+        <div className={`flex flex-1 items-center gap-2 lg:gap-3 min-w-0 ${className}`}>
+            <div className="grid place-items-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 shrink-0 border border-(--accent)/40 text-(--accent)">
+                <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" strokeWidth={1.5} />
             </div>
-            <h3
-                className="font-semibold text-[15px] sm:text-[16px] md:text-[16px] lg:text-[26px] short:lg:text-[18px]! short:xl:text-[20px]! tracking-[0.3px] text-white m-0 truncate"
-                style={{ fontFamily: '"Fraunces", serif' }}
-            >
+            <h3 className="display-title text-[18px] md:text-[20px] lg:text-[26px] short:lg:text-[20px]! short:xl:text-[22px]! leading-none text-[#F6F1EC] m-0 truncate">
                 {label}
             </h3>
-        </motion.div>
+        </div>
     );
 }

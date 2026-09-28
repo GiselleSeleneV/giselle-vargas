@@ -24,6 +24,8 @@ export default function AppContent() {
     const experienceRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
+    const scrollerRef = useRef<HTMLDivElement>(null);
+    const activeIndexRef = useRef(activeIndex);
 
 
     const experienceAndromeda = t("experience.company_three", { returnObjects: true }) as WorkExperience;
@@ -33,6 +35,7 @@ export default function AppContent() {
     const sectionRefs = useSectionRefs();
 
     useLayoutEffect(() => {
+        activeIndexRef.current = activeIndex;
         const theme = sectionThemes[activeIndex] ?? sectionThemes[0];
         const root = document.documentElement;
         root.style.setProperty("--accent", theme.accent);
@@ -48,67 +51,70 @@ export default function AppContent() {
             projectsRef,
             skillsRef
         });
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (entry.target === welcomeRef.current) {
-                            setActiveIndex(0);
-                        } else if (entry.target === aboutMeRef.current) {
-                            setActiveIndex(1);
-                        } else if (entry.target === experienceRef.current) {
-                            setActiveIndex(2);
-                        } else if (entry.target === projectsRef.current) {
-                            setActiveIndex(3);
-                        } else if (entry.target === skillsRef.current) {
-                            setActiveIndex(4);
-                        }
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-
-        if (welcomeRef.current) observer.observe(welcomeRef.current);
-        if (aboutMeRef.current) observer.observe(aboutMeRef.current);
-        if (experienceRef.current) observer.observe(experienceRef.current);
-        if (projectsRef.current) observer.observe(projectsRef.current);
-        if (skillsRef.current) observer.observe(skillsRef.current);
-
-        return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        const scroller = scrollerRef.current;
+        if (!scroller) return;
+
+        const updateActiveStep = () => {
+            const rootRect = scroller.getBoundingClientRect();
+            const sections = scroller.querySelectorAll<HTMLElement>("[data-step]");
+            let nextIndex = activeIndexRef.current;
+            let largestVisible = 0;
+
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const visibleTop = Math.max(rect.top, rootRect.top);
+                const visibleBottom = Math.min(rect.bottom, rootRect.bottom);
+                const visible = visibleBottom - visibleTop;
+                if (visible > largestVisible) {
+                    largestVisible = visible;
+                    nextIndex = Number(section.dataset.step);
+                }
+            });
+
+            if (nextIndex !== activeIndexRef.current) {
+                activeIndexRef.current = nextIndex;
+                setActiveIndex(nextIndex);
+            }
+        };
+
+        updateActiveStep();
+        scroller.addEventListener("scroll", updateActiveStep, { passive: true });
+        return () => scroller.removeEventListener("scroll", updateActiveStep);
+    }, [setActiveIndex]);
 
     return (
         <div className="relative h-dvh w-full overflow-hidden text-white bg-[#100E12]">
 
-            <div className="h-dvh overflow-y-scroll snap-mandatory snap-y scrollbar-none">
+            <div ref={scrollerRef} className="h-dvh overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
-                <section ref={welcomeRef} style={sectionAccentStyle(0)} className="scroll-section h-dvh overflow-hidden flex items-center justify-center snap-start">
+                <section ref={welcomeRef} data-step="0" style={sectionAccentStyle(0)} className="scroll-section h-dvh overflow-hidden flex items-center justify-center snap-start">
                     <Welcome />
                 </section>
 
-                <section ref={aboutMeRef} style={sectionAccentStyle(1)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section ref={aboutMeRef} data-step="1" style={sectionAccentStyle(1)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <AboutMe />
                 </section>
 
-                <section ref={experienceRef} style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
-                    <Experiences experience={experienceAndromeda} />
+                <section ref={experienceRef} data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <Experiences experience={experienceAndromeda} index={0} />
                 </section>
 
-                <section style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
-                    <Experiences experience={experienceTalentum} />
+                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <Experiences experience={experienceTalentum} index={1} />
                 </section>
 
-                <section style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
-                    <Experiences experience={experienceDeft} />
+                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <Experiences experience={experienceDeft} index={2} />
                 </section>
 
-                <section ref={projectsRef} style={sectionAccentStyle(3)} className="scroll-section h-dvh box-border flex flex-col snap-start pt-14 pb-3 overflow-y-auto md:overflow-hidden">
+                <section ref={projectsRef} data-step="3" style={sectionAccentStyle(3)} className="scroll-section h-dvh box-border flex flex-col snap-start pt-14 pb-3 overflow-y-auto">
                     <Projects projectsData={projectsData} />
                 </section>
 
-                <section ref={skillsRef} style={sectionAccentStyle(4)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section ref={skillsRef} data-step="4" style={sectionAccentStyle(4)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
                     <Skills />
                 </section>
             </div>

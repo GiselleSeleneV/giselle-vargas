@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { CalendarDays } from "lucide-react";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 type CalendarBrandProps = {
@@ -11,21 +9,20 @@ type CalendarBrandProps = {
 
 export default function CalendarBrand({ label }: CalendarBrandProps) {
     const { t } = useTranslation();
-    const [ready, setReady] = useState(false);
 
     return (
-        <motion.header
-            className={`auth-brand ${ready ? "auth-brand--ready" : ""}`}
-            viewport={{ once: true, amount: 0.6 }}
-            onViewportEnter={() => setReady(true)}
-        >
-            <span className="auth-brand__icon" aria-hidden="true">
-                <CalendarDays className="w-[1.1rem] h-[1.1rem]" strokeWidth={2} />
+        <div className="flex min-w-0 flex-1 items-center gap-2 lg:gap-3">
+            <span className="grid place-items-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 shrink-0 border border-(--accent)/40 text-(--accent)">
+                <CalendarDays className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" strokeWidth={1.5} />
             </span>
-            <div className="auth-brand__text">
-                <h3 className="auth-brand__title">{label}</h3>
-                <p className="auth-brand__subtitle">{t("projects.calendar_subtitle")}</p>
+            <div className="min-w-0">
+                <h3 className="display-title m-0 truncate text-[18px] md:text-[20px] lg:text-[26px] short:lg:text-[20px]! short:xl:text-[22px]! leading-none text-[#F6F1EC]">
+                    {label}
+                </h3>
+                <p className="mt-1 truncate text-[10px] lg:text-[11px] uppercase tracking-[0.16em] text-[#B7AFA8]">
+                    {t("projects.calendar_subtitle")}
+                </p>
             </div>
-        </motion.header>
+        </div>
     );
 }

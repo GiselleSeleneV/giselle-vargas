@@ -8,9 +8,10 @@ import { WorkExperience } from "@/types/experience";
 
 interface ExperienceTalentumProps {
     readonly experience: WorkExperience;
+    readonly index: number;
 }
 
-export default function Experiences({ experience }: ExperienceTalentumProps) {
+export default function Experiences({ experience, index }: ExperienceTalentumProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedRole, setSelectedRole] = useState<string[] | null>(null);
     const [selectedProject, setSelectedProject] = useState("");
@@ -29,6 +30,10 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
     };
     return (
         <section className="relative w-full mx-auto flex-1 min-h-0 lg:max-w-[min(94vw,1600px)] px-6 lg:px-8 flex flex-col overflow-hidden">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-16 h-56 w-56 -translate-x-1/2 rounded-full bg-(--accent) opacity-[0.08] blur-3xl"
+            />
             <div className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center">
                 <div className="absolute inset-y-0 left-1/2 w-[0.5px] bg-(--accent)/40 rounded-full transform -translate-x-1/2 z-0" />
 
@@ -52,11 +57,16 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                     src={experience.company_logo}
                                     alt="Logo empresa"
                                     fill
-                                    className="object-contain rounded-sm shadow-md"
+                                    className="object-contain"
                                 />
                             </div>
                         )}
-                        <h3 className="display-title text-(--accent) text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] short:text-[20px]! short:lg:text-[26px]! short:xl:text-[30px]! leading-none">{experience.company}</h3>
+                        <p className="mb-2 text-[11px] uppercase text-(--accent)">
+                            <span className="inline-block tracking-[0.42em] -mr-[0.42em]">
+                                {String(index + 1).padStart(2, "0")}
+                            </span>
+                        </p>
+                        <h3 className="display-title text-[#F6F1EC] text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] short:text-[20px]! short:lg:text-[26px]! short:xl:text-[30px]! leading-none">{experience.company}</h3>
                         <p className="text-[#B7AFA8] text-[11px] md:text-[13px] lg:text-[15px] xl:text-[16px] short:text-[11px]! short:lg:text-[13px]! mt-2 uppercase tracking-[0.22em]">{experience.position}</p>
                     </motion.div>
 
@@ -68,7 +78,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`relative group min-h-[80px] lg:min-h-[132px] xl:min-h-[150px] short:min-h-[64px]! short:lg:min-h-[92px]! short:xl:min-h-[100px]! p-2 lg:p-4 xl:p-6 short:p-2! short:lg:p-2.5! short:xl:p-3! rounded-xl bg-white/5 border border-white/10 backdrop-blur-md transition-colors duration-300 hover:border-(--accent)/40 cursor-pointer overflow-hidden ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
+                                className={`relative group min-h-[80px] lg:min-h-[132px] xl:min-h-[150px] short:min-h-[64px]! short:lg:min-h-[92px]! short:xl:min-h-[100px]! p-3 lg:p-5 xl:p-6 short:p-2! short:lg:p-3! short:xl:p-3! border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-(--accent)/40 cursor-pointer overflow-hidden ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"
                                     }`}
                                 onClick={() => {
                                     setSelectedProject(project.nameProject);
@@ -78,7 +88,7 @@ export default function Experiences({ experience }: ExperienceTalentumProps) {
                                     setIsModalOpen(true);
                                 }}
                             >
-                                <h4 className="text-white text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] short:text-[12px]! short:lg:text-[14px]! short:xl:text-[15px]! font-semibold group-hover:text-(--accent) transition-colors pr-[5.5rem] lg:pr-[8.5rem] short:pr-[4.5rem]! short:lg:pr-[6rem]!">
+                                <h4 className="display-title text-[#F6F1EC] text-[15px] md:text-[17px] lg:text-[20px] xl:text-[22px] short:text-[14px]! short:lg:text-[16px]! short:xl:text-[17px]! group-hover:text-(--accent) transition-colors pr-[5.5rem] lg:pr-[8.5rem] short:pr-[4.5rem]! short:lg:pr-[6rem]!">
                                     {project.nameProject}
                                 </h4>
                                 <p className="flex text-[11px] md:text-[12px] lg:text-[14px] text-[#C8C2CC] mt-1 pr-[5.5rem] lg:pr-[8.5rem] short:pr-[4.5rem]! short:lg:pr-[6rem]!">

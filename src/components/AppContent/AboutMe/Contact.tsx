@@ -37,7 +37,7 @@ export default function Contact() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 }
                     }}
-                    className="flex flex-col items-center justify-center text-center min-w-0 p-1 lg:p-3 xl:p-5 short:p-1.5! short:lg:p-2! short:xl:p-2.5! rounded-xl bg-white/5 border border-white/10 backdrop-blur-md transition-colors duration-300 hover:border-(--accent)/40"
+                    className="flex flex-col items-center justify-center text-center min-w-0 p-1 lg:p-3 xl:p-5 short:p-1.5! short:lg:p-2! short:xl:p-2.5! border border-white/10 transition-colors duration-300 hover:border-(--accent)/45"
                 >
                     <item.img color="var(--accent)" />
                     <span className="mt-1 lg:mt-3 w-full text-[10px] sm:text-[11px] lg:text-[14px] text-white break-all leading-tight">

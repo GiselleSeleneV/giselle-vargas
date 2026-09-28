@@ -51,14 +51,14 @@ export default function Modal({
                     animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
                     exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
                     transition={{ duration: 0.4 }}
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4"
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-3 sm:p-4"
                 >
                     <motion.div
                         initial={{ y: 50, opacity: 0, scale: 0.95 }}
                         animate={{ y: 0, opacity: 1, scale: 1 }}
                         exit={{ y: 50, opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
-                        className="relative w-full max-w-5xl max-h-[680px] rounded-2xl shadow-2xl bg-gradient-to-br from-[#221C26] to-black text-white pr-8 pl-4 pt-2 pb-4 flex flex-col justify-between"
+                        className="relative flex w-full max-w-5xl min-h-0 max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-[#221C26] to-black text-white pl-4 pr-4 pt-2 pb-3 sm:pr-8 sm:pb-4"
                     >
 
                         <motion.button
@@ -70,7 +70,7 @@ export default function Modal({
                             <CloseIcon color="var(--accent)" />
                         </motion.button>
 
-                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full border-b border-(--accent)/30 pb-2 gap-2">
+                        <div className="flex w-full shrink-0 flex-col gap-2 border-b border-(--accent)/30 pb-2 lg:flex-row lg:items-center lg:justify-between">
                             <div className="w-full lg:w-auto text-center lg:text-start">
                                 <h2 className="text-[16px] md:text-[22px] lg:text-[26px] xl:text-[30px] font-bold text-(--accent)">{selectedProject}</h2>
                                 <p className="hidden lg:block text-[12px] lg:text-[14px] text-white mt-1">{t('experience.responsibilities_performed')}</p>
@@ -91,9 +91,9 @@ export default function Modal({
                             </p>
                         </div>
 
-                        <div className="overflow-auto">
-                            <div className="mt-2 text-justify text-[12px] lg:text-[14px] leading-relaxed text-[#E6E1E8]">
-                                <ul className="list-disc pl-5 space-y-2">
+                        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pr-1">
+                            <div className="mt-2 text-left text-[12px] lg:text-[14px] leading-relaxed text-[#E6E1E8] sm:text-justify">
+                                <ul className="list-disc space-y-2 pl-5 short:space-y-1.5">
                                     {selectedRole?.filter(Boolean).map((role, idx) => (
                                         <li key={`${role}-${idx}`}>{role}</li>
                                     ))}
@@ -112,7 +112,7 @@ export default function Modal({
                                 </div>
                             )}
 
-                            <div className="mt-6">
+                            <div className="mt-6 short:mt-4 pb-1">
                                 <h3 className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-semibold text-(--accent) mb-4">{t('experience.references')}</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4">
                                     {workExperience[currentIndex].references?.map((ref, idx) => (
@@ -133,7 +133,7 @@ export default function Modal({
                                         </div>
                                     ))}
                                 </div>
-                                <div className="flex justify-center mt-6">
+                                <div className="mt-6 flex justify-center short:mt-4 pb-1">
                                     <button
                                         type="button"
                                         onClick={() => setIsModalOpen(false)}

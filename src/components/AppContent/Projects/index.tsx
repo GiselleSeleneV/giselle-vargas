@@ -3,7 +3,6 @@
 import TechStack from "@/components/TechStack/TechStack";
 import { ProjectsType } from "@/types/projects";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import JournalBrand from "./JournalBrand";
 import HeroesTitle from "./HeroesTitle";
@@ -34,38 +33,44 @@ export default function Projects({ projectsData }: ProjectsProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="w-full md:flex-1 md:min-h-0 lg:max-w-[min(94vw,1600px)] mx-auto px-4 sm:px-6 md:px-8 flex flex-col"
+      className="relative flex w-full min-h-full shrink-0 flex-col justify-center lg:max-w-[min(94vw,1600px)] mx-auto px-4 sm:px-6 lg:px-8"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-8 h-56 w-56 -translate-x-1/2 rounded-full bg-(--accent) opacity-[0.09] blur-3xl"
+      />
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center shrink-0"
+        className="relative z-10 text-center shrink-0 mb-6 xl:mb-14 short:mb-3! short:xl:mb-4!"
       >
-        <h2 className="display-title text-center text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] short:text-[28px]! short:md:text-[32px]! short:lg:text-[36px]! short:xl:text-[40px]! text-(--accent) mb-2 sm:mb-3 md:mb-4 short:mb-2!">
+        <h2 className="display-title text-center text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] short:text-[28px]! short:md:text-[32px]! short:lg:text-[36px]! short:xl:text-[40px]! leading-[0.92] text-[#F6F1EC]">
           {t("projects.title")}
         </h2>
+        <div className="mx-auto mt-3 h-px w-12 bg-(--accent)/55 short:mt-2!" />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-4 lg:gap-5 xl:gap-6 short:gap-2! short:md:gap-2.5! short:lg:gap-3! md:flex-1 md:min-h-0 p-0.5 md:p-1">
+      <div className="relative z-10 grid w-full grid-cols-1 items-stretch gap-3 sm:gap-3.5 md:grid-cols-2 md:gap-4 lg:gap-5 xl:grid-cols-3 xl:gap-6 short:gap-2! short:md:gap-2.5! short:lg:gap-3!">
         {projectsData.map((project, idx) => {
           const showJournalBrand = isJournalProject(project.title);
           const showHeroesTitle = isHeroesProject(project.title);
           const showCalendarBrand = isCalendarProject(project.title);
+          const spansRow = idx === projectsData.length - 1 && projectsData.length % 2 === 1;
 
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 0.55, delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="relative h-auto md:h-full md:min-h-0 bg-white/5 border border-white/10 backdrop-blur-md rounded-xl md:rounded-2xl flex justify-between transition-colors duration-300 px-2.5 py-2 sm:px-3 sm:py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 short:py-1.5! short:md:py-2! hover:border-(--accent)/40 overflow-hidden"
+              className={`relative flex h-full min-w-0 flex-col justify-between border border-white/10 bg-white/[0.02] px-4 py-3.5 sm:px-5 sm:py-4 lg:px-5 lg:py-5 xl:px-6 short:px-3! short:py-2.5! transition-colors duration-300 hover:border-(--accent)/40 overflow-hidden ${spansRow ? "md:col-span-2 xl:col-span-1" : ""}`}
             >
-              <div className="relative z-10 flex flex-col w-full lg:w-[66%] h-full justify-between min-w-0 gap-1 md:gap-1 lg:gap-2">
-                <div className="min-w-0 min-h-0 overflow-hidden">
-                  <div className="flex items-center min-w-0 md:min-h-0 lg:min-h-[2.75rem] xl:min-h-[3.75rem] short:lg:min-h-0!">
+              <div className="min-w-0">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
                     {showJournalBrand ? (
                       <JournalBrand label={project.title} />
                     ) : showHeroesTitle ? (
@@ -73,38 +78,34 @@ export default function Projects({ projectsData }: ProjectsProps) {
                     ) : showCalendarBrand ? (
                       <CalendarBrand label={project.title} />
                     ) : (
-                      <div className="flex items-center gap-2 min-w-0">
-                        <Image
-                          src="/images/photo-projects.png"
-                          alt="Photo caricatura"
-                          width={26}
-                          height={26}
-                          className="rounded-[6px] lg:hidden shrink-0"
-                        />
-                        <h3 className="text-[14px] md:text-[16px] lg:text-[24px] font-bold text-white truncate">
-                          {project.title}
-                        </h3>
-                      </div>
+                      <h3 className="display-title text-[18px] md:text-[20px] lg:text-[26px] leading-none text-[#F6F1EC] truncate">
+                        {project.title}
+                      </h3>
                     )}
                   </div>
-
-                  <p className="text-[#E6E1E8] text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px] short:lg:text-[12px]! short:xl:text-[13px]! text-justify mb-1 mt-1 md:mb-1 md:mt-1 lg:mb-2 lg:mt-2 short:mb-0.5! short:mt-0.5! leading-snug line-clamp-3 md:line-clamp-2 lg:line-clamp-3 xl:line-clamp-4 short:line-clamp-2! short:lg:line-clamp-2!">
-                    {project.description}
-                  </p>
+                  <span className="shrink-0 pt-1 text-[11px] tracking-[0.22em] text-(--accent)">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
-                <div className="flex flex-col mt-auto min-w-0 shrink-0">
-                  <div className="overflow-hidden scale-90 origin-left md:scale-90 lg:scale-100">
-                    <TechStack techStack={project?.techStack} />
-                  </div>
+                <div className="my-3 h-px w-8 bg-(--accent)/50 short:my-2!" />
+                <p className="text-left text-[12px] sm:text-[13px] lg:text-[14px] xl:text-[15px] short:text-[12px]! short:lg:text-[13px]! leading-relaxed text-[#E6E1E8] line-clamp-3 lg:line-clamp-4 xl:line-clamp-3 short:line-clamp-2!">
+                  {project.description}
+                </p>
+              </div>
 
-                  <div className="mt-1.5 md:mt-1.5 lg:mt-2 flex items-stretch gap-1.5 sm:gap-2 w-full min-w-0 shrink-0">
+              <div className={`mt-4 short:mt-2! flex min-w-0 flex-col gap-3 short:gap-2! ${spansRow ? "md:flex-row md:items-end md:justify-between xl:flex-col xl:items-stretch" : ""}`}>
+                <div className="min-w-0 flex-1 overflow-hidden">
+                  <TechStack techStack={project?.techStack} />
+                </div>
+
+                <div className="flex shrink-0 flex-wrap items-center gap-2">
                     {project.link ? (
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 min-w-0 inline-flex items-center justify-center gap-1 text-center text-[10px] md:text-[12px] uppercase tracking-[0.12em] bg-(--accent) text-[#100E12] font-medium py-1 md:py-1.5 px-2 md:px-3 hover:bg-(--accent-soft) transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 border border-(--accent)/45 px-3 py-1.5 text-[10px] md:text-[12px] uppercase tracking-[0.14em] text-(--accent) transition-colors hover:bg-(--accent) hover:text-[#100E12]"
                       >
                         <ExternalLink
                           className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0"
@@ -115,8 +116,8 @@ export default function Projects({ projectsData }: ProjectsProps) {
                         </span>
                       </a>
                     ) : (
-                      <div className="flex-1 min-w-0 text-center text-[10px] md:text-[12px] bg-gray-600/40 text-[#C8C2CC] font-semibold py-0.5 md:py-1 px-1.5 sm:px-2 rounded-md md:rounded-lg cursor-not-allowed">
-                        {t("projects.buttonText")} 🔒
+                      <div className="inline-flex items-center border border-white/10 px-3 py-1.5 text-[10px] md:text-[12px] uppercase tracking-[0.14em] text-[#8A8580] cursor-not-allowed">
+                        {t("projects.buttonText")}
                       </div>
                     )}
 
@@ -136,18 +137,6 @@ export default function Projects({ projectsData }: ProjectsProps) {
                     )}
                   </div>
                 </div>
-              </div>
-
-              <div className="hidden lg:block relative z-10 w-[30%] min-w-[8rem] xl:min-w-[9.5rem] shrink-0 self-stretch rounded-xl overflow-hidden">
-                <Image
-                  src="/images/photo-projects.png"
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 30vw, 0px"
-                  className="object-cover object-center"
-                  aria-hidden
-                />
-              </div>
             </motion.div>
           );
         })}
