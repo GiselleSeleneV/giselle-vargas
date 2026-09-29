@@ -52,7 +52,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
         <div className="mx-auto mt-3 h-px w-12 bg-(--accent)/55 short:mt-2!" />
       </motion.div>
 
-      <div className="relative z-10 grid w-full grid-cols-1 items-stretch gap-3 sm:gap-3.5 md:grid-cols-2 md:gap-4 lg:gap-5 xl:grid-cols-3 xl:gap-6 short:gap-2! short:md:gap-2.5! short:lg:gap-3!">
+      <div className="relative z-10 grid w-full grid-cols-1 items-stretch gap-6 sm:gap-7 md:grid-cols-2 md:gap-4 lg:gap-5 xl:grid-cols-3 xl:gap-6 short:gap-5! short:md:gap-2.5! short:lg:gap-3!">
         {projectsData.map((project, idx) => {
           const showJournalBrand = isJournalProject(project.title);
           const showHeroesTitle = isHeroesProject(project.title);
