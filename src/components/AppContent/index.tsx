@@ -12,6 +12,7 @@ import { useSectionRefs } from "@/store/useSectionsRefs";
 import { WorkExperience } from "@/types/experience";
 import { ProjectsType } from "@/types/projects";
 import { sectionAccentStyle, sectionThemes } from "@/theme/sections";
+import SectionTexture from "@/components/SectionTexture";
 
 export default function AppContent() {
     const { t } = useTranslation();
@@ -90,31 +91,38 @@ export default function AppContent() {
 
             <div ref={scrollerRef} className="h-dvh overflow-y-scroll snap-mandatory snap-y scrollbar-none">
 
-                <section ref={welcomeRef} data-step="0" style={sectionAccentStyle(0)} className="scroll-section h-dvh overflow-hidden flex items-center justify-center snap-start">
+                <section ref={welcomeRef} data-step="0" style={sectionAccentStyle(0)} className="scroll-section relative z-0 h-dvh overflow-hidden flex items-center justify-center snap-start">
+                    <SectionTexture side="left" />
                     <Welcome />
                 </section>
 
-                <section ref={aboutMeRef} data-step="1" style={sectionAccentStyle(1)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section ref={aboutMeRef} data-step="1" style={sectionAccentStyle(1)} className="scroll-section relative z-0 h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <SectionTexture side="right" />
                     <AboutMe />
                 </section>
 
-                <section ref={experienceRef} data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section ref={experienceRef} data-step="2" style={sectionAccentStyle(2)} className="scroll-section relative z-0 h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <SectionTexture side="left" />
                     <Experiences experience={experienceAndromeda} index={0} />
                 </section>
 
-                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section relative z-0 h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <SectionTexture side="right" />
                     <Experiences experience={experienceTalentum} index={1} />
                 </section>
 
-                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section data-step="2" style={sectionAccentStyle(2)} className="scroll-section relative z-0 h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <SectionTexture side="left" />
                     <Experiences experience={experienceDeft} index={2} />
                 </section>
 
-                <section ref={projectsRef} data-step="3" style={sectionAccentStyle(3)} className="scroll-section h-dvh box-border flex flex-col snap-start pt-14 pb-3 overflow-y-auto">
+                <section ref={projectsRef} data-step="3" style={sectionAccentStyle(3)} className="scroll-section relative z-0 h-dvh box-border flex flex-col snap-start pt-14 pb-3 overflow-y-auto">
+                    <SectionTexture side="right" />
                     <Projects projectsData={projectsData} />
                 </section>
 
-                <section ref={skillsRef} data-step="4" style={sectionAccentStyle(4)} className="scroll-section h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                <section ref={skillsRef} data-step="4" style={sectionAccentStyle(4)} className="scroll-section relative z-0 h-dvh overflow-hidden flex flex-col pt-14 pb-3 snap-start">
+                    <SectionTexture side="left" />
                     <Skills />
                 </section>
             </div>

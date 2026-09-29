@@ -23,6 +23,79 @@ body {
   letter-spacing: -0.03em;
 }
 
+.section-texture-right {
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.18) 32%,
+    transparent 58%
+  );
+}
+
+.section-texture-left {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.18) 32%,
+    transparent 58%
+  );
+}
+
+@media (min-width: 768px) {
+  .section-texture-right {
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.24) 40%,
+      transparent 72%
+    );
+  }
+
+  .section-texture-left {
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.24) 40%,
+      transparent 72%
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-texture-right {
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.35) 46%,
+      transparent 100%
+    );
+  }
+
+  .section-texture-left {
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.35) 46%,
+      transparent 100%
+    );
+  }
+}
+
+.section-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (min-width: 1024px) {
+  .section-texture::after {
+    opacity: 0.1;
+  }
+}
+
 .home-bg {
   background: var(--home-background);
 }
