@@ -328,6 +328,29 @@
           { "name": "Postman", "icon": "/icons/postman-icon.svg" },
           { "name": "VS Code", "icon": "/icons/visual-studio-icon.svg.png" }
         ]
+      },
+      {
+        "title": "Giss Shop",
+        "description": "Aplicación web de tienda de ropa para explorar el catálogo por género, ver la ficha de cada prenda, armar el carrito y gestionar inventario, usuarios y reportes desde un panel de administración.",
+        "link": "https://giss-shop.vercel.app/",
+        "githubLink": "https://github.com/GiselleSeleneV/giss-shop",
+        "techStack": [
+          { "name": "TypeScript", "icon": "/icons/typescript-icon.svg.png" },
+          { "name": "React", "icon": "/icons/react-icon-temp.svg.png" },
+          { "name": "Vite", "icon": "/icons/vite.svg" },
+          { "name": "React Router", "icon": "/icons/react-router.svg" },
+          { "name": "Tailwind", "icon": "/icons/tailwind-CSS-icon.svg.png" },
+          { "name": "shadcn/ui", "icon": "/icons/shadcn.svg" },
+          { "name": "Base UI", "icon": "/icons/base-ui.svg" },
+          { "name": "Lucide", "icon": "/icons/lucide.svg" },
+          { "name": "TanStack Query", "icon": "/icons/tanstack-query.svg" },
+          { "name": "Zustand", "icon": "/icons/zustand.svg" },
+          { "name": "Axios", "icon": "/icons/Axios.svg" },
+          { "name": "React Hook Form", "icon": "/icons/react-hook-form.svg" },
+          { "name": "jsPDF", "icon": "/icons/jspdf.svg" },
+          { "name": "Sonner", "icon": "/icons/sonner.svg" },
+          { "name": "ESLint", "icon": "/icons/eslint.svg" }
+        ]
       }
     ]
   },
@@ -336,10 +359,10 @@
       "title": "Habilidades Técnicas",
         "data": [
             { "category": "Lenguajes de programación", "skills": ["JavaScript (ES6+), TypeScript, nHTML5, CSS3"] },
-            { "category": "Frameworks y bibliotecas", "skills": ["React, Next.js, Framer Motion, Tailwind CSS, Styled Components, Ant Design, Bootstrap"] },
+            { "category": "Frameworks y bibliotecas", "skills": ["React, Next.js, Vite, React Router, Framer Motion, Tailwind CSS, shadcn/ui, Base UI, Lucide, Styled Components, Ant Design, Bootstrap, TanStack Query, Zustand, Axios, React Hook Form, jsPDF, Sonner"] },
             { "category": "APIs y manejo de datos", "skills": ["GraphQL, RESTful API, JSON"] },
             { "category": "Optimización y rendimiento", "skills": ["Mejoras de velocidad de carga, SEO técnico, SSR"] },
-            { "category": "Herramientas de desarrollo", "skills": ["Git, GitHub, Docker, Jest, Postman, VS Code"] },
+            { "category": "Herramientas de desarrollo", "skills": ["Git, GitHub, Docker, Jest, ESLint, Postman, VS Code"] },
             { "category": "Soporte técnico", "skills": ["Gestión de tickets, Diagnóstico de errores, Atención al cliente"] }
         ]
       },

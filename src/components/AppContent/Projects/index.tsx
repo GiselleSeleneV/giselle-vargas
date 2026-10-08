@@ -52,7 +52,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
         <div className="mx-auto mt-3 h-px w-12 bg-(--accent)/55 short:mt-2!" />
       </motion.div>
 
-      <div className="relative z-10 grid w-full grid-cols-1 items-stretch gap-6 sm:gap-7 md:grid-cols-2 md:gap-4 lg:gap-5 xl:grid-cols-3 xl:gap-6 short:gap-5! short:md:gap-2.5! short:lg:gap-3!">
+      <div className="relative z-10 grid w-full grid-cols-1 items-stretch gap-6 sm:gap-7 md:grid-cols-2 md:gap-4 lg:gap-5 xl:gap-6 short:gap-5! short:md:gap-2.5! short:lg:gap-3!">
         {projectsData.map((project, idx) => {
           const showJournalBrand = isJournalProject(project.title);
           const showHeroesTitle = isHeroesProject(project.title);
@@ -66,7 +66,7 @@ export default function Projects({ projectsData }: ProjectsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className={`relative flex h-full min-w-0 flex-col justify-between border border-white/10 bg-white/[0.02] px-4 py-3.5 sm:px-5 sm:py-4 lg:px-5 lg:py-5 xl:px-6 short:px-3! short:py-2.5! transition-colors duration-300 hover:border-(--accent)/40 overflow-hidden ${spansRow ? "md:col-span-2 xl:col-span-1" : ""}`}
+              className={`relative flex h-full min-w-0 flex-col justify-between border border-white/10 bg-white/[0.02] px-4 py-3.5 sm:px-5 sm:py-4 lg:px-5 lg:py-5 xl:px-6 short:px-3! short:py-2.5! transition-colors duration-300 hover:border-(--accent)/40 overflow-hidden ${spansRow ? "md:col-span-2" : ""}`}
             >
               <div className="min-w-0">
                 <div className="flex items-start justify-between gap-3">
