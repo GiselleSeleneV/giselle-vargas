@@ -26,6 +26,9 @@
 
   "about_me": {
     "about_me": "SOBRE MÍ",
+    "visual_label": "Composición gráfica con las iniciales GV",
+    "visual_caption": "Desarrollo frontend",
+    "visual_footer": "Diseño con intención",
     "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante.",
     "btn_download": "CV",
     "btn_certifications": "Certificados",

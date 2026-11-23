@@ -26,6 +26,9 @@
   
   "about_me": {
     "about_me": "ABOUT ME",
+    "visual_label": "Graphic composition with the initials GV",
+    "visual_caption": "Frontend development",
+    "visual_footer": "Designed with intent",
     "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning.",
     "btn_download": "CV",
     "btn_certifications": "Certifications",
