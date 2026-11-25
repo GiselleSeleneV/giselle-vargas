@@ -31,8 +31,7 @@
     "visual_footer": "Diseño con intención",
     "description": "Soy una desarrolladora frontend apasionada por crear experiencias digitales interactivas, accesibles y eficientes. Trabajo con tecnologías como JavaScript, React, Next.js y GraphQL para construir interfaces modernas y escalables.\n\nMe especializo en mejorar el rendimiento, aplicar buenas prácticas y desarrollar soluciones orientadas al usuario. He colaborado en proyectos para diversos sectores, siempre con un enfoque en la calidad, la usabilidad y el aprendizaje constante.",
     "btn_download": "CV",
-    "btn_certifications": "Certificados",
-    "btn_projects": "Mis proyectos"
+    "btn_certifications": "Certificados"
   },
 
   "experience": {
@@ -49,8 +48,8 @@
    "company_three": {
       "company": "Andromeda Tech S.A.S",
       "company_logo": "/images/andromeda-logo.png",
-      "startDate": "Oct 2025",
-      "endDate": "Mar 2026",
+      "startDate": "Mar 2025",
+      "endDate": "Ago 2026",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
       "references": [
@@ -69,8 +68,8 @@
         {
           "nameProject": "Andromeda",
           "logo": "/images/andromeda-logo.png",
-          "startDate": "Oct 2025",
-          "endDate" : "Mar 2026",
+          "startDate": "Mar 2025",
+          "endDate" : "Ago 2026",
           "role": [
             "Desarrollo y mantenimiento de la aplicación para gestión operativa en campo, enfocada en rendimiento, usabilidad y adaptabilidad móvil.",
             "Implementación de autenticación, manejo de sesión e integración segura con servicios backend.",
@@ -90,8 +89,8 @@
     "company_two": {
       "company": "Corporación Talentum",
       "company_logo": "/images/coporacion-talentum-logo.png",
-      "startDate": "Ago-2023",
-      "endDate": "Dic-2024",
+      "startDate": "Ago 2023",
+      "endDate": "Nov 2025",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
       "references": [
@@ -110,8 +109,8 @@
         {
           "nameProject": "Soporte de primer nivel para el SIGP",
           "logo": "/images/projects/SIGP/logo.jpeg",
-          "startDate": "Sep 2024",
-          "endDate" : "Dic 2024",
+          "startDate": "Sep 2025",
+          "endDate" : "Nov 2025",
           "role": [
             "Asistir a los usuarios ante inquietudes, incidencias o dificultades.",
             "Clasificar los casos según su complejidad (nivel 1, 2 o 3) y redirigirlos al área correspondiente para su atención especializada.",
@@ -127,8 +126,8 @@
         {
           "nameProject": "Aulas Quindío",
           "logo": "/images/projects/quindio/logo.png",
-          "startDate": "Jul 2024",
-          "endDate" : "Dic 2024",
+          "startDate": "Jul 2025",
+          "endDate" : "Nov 2025",
           "role" : [
             "Desarrollo de componentes reutilizables y escalables.",
             "Integración de APIs mediante GraphQL y optimización del rendimiento.",
@@ -234,8 +233,8 @@
     "company_one": {
       "company": "Deft Soluciones Tecnologicas",
       "company_logo": "/images/deft-logo.jpg",
-      "startDate": "Ago 2023",
-      "endDate": "Dic 2024",
+      "startDate": "Ene 2023",
+      "endDate": "Jul 2023",
       "city": "Cali, Valle del Cauca",
       "position": "DESARROLLADORA FRONTEND",
       "references": [

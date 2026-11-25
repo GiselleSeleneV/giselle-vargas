@@ -31,8 +31,7 @@
     "visual_footer": "Designed with intent",
     "description": "I'm a frontend developer passionate about crafting interactive, accessible, and efficient digital experiences. I work with technologies like JavaScript, React, Next.js, and GraphQL to build modern, scalable interfaces.\n\nI specialize in performance optimization, clean code practices, and user-focused solutions. I've contributed to projects across various industries, always with a strong focus on quality, usability, and continuous learning.",
     "btn_download": "CV",
-    "btn_certifications": "Certifications",
-    "btn_projects": "My projects"
+    "btn_certifications": "Certifications"
   },
 
   "experience": {
@@ -49,8 +48,8 @@
 "company_three": {
       "company": "Andromeda Tech S.A.S",
       "company_logo": "/images/andromeda-logo.png",
-      "startDate": "Oct 2025",
-      "endDate": "Mar 2026",
+      "startDate": "Mar 2025",
+      "endDate": "Aug 2026",
       "city": "Cali, Valle del Cauca",
       "position": "FRONTEND DEVELOPER",
       "references": [
@@ -69,8 +68,8 @@
         {
           "nameProject": "Andromeda",
           "logo": "/images/andromeda-logo.png",
-          "startDate": "Oct 2025",
-          "endDate" : "Mar 2026",
+          "startDate": "Mar 2025",
+          "endDate" : "Aug 2026",
           "role": [
             "Development and maintenance of a field operations management application, with a focus on performance, usability, and mobile adaptability.",
             "Implementation of authentication, session management, and secure integration with backend services.",
@@ -90,8 +89,8 @@
     "company_two": {
       "company": "Talentum Corporation",
       "company_logo": "/images/coporacion-talentum-logo.png",
-      "startDate": "Aug-2023",
-      "endDate": "Dec-2024",
+      "startDate": "Aug 2023",
+      "endDate": "Nov 2025",
       "city": "Cali, Colombia",
       "position": "FRONTEND DEVELOPER",
       "references": [
@@ -110,8 +109,8 @@
         {
           "nameProject": "First-level support for the SIGP",
           "logo": "/images/projects/SIGP/logo.jpeg",
-          "startDate": "Sep 2024",
-          "endDate" : "Dec 2024",
+          "startDate": "Sep 2025",
+          "endDate" : "Nov 2025",
           "role": [
             "Provide support to users in response to questions, issues, or technical difficulties.",
             "Classify cases according to their complexity (Level 1, 2, or 3) and redirect them to the appropriate department for specialized assistance.",
@@ -127,8 +126,8 @@
         {
           "nameProject": "Aulas Quindío",
           "logo": "/images/projects/quindio/logo.png",
-          "startDate": "Jul 2024",
-          "endDate" : "Dec 2024",
+          "startDate": "Jul 2025",
+          "endDate" : "Nov 2025",
           "role": [
             "Development of reusable and scalable components.",
             "API integration using GraphQL and performance optimization.",
@@ -234,8 +233,8 @@
     "company_one": {
       "company": "Deft Technological Solutions",
       "company_logo": "/images/deft-logo.jpg",
-      "startDate": "Aug 2023",
-      "endDate": "Dec 2024",
+      "startDate": "Jan 2023",
+      "endDate": "Jul 2023",
       "city": "Cali, Colombia",
       "position": "FRONTEND DEVELOPER",
       "references": [

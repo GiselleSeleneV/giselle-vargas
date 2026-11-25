@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Contact from "./Contact";
 import { DownloadIcon } from "@/components/Icons";
-import { useSectionRefs } from "@/store/useSectionsRefs";
 
 export default function AboutMe() {
     const { t, i18n } = useTranslation();
@@ -13,8 +12,6 @@ export default function AboutMe() {
         ? "/pdf/CV_Selene_Vargas_Espanol.pdf"
         : "/pdf/Selene_Vargas_CV_English.pdf";
     const title = t("about_me.about_me");
-    const { projectsRef } = useSectionRefs();
-
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const controls = useAnimation();
@@ -24,10 +21,6 @@ export default function AboutMe() {
             controls.start("visible");
         }
     }, [isInView, controls]);
-
-    const scrollToProjects = () => {
-        projectsRef?.current?.scrollIntoView({ behavior: "smooth" });
-    };
 
     return (
         <section className="relative w-full flex-1 min-h-0 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
@@ -99,16 +92,8 @@ export default function AboutMe() {
                       </p>
                     </div>
 
-                    <div className="mt-2 lg:mt-4 short:mt-1.5! short:lg:mt-2! flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 short:gap-2! w-full">
-                        <button
-                            type="button"
-                            onClick={scrollToProjects}
-                            className="inline-flex items-center justify-center gap-2 border border-(--accent)/40 px-4 py-1.5 lg:px-5 lg:py-2 text-[11px] lg:text-[12px] uppercase tracking-[0.18em] text-[#F6F1EC] transition-colors duration-300 hover:border-(--accent) hover:text-(--accent) cursor-pointer w-fit"
-                        >
-                            {t("about_me.btn_projects")}
-                        </button>
-
-                        <div className="flex flex-wrap items-center gap-3 sm:justify-end">
+                    <div className="mt-2 lg:mt-4 short:mt-1.5! short:lg:mt-2! flex w-full">
+                        <div className="flex flex-wrap items-center justify-start gap-3">
                             <motion.a
                                 href={cvHref}
                                 download
